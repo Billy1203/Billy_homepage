@@ -1,0 +1,29 @@
+---
+layout: archive
+title: "Footprints on the Road"
+permalink: /traveling/
+author_profile: true
+---
+<!--{% include base_path %}-->
+
+<!--Four categories: Trip ✈️, Relocation 🏠, Move 🏠, Journey ☀️-->
+
+<!-- Container for categories -->
+<div style="text-align: center;">
+  <span style="background-color: #f0f8ff; padding: 5px; border-radius: 5px; display: inline-block; margin-right: 10px;">Trip ✈️</span>
+
+  <span style="background-color: #ffebcd; padding: 5px; border-radius: 5px; display: inline-block; margin-right: 10px;">Relocation 🏠</span>
+
+  <span style="background-color: #e0ffe0; padding: 5px; border-radius: 5px; display: inline-block; margin-right: 10px;">Move 🏠</span>
+
+  <span style="background-color: #fffacd; padding: 5px; border-radius: 5px; display: inline-block;">Journey ☀️</span>
+</div>
+
+
+<!--{% if site.talkmap_link == true %}-->
+<!--<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've traveled!</a></p>-->
+<!--{% endif %}-->
+
+{% for post in site.talks reversed %}
+  {% include archive-single-traveling.html %}
+{% endfor %}
