@@ -35,7 +35,7 @@ My research passions lie in machine learning, pattern recognition, robotics perc
 I’m not buried in research, you’ll find me snapping photos 📷, hiking 🚶, playing soccer ⚽️, or playing computer 🧑‍💻. 
 Check out my photos and illustrations [here 🔞](https://unsplash.com/@billyxue).
 
-Got an idea or want to collaborate? Let’s talk! :):):)
+Got an idea or want to collaborate? Let’s talk! :)
 
 ---
 

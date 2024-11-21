@@ -6,17 +6,17 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Traveling"
-    url: /traveling/
-
   - title: "Projects"
     url: /projects/
+
+  - title: "Traveling"
+    url: /traveling/
     
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
-  - title: "Events"
-    url: /events/
+#  - title: "Portfolio"
+#    url: /portfolio/
+#
+#  - title: "Blog Posts"
+#    url: /year-archive/
+#
+#  - title: "Events"
+#    url: /events/

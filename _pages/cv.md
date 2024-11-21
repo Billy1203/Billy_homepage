@@ -9,17 +9,11 @@ redirect_from:
 
 {% include base_path %}
 
-[[Resume.pdf]](https://drive.google.com/file/d/1KTl4qMLlP35uyPOUs-MBbq623duB3skY/preview)
+[[Resume.pdf]](https://drive.google.com/file/d/1tV_HWoPmH-wsyAeUMnmPxYyeKQkzrKXr/preview)
 [[简历.pdf]](https://drive.google.com/file/d/1drHYbIYqrfC0wJuacXsuvxk_bc-8C5Ar/preview)
-(Recently updated on Sept., 20, 2024)
 
 Education 🎓
 ======
-* Provisional Ph.D, University of Leeds, 2024 Fall (expected to enroll)
-  * School of Computing, major in Computing & Robotics
-  * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
-  * [EPSRC-DTP](https://www.ukri.org/what-we-do/developing-people-and-skills/epsrc/studentships/doctoral-training-partnerships) Full Studentship Recipient
-
 * **Master of Research**, University of Liverpool (UoL), Liverpool, UK 🇬🇧 / XJTLU, Suzhou, China 🇨🇳, <span 
   style="float: right; background-color: #f0f0f0;">2022.9 - 2024.4</span>
   * School of Advanced Technology, major in _Pattern Recognition and Intelligent System_, pass with Distinction 
@@ -41,9 +35,15 @@ Education 🎓
     * [Here](https://www.nature.com/articles/nature.2012.10631) is a short story from 2012, before I decided to join in SUSTC. 
 
 * Summer Program, The University of British Columbia (UBC), Vancouver, Canada 🇨🇦, <span style="float: right; 
-  background-color: #f0f0f0;">2017.6 - 
-  2017.9</span>
+  background-color: #f0f0f0;">2017.6 - 2017.9</span>
   * Excellent Student in Summer Program, Department of ECE
+
+-----
+* Provisional Ph.D, University of Leeds, 2024 Fall (expected to enroll)
+  * School of Computing, major in Computing & Robotics
+  * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
+  * [EPSRC-DTP](https://www.ukri.org/what-we-do/developing-people-and-skills/epsrc/studentships/doctoral-training-partnerships) Full Studentship Recipient
+
 
 Work experience 💻 
 ======
@@ -62,7 +62,8 @@ Work experience 💻
     * DTS201TC Pattern Recognition (130+ undergraduate students)
     * DTS206TC Applied Linear Statistical Models (130+ undergraduate students)
 
-* Southern University of Science and Technology, <span style="float: right; background-color: #f0f0f0;">2019.9 - 2022.8</span>
+* [Southern University of Science and Technology](https://www.sustech.edu.cn/en/), <span style="float: right; background-color: #f0f0f0;">2019.9 - 
+  2022.8</span>
   * **Research and Teach Assistant** in [ISUS Lab](https://github.com/sustech-isus)
     * CS401 Intelligent Robotics (70+ undergraduate students)
     * CS405 Machine Learning (90+ undergraduate and graduate students)

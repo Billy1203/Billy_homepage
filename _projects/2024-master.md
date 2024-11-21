@@ -17,12 +17,12 @@ Supervisor:
 * Dr. Zhenfeng XUE@[SHU](https://en.shu.edu.cn)
 * [Prof. Ming XU](https://scholar.xjtlu.edu.cn/en/persons/MingXu)@UoL / XJTLU
 
-<h3>Presentation</h3>
+<h3>Oral Presentation</h3>
 <iframe src="../files/MRes_presentation.pdf" style="width: 100%; aspect-ratio: 4/3; height: auto; max-height: 800px; 
 margin-top: 0px; margin-bottom: 20px; border: none;"></iframe>
 🔍 <a href="../files/MRes_presentation.pdf" target="_blank">Fullscreen View</a> 👆🏻
 
-<h3>Dissertation</h3>
+<h3>Master Dissertation</h3>
 <iframe src="../files/MRes_dissertation.pdf" style="width: 100%; aspect-ratio: 2/3; height: auto; max-height: 800px; 
 margin-top: 0px; margin-bottom: 20px; border: none;"></iframe>
 🔍 <a href="../files/MRes_dissertation.pdf" target="_blank">Fullscreen View</a> 👆🏻
