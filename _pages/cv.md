@@ -58,8 +58,7 @@ Work experience 💻
   * **V-SLAM Algorithm Engineer**
 
 * *GAP work* [Dingxin Capital](http://www.dingxin-capital.com), <span style="float: right; background-color: #f0f0f0;
-  ">2024.6 
-- 2024.11</span>
+  ">2024.6 - 2024.11</span>
   * **AI Industry Analyst**
   * I engaged with over 100 startups, gaining valuable insights into their needs and progress. This experience significantly deepened my understanding of entrepreneurship and helped shape my perspective on the challenges and opportunities faced by startups.
 
