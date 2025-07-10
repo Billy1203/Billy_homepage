@@ -42,8 +42,6 @@ Education 🎓
 * Provisional Ph.D (expected to enroll)
   * University of Leeds 🇬🇧, School of Computing, major in Computing & Robotics
     * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
-      * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
-[//]: # (      * [EPSRC-DTP]&#40;https://www.ukri.org/what-we-do/developing-people-and-skills/epsrc/studentships/doctoral-training-partnerships&#41; Full Studentship Recipient)
   * University of Glasgow 🇬🇧, School of Engineering, major in EEE
     * Proposed supervisor: [Dr. Chongfeng Wei](https://www.gla.ac.uk/schools/engineering/staff/chongfengwei/)
   * University of Manchester 🇬🇧, major in Computer Science
