@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "CV"
+title: "CV 📑"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -39,22 +39,36 @@ Education 🎓
   * Excellent Student in Summer Program, Department of ECE
 
 -----
-* Provisional Ph.D, University of Leeds, 2024 Fall (expected to enroll)
-  * School of Computing, major in Computing & Robotics
-  * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
-  * [EPSRC-DTP](https://www.ukri.org/what-we-do/developing-people-and-skills/epsrc/studentships/doctoral-training-partnerships) Full Studentship Recipient
+* Provisional Ph.D (expected to enroll)
+  * University of Leeds 🇬🇧, School of Computing, major in Computing & Robotics
+    * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
+      * Proposed supervisors: [Dr. Yanlong HUANG](https://eps.leeds.ac.uk/computing/staff/8178/dr-yanlong-huang), [Dr. Mehmet Dogar](https://eps.leeds.ac.uk/computing/staff/743/dr-mehmet-dogar)
+[//]: # (      * [EPSRC-DTP]&#40;https://www.ukri.org/what-we-do/developing-people-and-skills/epsrc/studentships/doctoral-training-partnerships&#41; Full Studentship Recipient)
+  * University of Glasgow 🇬🇧, School of Engineering, major in EEE
+    * Proposed supervisor: [Dr. Chongfeng Wei](https://www.gla.ac.uk/schools/engineering/staff/chongfengwei/)
+  * University of Manchester 🇬🇧, major in Computer Science
+    * Proposed supervisor: Dr. Jingyuan Wang
+  * University of Bristol 🇬🇧, major in Engineering Mathematics
+    * Proposed supervisor: [Dr. Ben Ward-Cherrier](https://www.bristol.ac.uk/people/person/Ben-Ward-Cherrier-054a2ca1-4381-4f3d-892d-0492cd713e37/)
 
 
 Work experience 💻 
 ======
-* [Dingxin Capital](http://www.dingxin-capital.com), <span style="float: right; background-color: #f0f0f0;">2024.5 - now</span>
+* [OMOway](https://www.omoway.com/), <span style="float: right; background-color: #f0f0f0;">2024.12 - now</span>
+  * **V-SLAM Algorithm Engineer**
+
+* *GAP work* [Dingxin Capital](http://www.dingxin-capital.com), <span style="float: right; background-color: #f0f0f0;
+  ">2024.6 
+- 2024.11</span>
   * **AI Industry Analyst**
   * I engaged with over 100 startups, gaining valuable insights into their needs and progress. This experience significantly deepened my understanding of entrepreneurship and helped shape my perspective on the challenges and opportunities faced by startups.
 
-* [Boundary.AI](https://www.boundaryai.cn/en), <span style="float: right; background-color: #f0f0f0;">2024.3 - 2024.5</span>
-  * **SLAM Algorithm Researcher**
+* [Boundary.AI](https://www.boundaryai.cn/en), <span style="float: right; background-color: #f0f0f0;">2024.3 - 2024.6</span>
+  * **V-SLAM Algorithm Researcher**
 
-* [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn), <span style="float: right; background-color: #f0f0f0;">2022.9 - 2024.3</span>
+* [*Intern*] [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn), <span style="float: right; 
+  background-color: 
+  #f0f0f0;">2022.9 - 2024.3</span>
   * **Perception Algorithm Engineer** in [APRIL Lab](https://april.zju.edu.cn)
 
 * [*Part Time*] [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en), <span style="float: right; background-color: #f0f0f0;">2022.9 - 2024.3</span>
@@ -71,8 +85,9 @@ Work experience 💻
     * Roboeye Technology (Shenzhen) Co., Ltd., a startup, part of the Nanshan District Leading Team Project in Shenzhen
     * Conduct a research project related to my undergraduate dissertation and capstone design project
 
-* [*Intern*] Baker Tilly China Certified Public Accountants, <span style="float: right; background-color: #f0f0f0;">2018.5 - 2018.8</span>
-  * Due Diligence Analyst
+[//]: # (* [*Intern*] Baker Tilly China Certified Public Accountants, <span style="float: right; background-color: #f0f0f0;">2018.5 - 2018.8</span>)
+
+[//]: # (  * Due Diligence Analyst)
   
 Skills ⚙️ 
 ======
