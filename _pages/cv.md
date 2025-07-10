@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 [[Resume.pdf]](https://drive.google.com/file/d/1tV_HWoPmH-wsyAeUMnmPxYyeKQkzrKXr/preview)
-[[简历.pdf]](https://drive.google.com/file/d/1drHYbIYqrfC0wJuacXsuvxk_bc-8C5Ar/preview)
+[[简历.pdf]](https://drive.google.com/file/d/1E2BlLuXIvtUrV_0oL_njYSsOqR9UlG1u/preview)
 
 Education 🎓
 ======
