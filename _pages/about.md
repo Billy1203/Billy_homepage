@@ -42,20 +42,20 @@ Got an idea or want to collaborate? Let’s talk! :)
 
 ---
 
-- 🎉 **2023-11** One paper accepted by Nature Communications!
-- 🎉 **2024-02** I received M.Res degree with Distinction and awarded Best Overall Master Student, ranked 1st/80+ 
-  students.
-- 💼 **2024-03** I received 1st job offer and returned to Shenzhen to join Boundary AI, working on VSLAM systems.
-- 🎉 **2024-04** I was honored to receive multiple fully funded PhD offers in 2024 to pursue research in robotics,
-  focusing on object manipulation, robotic arm control, tactile perception, and imitation learning.
-- 🎉 **2024-05** One paper accepted by Ocean Engineering!
-- 😭 **2024-11** Unfortunately, due to ATAS clearance issues specific to the UK visa process, I was ultimately unable
-  to proceed with enrollment.
-- 🎉 **2025-03** I’m grateful to have received multiple fully funded PhD offers in 2025 to pursue research in robotics.
+- 🎉 **2025-06** One paper accepted by IROS 2025 as an oral presentation!
 - ⚠️ **2025-04** I was excited about the opportunities, due to the sensitive nature of my research background, it is
   unlikely that I’ll be able to proceed with overseas enrollment. I still remain passionate about advancing robotics
   and applying cutting-edge technologies to the real world.
-- 🎉 **2025-06** One paper accepted by IROS 2025 as an oral presentation!
+- 🎉 **2025-03** I’m grateful to have received multiple fully funded PhD offers in 2025 to pursue research in robotics.
+- 😭 **2024-11** Unfortunately, due to ATAS clearance issues specific to the UK visa process, I was ultimately unable
+  to proceed with enrollment.
+- 🎉 **2024-05** One paper accepted by Ocean Engineering!
+- 🎉 **2024-04** I was honored to receive multiple fully funded PhD offers in 2024 to pursue research in robotics,
+  focusing on object manipulation, robotic arm control, tactile perception, and imitation learning.
+- 💼 **2024-03** I received 1st job offer and returned to Shenzhen to join Boundary AI, working on VSLAM systems.
+- 🎉 **2024-02** I received M.Res degree with Distinction and awarded Best Overall Master Student, ranked 1st/80+
+  students.
+- 🎉 **2023-11** One paper accepted by Nature Communications!
 
 ---
 
