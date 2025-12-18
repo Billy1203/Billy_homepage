@@ -61,7 +61,8 @@ target="_blank" rel="noopener">简历 (中文)</a>
 * [OMOway](https://www.omoway.com/) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2024.12 - 2025.08</span>
   * **V-SLAM Algorithm Engineer**
 
-* *GAP work* [Dingxin Capital](http://www.dingxin-capital.com) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2024.6 - 2024.11</span>
+* [*GAP work*] [Dingxin Capital](http://www.dingxin-capital.com) <span style="float:right; font-size:0.85em; 
+  color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2024.6 - 2024.11</span>
   * **AI Industry Analyst**
   * I engaged with over 100 startups, gaining valuable insights into their needs and progress. This experience significantly deepened my understanding of entrepreneurship and helped shape my perspective on the challenges and opportunities faced by startups.
 
