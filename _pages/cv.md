@@ -31,20 +31,28 @@ target="_blank" rel="noopener">简历 (中文)</a>
     /projects/2019-bachelor.html)
   * 2nd Place in Capstone Design Competition at the College of Engineering
   * Outstanding Undergraduate Dissertation 2019
-  * About SUSTC / SUSTech
-    * SUSTech ranked **1st** in Mainland China and **13th** in the world in the [THE](https://www.timeshighereducation.com) Young University Rankings 2022
-    * SUSTech ranked **15th** in Mainland China and **157th** in the world in the [US News](https://www.timeshighereducation.com) Best Global Universities 2024
-    * [Here](https://www.nature.com/articles/nature.2012.10631) is a short story from 2012, before I decided to join in SUSTC
+  
+  <details>
+  <summary><strong>About SUSTech</strong></summary>
+  <ul>
+    <li>SUSTech ranked <strong>1st</strong> in Mainland China and <strong>13th</strong> worldwide in the THE Young University Rankings 2022</li>
+    <li>SUSTech ranked <strong>15th</strong> in Mainland China and <strong>157th</strong> worldwide in the US News Best Global Universities 2024</li>
+    <li><a href="https://www.nature.com/articles/nature.2012.10631">A short story from 2012</a>, before I decided to join SUSTech</li>
+  </ul>
+  </details>
 
 * Summer Program, The University of British Columbia (UBC), Vancouver, Canada 🇨🇦 <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2017.6 - 2017.9</span>
   * Excellent Student in Summer Program, Department of ECE
 
-### PhD offers
-* Provisional PhD (received offer, expected to enroll)
-  * University of Leeds 🇬🇧, School of Computing, major in Computing & Robotics
-  * University of Glasgow 🇬🇧, School of Engineering, major in EEE
-  * University of Manchester 🇬🇧, major in Computer Science
-  * University of Bristol 🇬🇧, major in Engineering Mathematics
+<details>
+<summary><strong>Provisional PhD (received offer, expected to enroll)</strong></summary>
+<ul>
+  <li>University of Leeds 🇬🇧, School of Computing, major in Computing & Robotics</li>
+  <li>University of Glasgow 🇬🇧, School of Engineering, major in EEE</li>
+  <li>University of Manchester 🇬🇧, major in Computer Science</li>
+  <li>University of Bristol 🇬🇧, major in Engineering Mathematics</li>
+</ul>
+</details>
 
 ## Work Experience
 * [Jabbr](https://jabbr.ai/) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2025.9 - now</span>
