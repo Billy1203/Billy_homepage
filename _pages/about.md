@@ -70,17 +70,12 @@ Got an idea or want to collaborate? Let’s talk! :)
 
 ---
 
-<div style="
-  margin: 3rem auto 1rem auto;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #888;
-">
-  Visitor statistics
-  <br>
-  <img
-    src="https://s01.flagcounter.com/count2/ylM7/bg_FFFFFF/txt_777777/border_EEEEEE/columns_4/maxflags_8/viewers_0/labels_0/pageviews_0/"
-    alt="Visitor Counter"
-    style="margin-top: 0.4rem; opacity: 0.85;"
-  >
+<div class="page__content">
+  <div class="visitor-stats" style="text-align:center;">
+    <div class="visitor-title">Visitors from</div>
+    <img
+      src="https://s01.flagcounter.com/count2/ylM7/bg_FFFFFF/txt_777777/border_EEEEEE/columns_6/maxflags_12/viewers_3/labels_1/pageviews_0/"
+      alt="Visitor Counter"
+      style="display:block; margin:0.5rem auto 0;">
+  </div>
 </div>
