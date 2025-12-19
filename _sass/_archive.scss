@@ -114,12 +114,64 @@
   box-shadow: $box-shadow;
   background: $background-color;
   transition: $global-transition;
+  margin-bottom: 1.25rem;
 }
 
 .archive__item:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 36px rgba(0,0,0,.08);
+  background-color: mix($background-color, #000, 97%);
 }
+
+/* --- CV publications: plain list (no cards) --- */
+.cv-pubs .archive {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.cv-pubs .archive > li {
+  list-style: none;
+}
+
+.cv-pubs .archive__item {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  transform: none;
+}
+
+.cv-pubs .archive__item:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.cv-pubs .archive__item-title {
+  margin: 0;
+}
+
+.cv-pubs .archive__item-excerpt {
+  margin-top: 0.2rem;
+}
+
+.cv-pubs .archive__item-teaser {
+  display: none;
+}
+
+.cv-pubs {
+  margin-left: -6.2rem;   /* 抵消 ul 默认 padding，数值按你实际调 1.0~1.5 */
+}
+
+.cv-pubs .archive {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
+
 
 
 

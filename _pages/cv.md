@@ -90,11 +90,17 @@ target="_blank" rel="noopener">简历 (中文)</a>
 [//]: # (  * Due Diligence Analyst)
   
 ## Skills
+
 * Programming: Python > Matlab > C++ = Java > R
 * Design: Photography, Video Editing, Illustration
 * Sports: Soccer ⚽️, Badminton 🏸, Table Tennis 🏓, Hiking ⛰️
 
 ## Publications
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
+<div class="cv-pubs">
+  <ul class="archive">
+    {% for post in site.publications reversed %}
+      {% include archive-single-cv.html %}
+    {% endfor %}
+  </ul>
+</div>
