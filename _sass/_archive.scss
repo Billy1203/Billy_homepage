@@ -170,10 +170,31 @@
   margin-left: 0;
 }
 
+/* ==========================================================================
+   CV / Education list spacing refinement
+   ========================================================================== */
 
+/* Level-1 list items (degree titles) */
+.page__content > ul > li,
+.page__content .archive > li {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.35;
+}
 
+/* Level-2 list items (details under each degree) */
+.page__content ul ul > li {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
 
-
+/* Level-3 list items (rare, very compact) */
+.page__content ul ul ul > li {
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
+  line-height: 1;
+}
 
 /*
    Grid view

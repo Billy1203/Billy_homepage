@@ -19,7 +19,7 @@ target="_blank" rel="noopener">简历 (中文)</a>
 ## Education
 * **Master of Research**, University of Liverpool (UoL), Liverpool, UK 🇬🇧 / XJTLU, Suzhou, China 🇨🇳 <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2022.9 - 2024.4</span>
   * School of Advanced Technology, major in **Pattern Recognition and Intelligent System**, pass with Distinction 
-  * Dissertation: _Research of 3D Perception Algorithm Based on Multi-Sensor Fusion_ [[Details here]](../..
+  * Dissertation: _Research of 3D Perception Algorithm Based on Multi-Sensor Fusion_ [[Details here]](..
     /projects/2024-master.html)
   * Best Overall Award (Top 2% in JITRI-XJTLU), Full Studentship Recipient (Top 5%)
 
@@ -27,7 +27,7 @@ target="_blank" rel="noopener">简历 (中文)</a>
 * **Bachelor of Engineering**, Southern University of Science and Technology (SUSTech), Shenzhen, China 🇨🇳 <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2015.9 - 2019.7</span>
   * [Department of Computer Science and Engineering](https://cse.sustech.edu.cn/en), major in **Computer Science and 
     Technology**
-  * Dissertation: _Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array_ [[Details here]](../..
+  * Dissertation: _Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array_ [[Details here]](..
     /projects/2019-bachelor.html)
   * 2nd Place in Capstone Design Competition at the College of Engineering
   * Outstanding Undergraduate Dissertation 2019
