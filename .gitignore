@@ -1,0 +1,26 @@
+# ---- Jekyll ----
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# ---- Ruby ----
+.bundle/
+vendor/bundle/
+
+# ---- Node ----
+node_modules/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Editors ----
+.idea/
+.vscode/
+*.swp
+*.swo
+
