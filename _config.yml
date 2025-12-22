@@ -210,9 +210,10 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-  talks:
+  plogs:
     output: true
-    permalink: /:collection/:path/
+    permalink: /plogs/:year-:month-:day-:title/
+#    permalink: /:collection/:path/
 
 
 # Defaults
@@ -262,12 +263,12 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
+  # _plogs
   - scope:
       path: ""
-      type: talks
+      type: plogs
     values:
-      layout: talk
+      layout: plog
       author_profile: true
       share: true
 
