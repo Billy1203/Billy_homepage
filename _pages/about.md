@@ -5,6 +5,7 @@ title: "Hi! 👋🏻"
 author_profile: true
 show_page_title: false
 watermark_label: "About Billy"
+content_width: wide
 redirect_from: 
   - /about/
   - /about.html
@@ -17,13 +18,23 @@ redirect_from:
 <hr class="section-divider">
 
 <div class="font-preview-panel" aria-label="Font preview presets">
-  <span class="font-preview-panel__label">Typeface Preview</span>
-  <div class="font-preview-panel__options">
-    <button type="button" class="font-preview-panel__option is-active" data-font-preset="default">Current</button>
-    <button type="button" class="font-preview-panel__option" data-font-preset="system-sans">System Sans</button>
-    <button type="button" class="font-preview-panel__option" data-font-preset="editorial">Editorial</button>
-    <button type="button" class="font-preview-panel__option" data-font-preset="scholar">Scholar</button>
-    <button type="button" class="font-preview-panel__option" data-font-preset="studio">Studio</button>
+  <div class="font-preview-panel__group">
+    <span class="font-preview-panel__label">Typeface Preview</span>
+    <div class="font-preview-panel__options">
+      <button type="button" class="font-preview-panel__option is-active" data-font-preset="default">Current</button>
+      <button type="button" class="font-preview-panel__option" data-font-preset="system-sans">System Sans</button>
+      <button type="button" class="font-preview-panel__option" data-font-preset="editorial">Editorial</button>
+      <button type="button" class="font-preview-panel__option" data-font-preset="scholar">Scholar</button>
+      <button type="button" class="font-preview-panel__option" data-font-preset="studio">Studio</button>
+    </div>
+  </div>
+  <div class="font-preview-panel__group">
+    <span class="font-preview-panel__label">Reading Density</span>
+    <div class="font-preview-panel__options">
+      <button type="button" class="font-preview-panel__option is-active" data-density-preset="balanced">Balanced</button>
+      <button type="button" class="font-preview-panel__option" data-density-preset="compact">Compact</button>
+      <button type="button" class="font-preview-panel__option" data-density-preset="relaxed">Relaxed</button>
+    </div>
   </div>
 </div>
 
@@ -36,6 +47,42 @@ redirect_from:
   <span class="about-highlight">Computer vision</span>
   <span class="about-highlight">Applied ML</span>
   <span class="about-highlight">Visual storytelling</span>
+</div>
+
+<div class="about-glance">
+  <section class="about-glance__story">
+    <span class="about-glance__eyebrow">Academic Background</span>
+    <h2 class="about-glance__title">A research foundation shaped by perception, systems thinking, and real-world engineering.</h2>
+    <p class="about-glance__text">My training spans pattern recognition, intelligent systems, and computer science, giving me a way of working that moves comfortably between theory, implementation, and deployment constraints. That foundation still shapes how I approach robotics perception today: rigorous in method, clear in system design, and practical in execution.</p>
+  </section>
+  <div class="about-glance__stats" aria-label="Profile snapshot">
+    <article class="about-stat">
+      <div class="about-stat__head">
+        <span class="about-stat__value">MRes</span>
+        <div class="about-stat__logos about-stat__logos--dual" aria-hidden="true">
+          <img class="about-stat__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
+          <img class="about-stat__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <span class="about-stat__label">UoL x ZJU</span>
+      <span class="about-stat__meta">Distinction, fully funded by Zhejiang University</span>
+    </article>
+    <article class="about-stat">
+      <div class="about-stat__head">
+        <span class="about-stat__value">BEng</span>
+        <div class="about-stat__logos" aria-hidden="true">
+          <img class="about-stat__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <span class="about-stat__label">SUSTech</span>
+      <span class="about-stat__meta">Computer Science and Technology</span>
+    </article>
+    <article class="about-stat">
+      <span class="about-stat__value">Experience</span>
+      <span class="about-stat__label">Research + Product</span>
+      <span class="about-stat__meta">Robotics perception, vision, and industry-facing engineering</span>
+    </article>
+  </div>
 </div>
 
 I am a robotics and computer vision engineer focused on perception systems that move from research prototypes into real-world products. I received an M.Res. with Distinction in Pattern Recognition and Intelligent Systems from the [University of Liverpool](https://www.liverpool.ac.uk), supported by the [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn/site/main), and a B.Eng. in Computer Science and Technology from [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/en).

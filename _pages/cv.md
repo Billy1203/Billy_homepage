@@ -5,6 +5,7 @@ permalink: /cv/
 author_profile: true
 show_page_title: false
 watermark_label: "CV"
+content_width: wide
 redirect_from:
   - /resume
 ---
@@ -23,7 +24,7 @@ target="_blank" rel="noopener">简历 (中文)</a>
   * School of Advanced Technology, major in **Pattern Recognition and Intelligent System**, graduated with Distinction
   * Dissertation: _Research of 3D Perception Algorithm Based on Multi-Sensor Fusion_ [[Details here]](..
     /projects/2024-master.html)
-  * Best Overall Award (Top 2% in JITRI-XJTLU), Full Studentship Recipient (Top 5%)
+  * Best Overall Award (Top 2% in JITRI-XJTLU), fully funded by Zhejiang University (Top 5% studentship)
 
 
 * **Bachelor of Engineering**, Southern University of Science and Technology (SUSTech), Shenzhen, China 🇨🇳 <span class="cv-date-pill">2015.9 - 2019.7</span>

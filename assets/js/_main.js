@@ -28,15 +28,22 @@ $(document).ready(function(){
 
   var stickySideBar = function(){
     const MINIMUM_WIDTH = 1024;
+    var desktopProfile = $(".author-profile-card--desktop");
+    var desktopButton = desktopProfile.find(".author__urls-wrapper button");
+    var desktopUrls = desktopProfile.find(".author__urls");
+
+    if (!desktopProfile.length) {
+      return;
+    }
 
     // Adjust if the follow button is shown based upon screen size
     var width = $(window).width();
-    var show = $(".author__urls-wrapper button").length === 0 ? width > MINIMUM_WIDTH : !$(".author__urls-wrapper button").is(":visible");
+    var show = desktopButton.length === 0 ? width > MINIMUM_WIDTH : !desktopButton.is(":visible");
 
     // Don't show the follow button if there is no content for it
-    var count = $('.author__urls.social-icons li').length - $('li[class="author__desktop"]').length;
+    var count = desktopProfile.find('.author__urls.social-icons li').length - desktopProfile.find('li.author__desktop').length;
     if (width <= MINIMUM_WIDTH && count === 0) {
-      $(".author__urls-wrapper button").hide();
+      desktopButton.hide();
       show = false;
     }
 
@@ -44,11 +51,11 @@ $(document).ready(function(){
       // fix
       Stickyfill.rebuild();
       Stickyfill.init();
-      $(".author__urls").show();
+      desktopUrls.show();
     } else {
       // unfix
       Stickyfill.stop();
-      $(".author__urls").hide();
+      desktopUrls.hide();
     }
   };
 
@@ -59,9 +66,10 @@ $(document).ready(function(){
   });
 
   // Follow menu drop down
-  $(".author__urls-wrapper button").on("click", function() {
-    $(".author__urls").fadeToggle("fast", function() {});
-    $(".author__urls-wrapper button").toggleClass("open");
+  $(".author-profile-card--desktop .author__urls-wrapper button").on("click", function() {
+    var desktopProfile = $(this).closest(".author-profile-card--desktop");
+    desktopProfile.find(".author__urls").fadeToggle("fast", function() {});
+    desktopProfile.find(".author__urls-wrapper button").toggleClass("open");
   });
 
   // init smooth scroll, this needs to be slightly more than then fixed masthead height

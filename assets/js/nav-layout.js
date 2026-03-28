@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const layoutNav = () => {
     resetLinks();
 
-    const narrowViewport = window.innerWidth < 440;
+    const narrowViewport = window.innerWidth < 380;
     const minVisibleItems = narrowViewport ? 0 : 1;
 
     while (links.scrollWidth > links.clientWidth && links.children.length > minVisibleItems) {

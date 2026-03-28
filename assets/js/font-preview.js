@@ -1,23 +1,25 @@
 (function() {
   var root = document.documentElement;
-  var controls = document.querySelectorAll('.font-preview-panel__option');
+  var fontControls = document.querySelectorAll('[data-font-preset]');
+  var densityControls = document.querySelectorAll('[data-density-preset]');
   var validPresets = ['default', 'system-sans', 'editorial', 'scholar', 'studio'];
+  var validDensities = ['balanced', 'compact', 'relaxed'];
 
-  function getStoredPreset() {
+  function getStoredValue(key) {
     try {
-      return localStorage.getItem('font-preset');
+      return localStorage.getItem(key);
     } catch (error) {
       return null;
     }
   }
 
-  function setStoredPreset(preset) {
+  function setStoredValue(key, value, defaultValue) {
     try {
-      if (preset === 'default') {
-        localStorage.removeItem('font-preset');
+      if (value === defaultValue) {
+        localStorage.removeItem(key);
         return;
       }
-      localStorage.setItem('font-preset', preset);
+      localStorage.setItem(key, value);
     } catch (error) {
       return;
     }
@@ -27,32 +29,56 @@
     return validPresets.indexOf(preset) > -1 ? preset : 'default';
   }
 
+  function resolveDensity(density) {
+    return validDensities.indexOf(density) > -1 ? density : 'balanced';
+  }
+
   function applyPreset(preset) {
-    var nextPreset = resolvePreset(preset || getStoredPreset());
+    var nextPreset = resolvePreset(preset || getStoredValue('font-preset'));
     if (nextPreset === 'default') {
       root.removeAttribute('data-font-preset');
     } else {
       root.setAttribute('data-font-preset', nextPreset);
     }
 
-    controls.forEach(function(control) {
+    fontControls.forEach(function(control) {
       var isActive = control.getAttribute('data-font-preset') === nextPreset;
       control.classList.toggle('is-active', isActive);
       control.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
   }
 
-  applyPreset();
+  function applyDensity(density) {
+    var nextDensity = resolveDensity(density || getStoredValue('reading-density'));
+    if (nextDensity === 'balanced') {
+      root.removeAttribute('data-reading-density');
+    } else {
+      root.setAttribute('data-reading-density', nextDensity);
+    }
 
-  if (!controls.length) {
-    return;
+    densityControls.forEach(function(control) {
+      var isActive = control.getAttribute('data-density-preset') === nextDensity;
+      control.classList.toggle('is-active', isActive);
+      control.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
   }
 
-  controls.forEach(function(control) {
+  applyPreset();
+  applyDensity();
+
+  fontControls.forEach(function(control) {
     control.addEventListener('click', function() {
       var preset = resolvePreset(control.getAttribute('data-font-preset'));
-      setStoredPreset(preset);
+      setStoredValue('font-preset', preset, 'default');
       applyPreset(preset);
+    });
+  });
+
+  densityControls.forEach(function(control) {
+    control.addEventListener('click', function() {
+      var density = resolveDensity(control.getAttribute('data-density-preset'));
+      setStoredValue('reading-density', density, 'balanced');
+      applyDensity(density);
     });
   });
 })();

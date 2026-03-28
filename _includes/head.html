@@ -17,12 +17,15 @@
   (function() {
     var storedTheme = null;
     var storedFontPreset = null;
+    var storedReadingDensity = null;
     try {
       storedTheme = localStorage.getItem('theme');
       storedFontPreset = localStorage.getItem('font-preset');
+      storedReadingDensity = localStorage.getItem('reading-density');
     } catch (error) {
       storedTheme = null;
       storedFontPreset = null;
+      storedReadingDensity = null;
     }
 
     if (storedTheme !== 'dark' && storedTheme !== 'light' && storedTheme !== 'system') {
@@ -45,6 +48,12 @@
       document.documentElement.setAttribute('data-font-preset', storedFontPreset);
     } else {
       document.documentElement.removeAttribute('data-font-preset');
+    }
+
+    if (storedReadingDensity && storedReadingDensity !== 'balanced') {
+      document.documentElement.setAttribute('data-reading-density', storedReadingDensity);
+    } else {
+      document.documentElement.removeAttribute('data-reading-density');
     }
   })();
 </script>
