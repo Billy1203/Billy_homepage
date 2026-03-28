@@ -5,6 +5,7 @@ permalink: /publications/
 author_profile: true
 entries_layout: list
 show_page_title: false
+watermark_label: "Publications"
 ---
 
 [//]: # ({% if site.author.googlescholar %})

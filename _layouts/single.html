@@ -14,64 +14,77 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+<div id="main" role="main"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
   {% include sidebar.html %}
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="page{% if page.collection %} page--{{ page.collection | slugify }}{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
-    <div class="page__inner-wrap">
-      {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
-        <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-          {% if page.read_time %}
-            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+    <div class="page-watermark-shell"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
+      <div class="page__inner-wrap">
+        {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
+          <header class="page__header{% if page.collection %} page__header--{{ page.collection | slugify }}{% endif %}">
+            {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+            {% if page.read_time %}
+              <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+            {% endif %}
+          {% if page.modified %}
+            <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
           {% endif %}
-        {% if page.modified %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
+          
+          {% if page.collection == 'projects' %}
+            <div class="page__subhead">
+              {% if page.type %}<span class="page__subhead-chip">{{ page.type }}</span>{% endif %}
+              {% if page.venue %}<span class="page__subhead-chip"><i>{{ page.venue }}</i></span>{% endif %}
+              {% if page.date %}<span class="page__subhead-chip">{{ page.date | default: "1900-01-01" | date: "%Y" }}</span>{% endif %}
+            </div>
+          {% elsif page.venue and page.date %}
+            <div class="page__subhead">
+              <span class="page__subhead-chip">Published in <i>{{ page.venue }}</i></span>
+              <span class="page__subhead-chip">{{ page.date | default: "1900-01-01" | date: "%Y" }}</span>
+            </div>
+          {% elsif page.date %}
+            <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+          {% endif %}    
+          </header>
+        {% endunless %}
+
+        <section class="page__content" itemprop="text">
+          {{ content }}
+
+          {% if page.citation or page.paperurl or page.slidesurl %}
+            <section class="page__resource-panel{% if page.collection %} page__resource-panel--{{ page.collection | slugify }}{% endif %}">
+              {% if page.citation %}
+                <p class="page__resource-citation"><strong>Recommended citation.</strong> {{ page.citation }}</p>
+              {% endif %}
+              {% if page.paperurl or page.slidesurl %}
+                <div class="page__resource-links">
+                  {% if page.paperurl %}<a href="{{ page.paperurl }}" class="btn btn--primary" rel="noopener" target="_blank">Paper Link</a>{% endif %}
+                  {% if page.slidesurl %}<a href="{{ page.slidesurl }}" class="btn btn--inverse" rel="noopener" target="_blank">Download Slides</a>{% endif %}
+                </div>
+              {% endif %}
+            </section>
+          {% endif %}
+
+          {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        </section>
+
+        {% if site.data.ui-text[site.locale].meta_label or page.tags[0] or page.categories[0] %}
+        <footer class="page__meta">
+          {% if site.data.ui-text[site.locale].meta_label %}
+            <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+          {% endif %}
+          {% include page__taxonomy.html %}
+        </footer>
         {% endif %}
-        
-        {% if page.collection == 'projects' %}
-          <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.venue and page.date %}
-          <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.date %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}    
-        </header>
-      {% endunless %}
 
-      <section class="page__content" itemprop="text">
-        {{ content }}
+        {% if page.share %}{% include page-actions.html %}{% endif %}
 
-        {% if page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% endif %}
-
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-      </section>
-
-      <footer class="page__meta">
-        {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-        {% endif %}
-        {% include page__taxonomy.html %}
-      </footer>
-
-      {% if page.share %}{% include social-share.html %}{% endif %}
-
-      {% include post_pagination.html %}
+        {% include post_pagination.html %}
+      </div>
     </div>
 
     {% if site.comments.provider and page.comments %}

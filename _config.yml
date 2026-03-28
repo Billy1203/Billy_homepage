@@ -30,7 +30,11 @@ author:
     - "head.webp"
   name             : "Yiheng XUE (Billy)"
 #  pronouns         : "he/his"
-  bio              : "Robotics, vision, perception."
+  bio              :
+  focus_tags       :
+    - "Robotics"
+    - "Vision"
+    - "Perception"
   location         : "Shenzhen, China"
   location_url     : "https://maps.google.com/?q=Shenzhen+China"
   employer         : "SUSTech"

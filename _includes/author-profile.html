@@ -9,15 +9,22 @@
   <div class="author__avatar">
     {% capture avatar_sources %}{% if author.avatar_options %}{% for avatar_option in author.avatar_options %}{% if forloop.index0 > 0 %}|{% endif %}{% if avatar_option contains "://" %}{{ avatar_option }}{% else %}{{ avatar_option | prepend: "/images/" | prepend: base_path }}{% endif %}{% endfor %}{% endif %}{% endcapture %}
     {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
+    	<img src="{{ author.avatar }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" decoding="async" fetchpriority="high" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
     {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" decoding="async" fetchpriority="high" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
     {% endif %}
   </div>
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
     {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
+    {% if author.focus_tags and author.focus_tags[0] %}
+      <div class="author__tags" aria-label="Research focus">
+        {% for tag in author.focus_tags %}
+          <span class="author__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
     {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
   </div>
 

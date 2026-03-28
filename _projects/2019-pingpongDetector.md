@@ -17,7 +17,11 @@ Pingpong detection in real-time with low-cost hardware.
 - Intel NUC
 
 <h3>Video</h3>
-<iframe frameborder="0" src="../files/pingpongDetector.mp4" allowtransparency="true" style="width: 100%;
-height: auto; max-height: 500px; aspect-ratio: 4/3; margin-top: 0px; margin-bottom: 20px; border: none;"></iframe>
+<div class="document-viewer-shell document-viewer-shell--video">
+  <video class="document-embed document-embed--video" controls preload="metadata" playsinline>
+    <source src="../files/pingpongDetector.mp4" type="video/mp4">
+    Your browser does not support embedded video playback.
+  </video>
+</div>
 
 <span style="color:green;">**Green**</span> denotes slow, and <span style="color:red;">**Red**</span> denotes fast.

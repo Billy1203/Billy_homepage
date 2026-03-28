@@ -16,14 +16,21 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
   (function() {
     var storedTheme = null;
+    var storedFontPreset = null;
     try {
       storedTheme = localStorage.getItem('theme');
+      storedFontPreset = localStorage.getItem('font-preset');
     } catch (error) {
       storedTheme = null;
+      storedFontPreset = null;
+    }
+
+    if (storedTheme !== 'dark' && storedTheme !== 'light' && storedTheme !== 'system') {
+      storedTheme = 'system';
     }
 
     var theme = storedTheme;
-    if (theme !== 'dark' && theme !== 'light') {
+    if (theme === 'system') {
       theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
@@ -31,6 +38,13 @@
       document.documentElement.setAttribute('data-theme', 'dark');
     } else {
       document.documentElement.removeAttribute('data-theme');
+    }
+    document.documentElement.style.colorScheme = theme;
+
+    if (storedFontPreset && storedFontPreset !== 'default') {
+      document.documentElement.setAttribute('data-font-preset', storedFontPreset);
+    } else {
+      document.documentElement.removeAttribute('data-font-preset');
     }
   })();
 </script>

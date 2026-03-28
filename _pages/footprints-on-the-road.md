@@ -4,6 +4,7 @@ title: "Footprints on the Road 👣"
 permalink: /plogs/
 author_profile: true
 show_page_title: false
+watermark_label: "Footprints"
 ---
 
 <div class="plogs-legend" aria-label="Plog categories">

@@ -4,6 +4,7 @@ title: "CV"
 permalink: /cv/
 author_profile: true
 show_page_title: false
+watermark_label: "CV"
 redirect_from:
   - /resume
 ---

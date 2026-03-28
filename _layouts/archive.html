@@ -12,13 +12,15 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+<div id="main" role="main"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
   {% include sidebar.html %}
 
-  <div class="archive page__inner-wrap archive-page">
-    {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
-      <h1 class="page__title">{{ page.title }}</h1>
-    {% endunless %}
-    {{ content }}
+  <div class="page-watermark-shell archive-watermark-shell"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
+    <div class="archive page__inner-wrap archive-page">
+      {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
+        <h1 class="page__title">{{ page.title }}</h1>
+      {% endunless %}
+      {{ content }}
+    </div>
   </div>
 </div>

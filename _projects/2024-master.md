@@ -8,7 +8,9 @@ date: 2024-03-22
 location: "Suzhou / Huzhou, China"
 ---
 
-> 📑 *This work is published on Ocean Engineering, click [here](../../publications/2024-09-04-OE) for more info.*
+<div class="project-note">
+<p><strong>📑 Published version:</strong> This work later appeared in <em>Ocean Engineering</em>. <a href="../../publications/2024-09-04-OE">View publication details</a>.</p>
+</div>
 
 My dissertation scored 88, ranking 1st in the school, earning a distinction.
 
@@ -18,14 +20,28 @@ Supervisor:
 * [Prof. Ming XU](https://scholar.xjtlu.edu.cn/en/persons/MingXu)@UoL / XJTLU
 
 <h3>Oral Presentation</h3>
-<iframe src="../files/MRes_presentation.pdf" style="width: 100%; aspect-ratio: 4/3; height: auto; max-height: 800px; 
-margin-top: 0px; margin-bottom: 20px; border: none;"></iframe>
-🔍 <a href="../files/MRes_presentation.pdf" target="_blank">Fullscreen View</a> 👆🏻
+<div class="document-viewer-shell">
+  <div class="lazy-embed js-lazy-embed">
+    <p class="lazy-embed__summary">PDF preview loads only when requested so the page stays responsive.</p>
+    <button class="btn btn--inverse lazy-embed__trigger" type="button">Load Presentation Preview</button>
+    <iframe class="document-embed document-embed--pdf lazy-embed__frame" data-src="../files/MRes_presentation.pdf" title="MRes presentation preview" loading="lazy"></iframe>
+  </div>
+</div>
+<div class="content-link-row">
+  <a class="btn btn--inverse" href="../files/MRes_presentation.pdf" target="_blank" rel="noopener">Open Presentation PDF</a>
+</div>
 
 <h3>Master Dissertation</h3>
-<iframe src="../files/MRes_dissertation.pdf" style="width: 100%; aspect-ratio: 2/3; height: auto; max-height: 800px; 
-margin-top: 0px; margin-bottom: 20px; border: none;"></iframe>
-🔍 <a href="../files/MRes_dissertation.pdf" target="_blank">Fullscreen View</a> 👆🏻
+<div class="document-viewer-shell">
+  <div class="lazy-embed js-lazy-embed">
+    <p class="lazy-embed__summary">PDF preview loads only when requested so the page stays responsive.</p>
+    <button class="btn btn--inverse lazy-embed__trigger" type="button">Load Dissertation Preview</button>
+    <iframe class="document-embed document-embed--pdf lazy-embed__frame" data-src="../files/MRes_dissertation.pdf" title="MRes dissertation preview" loading="lazy"></iframe>
+  </div>
+</div>
+<div class="content-link-row">
+  <a class="btn btn--inverse" href="../files/MRes_dissertation.pdf" target="_blank" rel="noopener">Open Dissertation PDF</a>
+</div>
 
 ---
 
