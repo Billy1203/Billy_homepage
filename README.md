@@ -1,3 +1,21 @@
+# Billy Homepage
+
+## Edit Content Quickly
+
+If you want to update this site later and find the right folder quickly, start here:
+
+- content map: [`CONTENT_GUIDE.md`](/Users/yiheng/Billy_homepage/CONTENT_GUIDE.md)
+- homepage text: [`_pages/about.md`](/Users/yiheng/Billy_homepage/_pages/about.md)
+- CV: [`_pages/cv.md`](/Users/yiheng/Billy_homepage/_pages/cv.md)
+- publications: [`_publications/`](/Users/yiheng/Billy_homepage/_publications)
+- projects: [`_projects/`](/Users/yiheng/Billy_homepage/_projects)
+- footprints: [`_plogs/`](/Users/yiheng/Billy_homepage/_plogs)
+- navigation: [`_data/navigation.yml`](/Users/yiheng/Billy_homepage/_data/navigation.yml)
+- author info and avatar: [`_config.yml`](/Users/yiheng/Billy_homepage/_config.yml)
+- styles: [`_sass/_theme.scss`](/Users/yiheng/Billy_homepage/_sass/_theme.scss)
+
+---
+
 # Academic Pages
 
 ![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)

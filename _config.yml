@@ -234,7 +234,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: page-content
       author_profile: true
       read_time: true
       comments: true
@@ -245,14 +245,14 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
+      layout: page-content
       author_profile: true
   # _projects
   - scope:
       path: ""
       type: projects
     values:
-      layout: single
+      layout: page-content
       author_profile: true
       share: true
       comments: true
@@ -261,7 +261,7 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: page-content
       author_profile: true
       share: true
       comments: true
@@ -270,7 +270,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
+      layout: page-content
       author_profile: true
       share: true
       comment: true
@@ -279,7 +279,7 @@ defaults:
       path: ""
       type: plogs
     values:
-      layout: plog
+      layout: travel-log-entry
       author_profile: true
       share: true
 

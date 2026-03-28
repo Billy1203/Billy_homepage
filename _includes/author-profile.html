@@ -62,7 +62,7 @@
     <li><a href="{{ author.arxiv }}"><i class="ai ai-arxiv ai-fw icon-pad-right"></i><span class="author__urls-label">arXiv</span></a></li>
   {% endif %}
   {% if author.googlescholar %}
-    <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">Google Scholar</span></a></li>
+    <li class="author__link--scholar"><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">Google Scholar</span></a></li>
   {% endif %}
   {% if author.semantic %}
     <li><a href="{{ author.semantic }}"><i class="ai ai-semantic-scholar ai-fw icon-pad-right"></i><span class="author__urls-label">Semantic Scholar</span></a></li>
@@ -174,7 +174,7 @@
 <div itemscope itemtype="http://schema.org/Person">
   <details class="author-profile-card author-profile-card--mobile">
     <summary class="author-profile-card__summary">
-      <span class="author-profile-card__summary-title">Profile And Links</span>
+      <span class="author-profile-card__summary-title">Quick Links</span>
       <span class="author-profile-card__summary-toggle" aria-hidden="true"></span>
     </summary>
 

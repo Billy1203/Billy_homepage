@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: section-list
 title: "Footprints on the Road 👣"
 permalink: /plogs/
 author_profile: true

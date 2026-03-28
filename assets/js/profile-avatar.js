@@ -1,10 +1,10 @@
 (function() {
-  var avatar = document.querySelector('.js-random-avatar');
-  if (!avatar) {
+  var avatars = Array.prototype.slice.call(document.querySelectorAll('.js-random-avatar'));
+  if (!avatars.length) {
     return;
   }
 
-  var avatarList = (avatar.getAttribute('data-avatars') || '')
+  var avatarList = (avatars[0].getAttribute('data-avatars') || '')
     .split('|')
     .filter(Boolean);
 
@@ -101,10 +101,18 @@
     return nextAvatar;
   }
 
+  function applyAvatar(source) {
+    avatars.forEach(function(avatar) {
+      avatar.setAttribute('src', source);
+    });
+  }
+
   function applyNextAvatar() {
-    avatar.setAttribute('src', getNextAvatar());
+    applyAvatar(getNextAvatar());
   }
 
   applyNextAvatar();
-  avatar.addEventListener('click', applyNextAvatar);
+  avatars.forEach(function(avatar) {
+    avatar.addEventListener('click', applyNextAvatar);
+  });
 })();

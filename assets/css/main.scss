@@ -30,10 +30,10 @@
 
 @import "forms";
 
-@import "page";
-@import "archive";
-@import "sidebar";
-@import "theme";
+@import "site-layout-content";
+@import "site-layout-listing";
+@import "site-sidebar-profile";
+@import "site-visual-theme";
 
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";

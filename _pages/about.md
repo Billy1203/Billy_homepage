@@ -1,6 +1,6 @@
 ---
 permalink: /
-layout: single
+layout: page-content
 title: "Hi! 👋🏻"
 author_profile: true
 show_page_title: false
