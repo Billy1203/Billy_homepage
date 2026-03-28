@@ -10,8 +10,11 @@
   }
 
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 56rem;
   }
 
   a {
@@ -66,6 +69,17 @@
   }
 }
 
+.archive__item-meta {
+  margin-bottom: 0.55rem;
+  color: $gray;
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
+}
+
+.archive__item-links {
+  font-size: 0.8rem;
+}
+
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
@@ -108,13 +122,13 @@
 }
 
 .archive__item {
-  padding: 16px 18px;
+  padding: 12px 15px;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   background: $background-color;
   transition: $global-transition;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.95rem;
 }
 
 .archive__item:hover {
@@ -123,14 +137,23 @@
   background-color: mix($background-color, #000, 97%);
 }
 
-/* --- CV publications: plain list (no cards) --- */
-.cv-pubs .archive {
-  padding-left: 0;
-  margin-left: 0;
+/* --- CV publications: compact ordered list --- */
+.cv-pubs {
+  margin: 0.75rem 0 0;
 }
 
-.cv-pubs .archive > li {
-  list-style: none;
+.cv-pubs .entries-list {
+  margin: 0;
+}
+
+.cv-pubs .archive.cv-ordered {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.cv-pubs .archive.cv-ordered > li {
+  list-style: decimal;
+  margin: 0 0 0.9rem;
 }
 
 .cv-pubs .archive__item {
@@ -161,13 +184,46 @@
   display: none;
 }
 
-.cv-pubs {
-  margin-left: -6.2rem;   /* 抵消 ul 默认 padding，数值按你实际调 1.0~1.5 */
+/* --- Plogs legend --- */
+.plogs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
 }
 
-.cv-pubs .archive {
-  padding-left: 0;
-  margin-left: 0;
+.plogs-legend__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid mix($border-color, #000, 85%);
+}
+
+.plogs-legend__tag--trip {
+  background-color: #f0f8ff;
+}
+
+.plogs-legend__tag--relocation {
+  background-color: #ffebcd;
+}
+
+.plogs-legend__tag--move {
+  background-color: #e0ffe0;
+}
+
+.plogs-legend__tag--journey {
+  background-color: #fffacd;
+}
+
+.archive__item--plog .archive__item-title {
+  margin-bottom: 0.35rem;
+}
+
+.archive__item--plog .archive__item-excerpt + .archive__item-excerpt {
+  margin-top: 0.45rem;
 }
 
 /* ==========================================================================

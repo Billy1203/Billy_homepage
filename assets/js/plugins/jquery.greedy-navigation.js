@@ -9,10 +9,25 @@ var $nav = $('#site-nav');
 var $btn = $('#site-nav button');
 var $vlinks = $('#site-nav .visible-links');
 var $hlinks = $('#site-nav .hidden-links');
+var $themeToggle = $('#theme-toggle');
 
 var breaks = [];
 
+function restoreVisibleLinks() {
+  while ($hlinks.children().length) {
+    $hlinks.children().first().insertBefore($themeToggle);
+  }
+
+  breaks = [];
+  $btn.addClass('hidden');
+  $hlinks.addClass('hidden');
+}
+
 function updateNav() {
+  if ($(window).width() >= 1180) {
+    restoreVisibleLinks();
+    return;
+  }
 
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
 

@@ -1,8 +1,10 @@
 ---
-layout: single
+layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
+entries_layout: list
+show_page_title: false
 ---
 
 [//]: # ({% if site.author.googlescholar %})
@@ -13,6 +15,6 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
+{% for post in site.publications reversed %} 
+  {% include archive-single.html type="list" %}
 {% endfor %}

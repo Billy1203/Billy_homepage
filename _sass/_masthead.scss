@@ -19,7 +19,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1em 1em 1em;
+    padding: 0.95rem 1rem;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -53,6 +53,10 @@
 
   &--lg {
     padding-right: 3em;
+    font-weight: 700;
+  }
+
+  &.selected a {
     font-weight: 700;
   }
 }

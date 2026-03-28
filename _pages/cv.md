@@ -3,6 +3,7 @@ layout: single
 title: "CV"
 permalink: /cv/
 author_profile: true
+show_page_title: false
 redirect_from:
   - /resume
 ---
@@ -17,14 +18,14 @@ target="_blank" rel="noopener">简历 (中文)</a>
 </div>
 
 ## Education
-* **Master of Research**, University of Liverpool (UoL), Liverpool, UK 🇬🇧 / XJTLU, Suzhou, China 🇨🇳 <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2022.9 - 2024.4</span>
-  * School of Advanced Technology, major in **Pattern Recognition and Intelligent System**, pass with Distinction 
+* **Master of Research**, University of Liverpool (UoL), Liverpool, UK 🇬🇧 / XJTLU, Suzhou, China 🇨🇳 <span class="cv-date-pill">2022.9 - 2024.4</span>
+  * School of Advanced Technology, major in **Pattern Recognition and Intelligent System**, graduated with Distinction
   * Dissertation: _Research of 3D Perception Algorithm Based on Multi-Sensor Fusion_ [[Details here]](..
     /projects/2024-master.html)
   * Best Overall Award (Top 2% in JITRI-XJTLU), Full Studentship Recipient (Top 5%)
 
 
-* **Bachelor of Engineering**, Southern University of Science and Technology (SUSTech), Shenzhen, China 🇨🇳 <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2015.9 - 2019.7</span>
+* **Bachelor of Engineering**, Southern University of Science and Technology (SUSTech), Shenzhen, China 🇨🇳 <span class="cv-date-pill">2015.9 - 2019.7</span>
   * [Department of Computer Science and Engineering](https://cse.sustech.edu.cn/en), major in **Computer Science and 
     Technology**
   * Dissertation: _Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array_ [[Details here]](..
@@ -41,7 +42,7 @@ target="_blank" rel="noopener">简历 (中文)</a>
   </ul>
   </details>
 
-* Summer Program, The University of British Columbia (UBC), Vancouver, Canada 🇨🇦 <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2017.6 - 2017.9</span>
+* Summer Program, The University of British Columbia (UBC), Vancouver, Canada 🇨🇦 <span class="cv-date-pill">2017.6 - 2017.9</span>
   * Excellent Student in Summer Program, Department of ECE
 
 <details>
@@ -55,35 +56,34 @@ target="_blank" rel="noopener">简历 (中文)</a>
 </details>
 
 ## Work Experience
-* [Jabbr](https://jabbr.ai/) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2025.9 - now</span>
+* [Jabbr](https://jabbr.ai/) <span class="cv-date-pill">2025.9 - now</span>
   * **AI Algorithm Engineer**
 
-* [OMOway](https://www.omoway.com/) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2024.12 - 2025.08</span>
+* [OMOway](https://www.omoway.com/) <span class="cv-date-pill">2024.12 - 2025.08</span>
   * **V-SLAM Algorithm Engineer**
 
-* [*GAP work*] [Dingxin Capital](http://www.dingxin-capital.com) <span style="float:right; font-size:0.85em; 
-  color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2024.6 - 2024.11</span>
+* [*GAP work*] [Dingxin Capital](http://www.dingxin-capital.com) <span class="cv-date-pill">2024.6 - 2024.11</span>
   * **AI Industry Analyst**
-  * I engaged with over 100 startups, gaining valuable insights into their needs and progress. This experience significantly deepened my understanding of entrepreneurship and helped shape my perspective on the challenges and opportunities faced by startups.
+  * Engaged with more than 100 startups and developed a stronger understanding of entrepreneurship, fundraising, and the operational realities of early-stage companies.
 
-* [Boundary.AI](https://www.boundaryai.cn/en) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2024.3 - 2024.6</span>
+* [Boundary.AI](https://www.boundaryai.cn/en) <span class="cv-date-pill">2024.3 - 2024.6</span>
   * **V-SLAM Algorithm Engineer**
 
-* [*Intern*] [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2022.9 - 2024.3</span>
+* [*Intern*] [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn) <span class="cv-date-pill">2022.9 - 2024.3</span>
   * **Perception Algorithm Engineer** in [APRIL Lab](https://april.zju.edu.cn)
 
-* [*Part Time*] [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2022.9 - 2024.3</span>
-  * **Teach Assistant**
+* [*Part Time*] [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en) <span class="cv-date-pill">2022.9 - 2024.3</span>
+  * **Teaching Assistant**
     * DTS201TC Pattern Recognition (130+ undergraduate students)
     * DTS206TC Applied Linear Statistical Models (130+ undergraduate students)
 
-* [Southern University of Science and Technology](https://www.sustech.edu.cn/en/) <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2019.9 - 2022.8</span>
-  * **Research and Teach Assistant** in [ISUS Lab](https://github.com/sustech-isus)
+* [Southern University of Science and Technology](https://www.sustech.edu.cn/en/) <span class="cv-date-pill">2019.9 - 2022.8</span>
+  * **Research and Teaching Assistant** in [ISUS Lab](https://github.com/sustech-isus)
     * CS401 Intelligent Robotics (70+ undergraduate students)
     * CS405 Machine Learning (90+ undergraduate and graduate students)
-  * Computer Vision Engineer, in first 2 years <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2021.9 - 2021.8</span>
+  * Concurrent **Computer Vision Engineer** role during the first two years <span class="cv-date-pill">2019.9 - 2021.8</span>
     * Roboeye Technology (Shenzhen) Co., Ltd., a startup, part of the Nanshan District Leading Team Project in Shenzhen
-    * Conduct a research project related to my undergraduate dissertation and capstone design project
+    * Led an applied research project extending my undergraduate dissertation and capstone work
 
 [//]: # (* [*Intern*] Baker Tilly China Certified Public Accountants, <span style="float:right; font-size:0.85em; color:#666; background:#f6f6f6; border:1px solid #eee; border-radius:999px; padding:0.12rem 0.55rem; margin-left:0.5rem;">2018.5 - 2018.8</span>)
 
@@ -98,9 +98,11 @@ target="_blank" rel="noopener">简历 (中文)</a>
 ## Publications
 
 <div class="cv-pubs">
-  <ul class="archive">
-    {% for post in site.publications reversed %}
-      {% include archive-single-cv.html %}
-    {% endfor %}
-  </ul>
+  <div class="entries-list">
+    <ol class="archive cv-ordered">
+      {% for post in site.publications reversed %}
+        {% include archive-single-cv.html type="list" %}
+      {% endfor %}
+    </ol>
+  </div>
 </div>

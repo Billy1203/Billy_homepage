@@ -29,7 +29,7 @@ margin-top: 0px; margin-bottom: 20px; border: none;"></iframe>
 
 ---
 
-<div style="background-color: #f9f9f9; padding: 15px; border-left: 5px solid #3498db;">
+<div class="content-callout">
 This research project was fully funded by the Huzhou Institute of Zhejiang University. The other co-first author, Tao 
 HUANG (ranked 1st), is a PhD candidate at Zhejiang University. I was responsible for the perception algorithms, paper
 conceptualization, illustrations, video production, and addressing reviewer comments. Tao HUANG handled the planning
