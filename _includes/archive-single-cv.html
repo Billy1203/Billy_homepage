@@ -8,8 +8,10 @@
 
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% assign title_zh = post.title_zh | default: post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
   {% assign title = post.title %}
+  {% assign title_zh = post.title_zh | default: post.title %}
 {% endif %}
 
 <li class="{{ include.type | default: 'list' }}__item">
@@ -27,13 +29,13 @@
 
     <h3 class="archive__item-title" itemprop="headline">
       {% if post.link %}
-      <a href="{{ post.link }}">{{ title }}</a>
+      <a href="{{ post.link }}">{% include i18n-text.html en=title zh=title_zh %}</a>
       <a href="{{ base_path }}{{ post.url }}" rel="permalink">
         <i class="fa fa-link" aria-hidden="true"></i>
         <span class="sr-only">Permalink</span>
       </a>
       {% else %}
-      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{% include i18n-text.html en=title zh=title_zh %}</a>
       {% endif %}
     </h3>
 

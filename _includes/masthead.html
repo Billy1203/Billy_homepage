@@ -1,8 +1,10 @@
 {% include base_path %}
 {% assign mobile_menu_label = "Menu" %}
+{% assign mobile_menu_label_zh = "菜单" %}
 {% for link in site.data.navigation.main %}
   {% if link.url != '/' and page.url contains link.url %}
     {% assign mobile_menu_label = link.title %}
+    {% assign mobile_menu_label_zh = link.title_zh | default: link.title %}
   {% endif %}
 {% endfor %}
 
@@ -11,7 +13,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         <div class="greedy-nav__brand{% if page.url == '/' or page.url == '/index.html' %} selected{% endif %}">
-          <a href="{{ base_path }}/"><span class="greedy-nav__brand-label">{{ site.title }}</span></a>
+          <a href="{{ base_path }}/">{% include i18n-text.html en=site.title zh=site.title_zh class="greedy-nav__brand-label" %}</a>
         </div>
         <div class="greedy-nav__primary">
           <ul class="greedy-nav__links">
@@ -22,13 +24,13 @@
                 {% assign domain = base_path %}
               {% endif %}
               <li class="greedy-nav__item{% if page.url contains link.url and link.url != '/' %} selected{% endif %}">
-                <a href="{{ domain }}{{ link.url }}"><span class="greedy-nav__link-label">{{ link.title }}</span></a>
+                <a href="{{ domain }}{{ link.url }}">{% include i18n-text.html en=link.title zh=link.title_zh class="greedy-nav__link-label" %}</a>
               </li>
             {% endfor %}
           </ul>
           <details class="greedy-nav__mobile-menu">
             <summary class="greedy-nav__mobile-summary">
-              <span class="greedy-nav__toggle-label">{{ mobile_menu_label }}</span>
+              {% include i18n-text.html en=mobile_menu_label zh=mobile_menu_label_zh class="greedy-nav__toggle-label" %}
               <span class="navicon" aria-hidden="true"></span>
             </summary>
             <ul class="greedy-nav__mobile-links">
@@ -39,21 +41,39 @@
                   {% assign domain = base_path %}
                 {% endif %}
                 <li class="{% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-                  <a href="{{ domain }}{{ link.url }}"><span class="greedy-nav__link-label">{{ link.title }}</span></a>
+                  <a href="{{ domain }}{{ link.url }}">{% include i18n-text.html en=link.title zh=link.title_zh class="greedy-nav__link-label" %}</a>
                 </li>
               {% endfor %}
             </ul>
           </details>
-          <button type="button" class="greedy-nav__toggle is-hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav-overflow" data-count="0">
-            <span class="greedy-nav__toggle-label">Menu</span>
+          <button
+            type="button"
+            class="greedy-nav__toggle is-hidden"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="site-nav-overflow"
+            data-count="0"
+            data-open-label-en="Open navigation menu"
+            data-open-label-zh="打开导航菜单"
+            data-close-label-en="Close navigation menu"
+            data-close-label-zh="关闭导航菜单"
+          >
+            {% include i18n-text.html en="Menu" zh="菜单" class="greedy-nav__toggle-label" %}
             <span class="navicon" aria-hidden="true"></span>
           </button>
           <ul id="site-nav-overflow" class="greedy-nav__hidden-links is-hidden"></ul>
         </div>
-        <div id="theme-toggle" class="greedy-nav__theme">
-          <a href="#" role="button" aria-label="Toggle color theme">
-            <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
-          </a>
+        <div class="greedy-nav__theme">
+          <div id="language-toggle" class="greedy-nav__language">
+            <a href="#" role="button" aria-label="Language: English; click to switch to Chinese">
+              <span class="greedy-nav__language-label">EN / 中</span>
+            </a>
+          </div>
+          <div id="theme-toggle" class="greedy-nav__theme-button">
+            <a href="#" role="button" aria-label="Toggle color theme">
+              <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </nav>
     </div>

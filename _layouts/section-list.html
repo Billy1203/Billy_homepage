@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{% assign ui_text_en = site.data.ui-text.en %}
+{% assign ui_text_zh = site.data.ui-text['zh-CN'] %}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}
@@ -12,13 +15,13 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
+<div id="main" role="main"{% if page.watermark_label %} data-page-label-en="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% if page.watermark_label_zh %} data-page-label-zh="{{ page.watermark_label_zh | strip_html | strip_newlines | escape_once }}"{% endif %}{% endif %}>
   {% include sidebar.html %}
 
-  <div class="page-watermark-shell archive-watermark-shell"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
+  <div class="page-watermark-shell archive-watermark-shell"{% if page.watermark_label %} data-page-label-en="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% if page.watermark_label_zh %} data-page-label-zh="{{ page.watermark_label_zh | strip_html | strip_newlines | escape_once }}"{% endif %}{% endif %}>
     <div class="archive page__inner-wrap archive-page">
       {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
-        <h1 class="page__title">{{ page.title }}</h1>
+        <h1 class="page__title">{% include i18n-text.html en=page.title zh=page.title_zh %}</h1>
       {% endunless %}
       {{ content }}
     </div>

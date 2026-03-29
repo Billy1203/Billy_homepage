@@ -34,35 +34,84 @@
     });
   }
 
+  function getCurrentLanguage() {
+    if (window.SiteLanguage && typeof window.SiteLanguage.getCurrentLanguage === 'function') {
+      return window.SiteLanguage.getCurrentLanguage();
+    }
+
+    return document.documentElement.getAttribute('data-language') === 'zh' ? 'zh' : 'en';
+  }
+
+  function getLocalizedText(element, key, fallback) {
+    if (!element) {
+      return fallback || '';
+    }
+
+    var language = getCurrentLanguage();
+    var localized = element.getAttribute('data-' + key + '-' + language);
+    var english = element.getAttribute('data-' + key + '-en');
+    return localized || english || fallback || '';
+  }
+
+  function syncCopyFeedback(button, label, status) {
+    var buttonState = button.getAttribute('data-copy-state') || 'default';
+    var statusState = status ? (status.getAttribute('data-copy-state') || '') : '';
+
+    if (label) {
+      label.textContent = getLocalizedText(label, buttonState === 'success' ? 'success' : 'default', 'Copy Page Link');
+    }
+
+    if (!status) {
+      return;
+    }
+
+    if (!statusState) {
+      status.textContent = '';
+      return;
+    }
+
+    status.textContent = getLocalizedText(status, statusState, '');
+  }
+
   buttons.forEach(function(button) {
     var container = button.closest('.page__share--copy');
     var status = container && container.querySelector('.page__share-status');
     var label = button.querySelector('span');
     var resetTimer = null;
 
+    button.setAttribute('data-copy-state', 'default');
+    if (status) {
+      status.setAttribute('data-copy-state', '');
+    }
+    syncCopyFeedback(button, label, status);
+
     button.addEventListener('click', function() {
       copyCurrentUrl().then(function() {
-        if (label) {
-          label.textContent = 'Copied';
-        }
+        button.setAttribute('data-copy-state', 'success');
         if (status) {
-          status.textContent = 'Link copied to clipboard.';
+          status.setAttribute('data-copy-state', 'success');
         }
+        syncCopyFeedback(button, label, status);
 
         window.clearTimeout(resetTimer);
         resetTimer = window.setTimeout(function() {
-          if (label) {
-            label.textContent = 'Copy Page Link';
-          }
+          button.setAttribute('data-copy-state', 'default');
           if (status) {
-            status.textContent = '';
+            status.setAttribute('data-copy-state', '');
           }
+          syncCopyFeedback(button, label, status);
         }, 2200);
       }).catch(function() {
         if (status) {
-          status.textContent = 'Copy failed. Please copy the URL manually.';
+          status.setAttribute('data-copy-state', 'error');
         }
+        button.setAttribute('data-copy-state', 'default');
+        syncCopyFeedback(button, label, status);
       });
+    });
+
+    window.addEventListener('site-language-change', function() {
+      syncCopyFeedback(button, label, status);
     });
   });
 })();

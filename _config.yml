@@ -9,6 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Billy's Homepage"
+title_zh                 : "Billy 的主页"
 title_separator          : "-"
 name                     : &name "Yiheng XUE"
 description              : &description "personal description"
@@ -32,9 +33,12 @@ author:
 #  pronouns         : "he/his"
   bio              :
   slogan           : "AI & Vision Engineer"
+  slogan_zh        : "AI 与视觉工程师"
   location         : "Shenzhen, China"
+  location_zh      : "中国深圳"
   location_url     : "https://maps.google.com/?q=Shenzhen+China"
   employer         : "SUSTech"
+  employer_zh      : "南方科技大学"
   employer_url     : "https://www.sustech.edu.cn/en/"
 #  uri              : ""
   email            : "xueyiheng1203_at_gmail.com"

@@ -8,8 +8,10 @@
 
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% assign title_zh = post.title_zh | default: post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
   {% assign title = post.title %}
+  {% assign title_zh = post.title_zh | default: post.title %}
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
@@ -30,13 +32,13 @@
 
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a>
+        <a href="{{ post.link }}">{% include i18n-text.html en=title zh=title_zh %}</a>
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">
           <i class="fa fa-link" aria-hidden="true"></i>
           <span class="sr-only">Permalink</span>
         </a>
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{% include i18n-text.html en=title zh=title_zh %}</a>
       {% endif %}
     </h2>
 
@@ -46,46 +48,56 @@
 
     {% if post.collection == 'projects' %}
       <p class="archive__item-excerpt archive__item-meta">
-        {{ post.type }}{% if post.venue %}, <i>{{ post.venue }}</i>{% endif %}{% if post.date %}, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
+        {% capture project_meta_en %}{{ post.type }}{% if post.venue %}, <i>{{ post.venue }}</i>{% endif %}{% if post.date %}, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}{% endcapture %}
+        {% capture project_meta_zh %}{{ post.type_zh | default: post.type }}{% if post.venue %}，<i>{{ post.venue_zh | default: post.venue }}</i>{% endif %}{% if post.date %}，{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}{% endcapture %}
+        {% include i18n-text.html en=project_meta_en zh=project_meta_zh %}
       </p>
     {% elsif post.collection == 'publications' %}
       {% if post.venue %}
         <p class="archive__item-excerpt archive__item-meta">
-          Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
+          {% capture publication_meta_en %}Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endcapture %}
+          {% capture publication_meta_zh %}发表于 <i>{{ post.venue_zh | default: post.venue }}</i>，{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endcapture %}
+          {% include i18n-text.html en=publication_meta_en zh=publication_meta_zh %}
         </p>
       {% elsif post.date %}
         <p class="archive__item-excerpt archive__item-meta">
-          Submitted on {{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}
+          {% capture submitted_en %}Submitted on {{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}{% endcapture %}
+          {% capture submitted_zh %}提交于 {{ post.date | default: "1900-01-01" | date: "%Y年%-m月%-d日" }}{% endcapture %}
+          {% include i18n-text.html en=submitted_en zh=submitted_zh %}
         </p>
       {% endif %}
     {% elsif post.date %}
+      {% capture post_date_en %}{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}{% endcapture %}
+      {% capture post_date_zh %}{{ post.date | default: "1900-01-01" | date: "%Y年%-m月%-d日" }}{% endcapture %}
       <p class="page__date">
-        <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong>
-        <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time>
+        <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en="Published:" zh="发布：" %}</strong>
+        {% include i18n-text.html en=post_date_en zh=post_date_zh %}
       </p>
     {% endif %}
 
+    {% capture excerpt_en %}{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
+    {% capture excerpt_zh %}{{ post.excerpt_zh | default: post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
     {% if post.excerpt and site.read_more != 'enabled' %}
-      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+      <p class="archive__item-excerpt" itemprop="description">{% include i18n-text.html en=excerpt_en zh=excerpt_zh %}</p>
     {% elsif post.excerpt and site.read_more == 'enabled' %}
       <p class="archive__item-excerpt" itemprop="description">
-        {{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}
-        <strong><a href="{{ base_path }}{{ post.url }}" rel="permalink">Read more</a></strong>
+        {% include i18n-text.html en=excerpt_en zh=excerpt_zh %}
+        <strong><a href="{{ base_path }}{{ post.url }}" rel="permalink">{% include i18n-text.html en="Read more" zh="继续阅读" %}</a></strong>
       </p>
     {% endif %}
 
     {% if post.citation and post.paperurl and post.slidesurl %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.paperurl }}">Paper Link</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.paperurl }}">{% include i18n-text.html en="Paper Link" zh="论文链接" %}</a> | <a href="{{ post.slidesurl }}">{% include i18n-text.html en="Download Slides" zh="下载幻灯片" %}</a></p>
     {% elsif post.citation and post.paperurl %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.paperurl }}">Paper Link</a></p>
+      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.paperurl }}">{% include i18n-text.html en="Paper Link" zh="论文链接" %}</a></p>
     {% elsif post.citation and post.slidesurl %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.slidesurl }}">{% include i18n-text.html en="Download Slides" zh="下载幻灯片" %}</a></p>
     {% elsif post.citation %}
       <p class="archive__item-excerpt archive__item-links">{{ post.citation }}</p>
     {% elsif post.paperurl %}
-      <p class="archive__item-excerpt archive__item-links"><a href="{{ post.paperurl }}">Paper Link</a></p>
+      <p class="archive__item-excerpt archive__item-links"><a href="{{ post.paperurl }}">{% include i18n-text.html en="Paper Link" zh="论文链接" %}</a></p>
     {% elsif post.slidesurl %}
-      <p class="archive__item-excerpt archive__item-links"><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      <p class="archive__item-excerpt archive__item-links"><a href="{{ post.slidesurl }}">{% include i18n-text.html en="Download Slides" zh="下载幻灯片" %}</a></p>
     {% endif %}
   </article>
 </div>

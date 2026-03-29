@@ -6,6 +6,28 @@
   var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
   var preloadedImages = {};
 
+  function getCurrentLanguage() {
+    return root.getAttribute('data-language') === 'zh' ? 'zh' : 'en';
+  }
+
+  function getLocalizedThemeName(theme, language) {
+    var languageCode = language === 'zh' ? 'zh' : 'en';
+    var names = {
+      en: {
+        light: 'light',
+        dark: 'dark',
+        system: 'System'
+      },
+      zh: {
+        light: '浅色',
+        dark: '深色',
+        system: '跟随系统'
+      }
+    };
+
+    return names[languageCode][theme];
+  }
+
   function normalizeTheme(theme) {
     return theme === 'dark' || theme === 'light' ? theme : 'system';
   }
@@ -62,13 +84,20 @@
     var currentTheme = normalizeTheme(themePreference);
     var nextTheme = getNextTheme(currentTheme);
     var effectiveTheme = getEffectiveTheme(currentTheme);
+    var language = getCurrentLanguage();
     var themeLabel = currentTheme === 'system'
-      ? ('System (' + effectiveTheme + ')')
-      : currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1);
-    var nextLabel = 'switch to ' + nextTheme + ' mode';
+      ? (
+        language === 'zh'
+          ? getLocalizedThemeName('system', language) + '（当前' + getLocalizedThemeName(effectiveTheme, language) + '）'
+          : getLocalizedThemeName('system', language) + ' (' + getLocalizedThemeName(effectiveTheme, language) + ')'
+      )
+      : getLocalizedThemeName(currentTheme, language);
+    var title = language === 'zh'
+      ? '主题：' + themeLabel + '；点击切换到' + getLocalizedThemeName(nextTheme, language) + '模式'
+      : 'Theme: ' + themeLabel + '; click to switch to ' + getLocalizedThemeName(nextTheme, language) + ' mode';
 
-    toggleLink.setAttribute('title', 'Theme: ' + themeLabel + '; click to ' + nextLabel);
-    toggleLink.setAttribute('aria-label', 'Theme: ' + themeLabel + '; click to ' + nextLabel);
+    toggleLink.setAttribute('title', title);
+    toggleLink.setAttribute('aria-label', title);
     toggle.setAttribute('data-theme-mode', currentTheme);
   }
 
@@ -136,6 +165,10 @@
   } else if (mediaQuery && mediaQuery.addListener) {
     mediaQuery.addListener(handleSystemThemeChange);
   }
+
+  window.addEventListener('site-language-change', function() {
+    updateToggleMetadata(getStoredTheme());
+  });
 
   if (!toggleLink) {
     return;

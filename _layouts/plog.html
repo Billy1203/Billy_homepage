@@ -19,7 +19,7 @@ Prefer editing `_layouts/travel-log-entry.html`.
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
+<div id="main" role="main"{% if page.watermark_label %} data-page-label-en="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% if page.watermark_label_zh %} data-page-label-zh="{{ page.watermark_label_zh | strip_html | strip_newlines | escape_once }}"{% endif %}{% endif %}>
   {% include sidebar.html %}
 
   <article class="page page--plog" itemscope itemtype="http://schema.org/CreativeWork">

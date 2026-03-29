@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = Array.from(links.children);
   let frame = null;
 
+  const getCurrentLanguage = () => (
+    document.documentElement.getAttribute("data-language") === "zh" ? "zh" : "en"
+  );
+
+  const getLocalizedLabel = (element, key, fallback) => (
+    element.getAttribute(`data-${key}-${getCurrentLanguage()}`) ||
+    element.getAttribute(`data-${key}-en`) ||
+    fallback
+  );
+
   const getViewportWidth = () => {
     const visualViewportWidth = window.visualViewport?.width;
     return Math.min(window.innerWidth, visualViewportWidth || window.innerWidth);
@@ -22,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("data-count", String(hiddenCount));
     toggle.setAttribute(
       "aria-label",
-      hidden.classList.contains("is-hidden") ? "Open navigation menu" : "Close navigation menu"
+      hidden.classList.contains("is-hidden")
+        ? getLocalizedLabel(toggle, "open-label", "Open navigation menu")
+        : getLocalizedLabel(toggle, "close-label", "Close navigation menu")
     );
   };
 
@@ -101,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", scheduleLayout);
   window.visualViewport?.addEventListener("resize", scheduleLayout);
   window.addEventListener("orientationchange", scheduleLayout);
+  window.addEventListener("site-language-change", syncToggleState);
 
   scheduleLayout();
 });

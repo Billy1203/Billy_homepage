@@ -9,7 +9,7 @@
 {% capture author_intro %}
   <h3 class="author__name">{{ author.name }}</h3>
   {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-  {% if author.slogan %}<p class="author__slogan">{{ author.slogan }}</p>{% elsif author.bio %}<p class="author__slogan">{{ author.bio }}</p>{% endif %}
+  {% if author.slogan %}<p class="author__slogan">{% include i18n-text.html en=author.slogan zh=author.slogan_zh %}</p>{% elsif author.bio %}<p class="author__slogan">{{ author.bio }}</p>{% endif %}
 {% endcapture %}
 {% capture author_links %}
   {% if author.location %}
@@ -17,12 +17,12 @@
       {% if author.location_url %}
         <a class="author__meta-link" href="{{ author.location_url }}" target="_blank" rel="noopener">
           <i class="fa-solid fa-location-dot fa-fw icon-pad-right author__meta-icon" aria-hidden="true"></i>
-          <span class="author__urls-label">{{ author.location }}</span>
+          <span class="author__urls-label">{% include i18n-text.html en=author.location zh=author.location_zh %}</span>
         </a>
       {% else %}
         <span class="author__meta-link">
           <i class="fa-solid fa-location-dot fa-fw icon-pad-right author__meta-icon" aria-hidden="true"></i>
-          <span class="author__urls-label">{{ author.location }}</span>
+          <span class="author__urls-label">{% include i18n-text.html en=author.location zh=author.location_zh %}</span>
         </span>
       {% endif %}
     </li>
@@ -32,12 +32,12 @@
       {% if author.employer_url %}
         <a class="author__meta-link" href="{{ author.employer_url }}" target="_blank" rel="noopener">
           <i class="fa-solid fa-building-columns fa-fw icon-pad-right author__meta-icon" aria-hidden="true"></i>
-          <span class="author__urls-label">{{ author.employer }}</span>
+          <span class="author__urls-label">{% include i18n-text.html en=author.employer zh=author.employer_zh %}</span>
         </a>
       {% else %}
         <span class="author__meta-link">
           <i class="fa-solid fa-building-columns fa-fw icon-pad-right author__meta-icon" aria-hidden="true"></i>
-          <span class="author__urls-label">{{ author.employer }}</span>
+          <span class="author__urls-label">{% include i18n-text.html en=author.employer zh=author.employer_zh %}</span>
         </span>
       {% endif %}
     </li>
@@ -46,13 +46,13 @@
     <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</span></a></li>
   {% endif %}
   {% if author.email %}
-    <li class="author__link--email"><a href="mailto:{{ author.email }}" aria-label="{{ site.data.ui-text[site.locale].email_label | default: "Email" }}"><i class="fas fa-fw fa-envelope icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span></a></li>
+    <li class="author__link--email"><a href="mailto:{{ author.email }}" aria-label="Email" data-i18n-aria-label-en="Email" data-i18n-aria-label-zh="邮箱"><i class="fas fa-fw fa-envelope icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{% include i18n-text.html en="Email" zh="邮箱" %}</span></a></li>
   {% endif %}
   {% if author.arxiv %}
     <li><a href="{{ author.arxiv }}"><i class="ai ai-arxiv ai-fw icon-pad-right"></i><span class="author__urls-label">arXiv</span></a></li>
   {% endif %}
   {% if author.googlescholar %}
-    <li class="author__link--scholar"><a href="{{ author.googlescholar }}" aria-label="Google Scholar"><i class="ai ai-google-scholar ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">Google Scholar</span></a></li>
+    <li class="author__link--scholar"><a href="{{ author.googlescholar }}" aria-label="Google Scholar" data-i18n-aria-label-en="Google Scholar" data-i18n-aria-label-zh="Google Scholar"><i class="ai ai-google-scholar ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">{% include i18n-text.html en="Google Scholar" zh="Google Scholar" %}</span></a></li>
   {% endif %}
   {% if author.semantic %}
     <li><a href="{{ author.semantic }}"><i class="ai ai-semantic-scholar ai-fw icon-pad-right"></i><span class="author__urls-label">Semantic Scholar</span></a></li>
@@ -61,7 +61,7 @@
     <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw icon-pad-right"></i><span class="author__urls-label">Impactstory</span></a></li>
   {% endif %}
   {% if author.orcid %}
-    <li class="author__link--orcid"><a href="{{ author.orcid }}" aria-label="ORCID"><i class="ai ai-orcid ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">ORCID</span></a></li>
+    <li class="author__link--orcid"><a href="{{ author.orcid }}" aria-label="ORCID" data-i18n-aria-label-en="ORCID" data-i18n-aria-label-zh="ORCID"><i class="ai ai-orcid ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">{% include i18n-text.html en="ORCID" zh="ORCID" %}</span></a></li>
   {% endif %}
   {% if author.pubmed %}
     <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed ai-fw icon-pad-right"></i><span class="author__urls-label">PubMed</span></a></li>
@@ -79,7 +79,7 @@
     <li><a href="https://dribbble.com/{{ author.dribbble }}"><i class="fab fa-fw fa-dribbble icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Dribbble</span></a></li>
   {% endif %}
   {% if author.github %}
-    <li class="author__link--github"><a href="https://github.com/{{ author.github }}" aria-label="GitHub"><i class="fab fa-fw fa-github icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">GitHub</span></a></li>
+    <li class="author__link--github"><a href="https://github.com/{{ author.github }}" aria-label="GitHub" data-i18n-aria-label-en="GitHub" data-i18n-aria-label-zh="GitHub"><i class="fab fa-fw fa-github icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{% include i18n-text.html en="GitHub" zh="GitHub" %}</span></a></li>
   {% endif %}
   {% if author.kaggle %}
     <li><a href="https://kaggle.com/{{ author.kaggle }}"><i class="fab fa-fw fa-kaggle icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Kaggle</span></a></li>
@@ -115,7 +115,7 @@
     <li><a href="https://lastfm.com/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Last.fm</span></a></li>
   {% endif %}
   {% if author.linkedin %}
-    <li class="author__link--linkedin"><a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn"><i class="fab fa-fw fa-linkedin icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">LinkedIn</span></a></li>
+    <li class="author__link--linkedin"><a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn" data-i18n-aria-label-en="LinkedIn" data-i18n-aria-label-zh="LinkedIn"><i class="fab fa-fw fa-linkedin icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{% include i18n-text.html en="LinkedIn" zh="LinkedIn" %}</span></a></li>
   {% endif %}
   {% if author.mastodon %}
     <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Mastodon</span></a></li>
@@ -162,19 +162,19 @@
 {% endcapture %}
 {% capture author_compact_links %}
   {% if author.email %}
-    <li><a href="mailto:{{ author.email }}" aria-label="{{ site.data.ui-text[site.locale].email_label | default: "Email" }}"><i class="fas fa-fw fa-envelope author__meta-icon" aria-hidden="true"></i></a></li>
+    <li><a href="mailto:{{ author.email }}" aria-label="Email" data-i18n-aria-label-en="Email" data-i18n-aria-label-zh="邮箱"><i class="fas fa-fw fa-envelope author__meta-icon" aria-hidden="true"></i></a></li>
   {% endif %}
   {% if author.orcid %}
-    <li><a href="{{ author.orcid }}" aria-label="ORCID"><i class="ai ai-orcid ai-fw author__meta-icon" aria-hidden="true"></i></a></li>
+    <li><a href="{{ author.orcid }}" aria-label="ORCID" data-i18n-aria-label-en="ORCID" data-i18n-aria-label-zh="ORCID"><i class="ai ai-orcid ai-fw author__meta-icon" aria-hidden="true"></i></a></li>
   {% endif %}
   {% if author.googlescholar %}
-    <li><a href="{{ author.googlescholar }}" aria-label="Google Scholar"><i class="ai ai-google-scholar ai-fw author__meta-icon" aria-hidden="true"></i></a></li>
+    <li><a href="{{ author.googlescholar }}" aria-label="Google Scholar" data-i18n-aria-label-en="Google Scholar" data-i18n-aria-label-zh="Google Scholar"><i class="ai ai-google-scholar ai-fw author__meta-icon" aria-hidden="true"></i></a></li>
   {% endif %}
   {% if author.github %}
-    <li><a href="https://github.com/{{ author.github }}" aria-label="GitHub"><i class="fab fa-fw fa-github author__meta-icon" aria-hidden="true"></i></a></li>
+    <li><a href="https://github.com/{{ author.github }}" aria-label="GitHub" data-i18n-aria-label-en="GitHub" data-i18n-aria-label-zh="GitHub"><i class="fab fa-fw fa-github author__meta-icon" aria-hidden="true"></i></a></li>
   {% endif %}
   {% if author.linkedin %}
-    <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn"><i class="fab fa-fw fa-linkedin author__meta-icon" aria-hidden="true"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn" data-i18n-aria-label-en="LinkedIn" data-i18n-aria-label-zh="LinkedIn"><i class="fab fa-fw fa-linkedin author__meta-icon" aria-hidden="true"></i></a></li>
   {% endif %}
 {% endcapture %}
 

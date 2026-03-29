@@ -3,6 +3,8 @@ layout: default
 ---
 
 {% include base_path %}
+{% assign ui_text_en = site.data.ui-text.en %}
+{% assign ui_text_zh = site.data.ui-text['zh-CN'] %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -14,7 +16,7 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main"{% if page.watermark_label %} data-page-label="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% endif %}>
+<div id="main" role="main"{% if page.watermark_label %} data-page-label-en="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% if page.watermark_label_zh %} data-page-label-zh="{{ page.watermark_label_zh | strip_html | strip_newlines | escape_once }}"{% endif %}{% endif %}>
   {% include sidebar.html %}
 
   <article class="page page--plog" itemscope itemtype="http://schema.org/CreativeWork">
@@ -26,30 +28,40 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header class="page__header page__header--plog">
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% if page.title %}
+            {% capture plog_title_en %}{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
+            {% capture plog_title_zh %}{{ page.title_zh | default: page.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
+            <h1 class="page__title" itemprop="headline">{% include i18n-text.html en=plog_title_en zh=plog_title_zh %}</h1>
+          {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
         {% if page.modified %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
+          {% capture plog_modified_en %}{{ page.modified | date: "%B %d, %Y" }}{% endcapture %}
+          {% capture plog_modified_zh %}{{ page.modified | date: "%Y年%-m月%-d日" }}{% endcapture %}
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en="Date:" zh="日期：" %}</strong> {% include i18n-text.html en=plog_modified_en zh=plog_modified_zh %}</p>
         {% elsif page.date %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
+          {% capture plog_date_en %}{{ page.date | date: "%B %d, %Y" }}{% endcapture %}
+          {% capture plog_date_zh %}{{ page.date | date: "%Y年%-m月%-d日" }}{% endcapture %}
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en="Date:" zh="日期：" %}</strong> {% include i18n-text.html en=plog_date_en zh=plog_date_zh %}</p>
         {% endif %}
         {% if page.talk_type %}
-            <p>{{ page.talk_type }} at {{ page.venue }}, {{ page.location }}</p>
+            {% capture talk_meta_en %}{{ page.talk_type }} at {{ page.venue }}, {{ page.location }}{% endcapture %}
+            {% capture talk_meta_zh %}{{ page.talk_type_zh | default: page.talk_type }}，{{ page.venue_zh | default: page.venue }}，{{ page.location_zh | default: page.location }}{% endcapture %}
+            <p>{% include i18n-text.html en=talk_meta_en zh=talk_meta_zh %}</p>
         {% endif %}
         </header>
       {% endunless %}
 
       <section class="page__content" itemprop="text">
         {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn">{% include i18n-text.html en=ui_text_en.ext_link_label zh=ui_text_zh.ext_link_label %}</a></div>{% endif %}
       </section>
 
       {% if site.data.ui-text[site.locale].meta_label or page.tags[0] or page.categories[0] %}
       <footer class="page__meta">
-        {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+        {% if ui_text_en.meta_label or ui_text_zh.meta_label %}
+          <h4 class="page__meta-title">{% include i18n-text.html en=ui_text_en.meta_label zh=ui_text_zh.meta_label %}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
       </footer>
@@ -68,8 +80,10 @@ layout: default
   {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
-      {% if site.data.ui-text[site.locale].related_label %}
-        <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
+      {% assign related_label_en = ui_text_en.related_label | default: "You May Also Enjoy" %}
+      {% assign related_label_zh = ui_text_zh.related_label | default: "你可能也会喜欢" %}
+      {% if ui_text_en.related_label or ui_text_zh.related_label %}
+        <h4 class="page__related-title">{% include i18n-text.html en=related_label_en zh=related_label_zh %}</h4>
       {% endif %}
       <div class="grid__wrapper">
         {% for post in site.related_posts limit:4 %}

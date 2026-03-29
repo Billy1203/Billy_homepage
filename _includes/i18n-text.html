@@ -1,0 +1,9 @@
+{% assign wrapper_tag = include.wrapper_tag | default: "span" %}
+{% assign variant_tag = include.variant_tag | default: "span" %}
+{% assign display_mode = include.display | default: "inline" %}
+{% assign zh_value = include.zh | default: include.en %}
+
+<{{ wrapper_tag }} class="i18n-switch i18n-switch--{{ display_mode }}{% if include.class %} {{ include.class }}{% endif %}">
+  <{{ variant_tag }} class="lang-en{% if include.en_class %} {{ include.en_class }}{% endif %}">{{ include.en }}</{{ variant_tag }}>
+  <{{ variant_tag }} class="lang-zh{% if include.zh_class %} {{ include.zh_class }}{% endif %}">{{ zh_value }}</{{ variant_tag }}>
+</{{ wrapper_tag }}>
