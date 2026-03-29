@@ -6,20 +6,10 @@
 
 {% capture avatar_sources %}{% if author.avatar_options %}{% for avatar_option in author.avatar_options %}{% if forloop.index0 > 0 %}|{% endif %}{% if avatar_option contains "://" %}{{ avatar_option }}{% else %}{{ avatar_option | prepend: "/images/" | prepend: base_path }}{% endif %}{% endfor %}{% endif %}{% endcapture %}
 {% capture avatar_url %}{% if author.avatar contains "://" %}{{ author.avatar }}{% else %}{{ author.avatar | prepend: "/images/" | prepend: base_path }}{% endif %}{% endcapture %}
-{% capture author_focus_tags %}
-  {% if author.focus_tags and author.focus_tags[0] %}
-    <div class="author__tags" aria-label="Research focus">
-      {% for tag in author.focus_tags %}
-        <span class="author__tag">{{ tag }}</span>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endcapture %}
 {% capture author_intro %}
   <h3 class="author__name">{{ author.name }}</h3>
   {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-  {{ author_focus_tags }}
-  {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+  {% if author.slogan %}<p class="author__slogan">{{ author.slogan }}</p>{% elsif author.bio %}<p class="author__slogan">{{ author.bio }}</p>{% endif %}
 {% endcapture %}
 {% capture author_links %}
   {% if author.location %}
@@ -56,13 +46,13 @@
     <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</span></a></li>
   {% endif %}
   {% if author.email %}
-    <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span></a></li>
+    <li class="author__link--email"><a href="mailto:{{ author.email }}" aria-label="{{ site.data.ui-text[site.locale].email_label | default: "Email" }}"><i class="fas fa-fw fa-envelope icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span></a></li>
   {% endif %}
   {% if author.arxiv %}
     <li><a href="{{ author.arxiv }}"><i class="ai ai-arxiv ai-fw icon-pad-right"></i><span class="author__urls-label">arXiv</span></a></li>
   {% endif %}
   {% if author.googlescholar %}
-    <li class="author__link--scholar"><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">Google Scholar</span></a></li>
+    <li class="author__link--scholar"><a href="{{ author.googlescholar }}" aria-label="Google Scholar"><i class="ai ai-google-scholar ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">Google Scholar</span></a></li>
   {% endif %}
   {% if author.semantic %}
     <li><a href="{{ author.semantic }}"><i class="ai ai-semantic-scholar ai-fw icon-pad-right"></i><span class="author__urls-label">Semantic Scholar</span></a></li>
@@ -71,7 +61,7 @@
     <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw icon-pad-right"></i><span class="author__urls-label">Impactstory</span></a></li>
   {% endif %}
   {% if author.orcid %}
-    <li><a href="{{ author.orcid }}"><i class="ai ai-orcid ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">ORCID</span></a></li>
+    <li class="author__link--orcid"><a href="{{ author.orcid }}" aria-label="ORCID"><i class="ai ai-orcid ai-fw icon-pad-right author__meta-icon"></i><span class="author__urls-label">ORCID</span></a></li>
   {% endif %}
   {% if author.pubmed %}
     <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed ai-fw icon-pad-right"></i><span class="author__urls-label">PubMed</span></a></li>
@@ -89,7 +79,7 @@
     <li><a href="https://dribbble.com/{{ author.dribbble }}"><i class="fab fa-fw fa-dribbble icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Dribbble</span></a></li>
   {% endif %}
   {% if author.github %}
-    <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">GitHub</span></a></li>
+    <li class="author__link--github"><a href="https://github.com/{{ author.github }}" aria-label="GitHub"><i class="fab fa-fw fa-github icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">GitHub</span></a></li>
   {% endif %}
   {% if author.kaggle %}
     <li><a href="https://kaggle.com/{{ author.kaggle }}"><i class="fab fa-fw fa-kaggle icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Kaggle</span></a></li>
@@ -125,7 +115,7 @@
     <li><a href="https://lastfm.com/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Last.fm</span></a></li>
   {% endif %}
   {% if author.linkedin %}
-    <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">LinkedIn</span></a></li>
+    <li class="author__link--linkedin"><a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn"><i class="fab fa-fw fa-linkedin icon-pad-right author__meta-icon" aria-hidden="true"></i><span class="author__urls-label">LinkedIn</span></a></li>
   {% endif %}
   {% if author.mastodon %}
     <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Mastodon</span></a></li>
@@ -170,33 +160,25 @@
     <li><a href="{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i><span class="author__urls-label">Zhihu</span></a></li>
   {% endif %}
 {% endcapture %}
+{% capture author_compact_links %}
+  {% if author.email %}
+    <li><a href="mailto:{{ author.email }}" aria-label="{{ site.data.ui-text[site.locale].email_label | default: "Email" }}"><i class="fas fa-fw fa-envelope author__meta-icon" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if author.orcid %}
+    <li><a href="{{ author.orcid }}" aria-label="ORCID"><i class="ai ai-orcid ai-fw author__meta-icon" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if author.googlescholar %}
+    <li><a href="{{ author.googlescholar }}" aria-label="Google Scholar"><i class="ai ai-google-scholar ai-fw author__meta-icon" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if author.github %}
+    <li><a href="https://github.com/{{ author.github }}" aria-label="GitHub"><i class="fab fa-fw fa-github author__meta-icon" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if author.linkedin %}
+    <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn"><i class="fab fa-fw fa-linkedin author__meta-icon" aria-hidden="true"></i></a></li>
+  {% endif %}
+{% endcapture %}
 
 <div itemscope itemtype="http://schema.org/Person">
-  <details class="author-profile-card author-profile-card--mobile">
-    <summary class="author-profile-card__summary">
-      <span class="author-profile-card__summary-title">Quick Links</span>
-      <span class="author-profile-card__summary-toggle" aria-hidden="true"></span>
-    </summary>
-
-    <div class="author-profile-card__panel">
-      <div class="author-profile-card__body">
-        <div class="author-profile-card__hero">
-          <div class="author__avatar author__avatar--mobile">
-            <img src="{{ avatar_url | strip }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" decoding="async" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
-          </div>
-
-          <div class="author__content">
-            {{ author_intro }}
-          </div>
-        </div>
-
-        <ul class="author__urls author__urls--mobile social-icons">
-          {{ author_links }}
-        </ul>
-      </div>
-    </div>
-  </details>
-
   <div class="author-profile-card author-profile-card--desktop">
     <div class="author__avatar">
       <img src="{{ avatar_url | strip }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" decoding="async" fetchpriority="high" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
@@ -207,7 +189,9 @@
     </div>
 
     <div class="author__urls-wrapper">
-      <button class="btn btn--inverse">Links</button>
+      <ul class="author__compact-links social-icons">
+        {{ author_compact_links }}
+      </ul>
       <ul class="author__urls social-icons">
         {{ author_links }}
       </ul>

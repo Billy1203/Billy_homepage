@@ -31,10 +31,7 @@ author:
   name             : "Yiheng XUE (Billy)"
 #  pronouns         : "he/his"
   bio              :
-  focus_tags       :
-    - "Robotics"
-    - "Vision"
-    - "Perception"
+  slogan           : "AI & Vision Engineer"
   location         : "Shenzhen, China"
   location_url     : "https://maps.google.com/?q=Shenzhen+China"
   employer         : "SUSTech"

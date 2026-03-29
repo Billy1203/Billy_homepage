@@ -1,5 +1,4 @@
 (function() {
-  var themeOrder = ['system', 'dark', 'light'];
   var root = document.documentElement;
   var toggle = document.getElementById('theme-toggle');
   var icon = document.getElementById('theme-icon');
@@ -8,7 +7,7 @@
   var preloadedImages = {};
 
   function normalizeTheme(theme) {
-    return themeOrder.indexOf(theme) > -1 ? theme : 'system';
+    return theme === 'dark' || theme === 'light' ? theme : 'system';
   }
 
   function getStoredTheme() {
@@ -41,9 +40,18 @@
     return mediaQuery && mediaQuery.matches ? 'dark' : 'light';
   }
 
-  function getNextTheme(theme) {
-    var currentIndex = themeOrder.indexOf(normalizeTheme(theme));
-    return themeOrder[(currentIndex + 1) % themeOrder.length];
+  function getEffectiveTheme(themePreference) {
+    return resolveTheme(themePreference || getStoredTheme());
+  }
+
+  function getNextTheme(themePreference) {
+    var currentPreference = normalizeTheme(themePreference);
+
+    if (currentPreference === 'system') {
+      return getEffectiveTheme('system') === 'dark' ? 'light' : 'dark';
+    }
+
+    return currentPreference === 'dark' ? 'light' : 'dark';
   }
 
   function updateToggleMetadata(themePreference) {
@@ -53,8 +61,11 @@
 
     var currentTheme = normalizeTheme(themePreference);
     var nextTheme = getNextTheme(currentTheme);
-    var themeLabel = currentTheme === 'system' ? 'System' : currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1);
-    var nextLabel = nextTheme === 'system' ? 'follow system' : ('switch to ' + nextTheme + ' mode');
+    var effectiveTheme = getEffectiveTheme(currentTheme);
+    var themeLabel = currentTheme === 'system'
+      ? ('System (' + effectiveTheme + ')')
+      : currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1);
+    var nextLabel = 'switch to ' + nextTheme + ' mode';
 
     toggleLink.setAttribute('title', 'Theme: ' + themeLabel + '; click to ' + nextLabel);
     toggleLink.setAttribute('aria-label', 'Theme: ' + themeLabel + '; click to ' + nextLabel);
@@ -126,12 +137,13 @@
     mediaQuery.addListener(handleSystemThemeChange);
   }
 
-  if (!toggle) {
+  if (!toggleLink) {
     return;
   }
 
-  toggle.addEventListener('click', function(event) {
+  toggleLink.addEventListener('click', function(event) {
     event.preventDefault();
+    event.stopPropagation();
     var nextTheme = getNextTheme(getStoredTheme());
     setStoredTheme(nextTheme);
     syncTheme(nextTheme);

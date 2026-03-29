@@ -1,11 +1,17 @@
 {% include base_path %}
+{% assign mobile_menu_label = "Menu" %}
+{% for link in site.data.navigation.main %}
+  {% if link.url != '/' and page.url contains link.url %}
+    {% assign mobile_menu_label = link.title %}
+  {% endif %}
+{% endfor %}
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         <div class="greedy-nav__brand{% if page.url == '/' or page.url == '/index.html' %} selected{% endif %}">
-          <a href="{{ base_path }}/">{{ site.title }}</a>
+          <a href="{{ base_path }}/"><span class="greedy-nav__brand-label">{{ site.title }}</span></a>
         </div>
         <div class="greedy-nav__primary">
           <ul class="greedy-nav__links">
@@ -16,10 +22,28 @@
                 {% assign domain = base_path %}
               {% endif %}
               <li class="greedy-nav__item{% if page.url contains link.url and link.url != '/' %} selected{% endif %}">
-                <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+                <a href="{{ domain }}{{ link.url }}"><span class="greedy-nav__link-label">{{ link.title }}</span></a>
               </li>
             {% endfor %}
           </ul>
+          <details class="greedy-nav__mobile-menu">
+            <summary class="greedy-nav__mobile-summary">
+              <span class="greedy-nav__toggle-label">{{ mobile_menu_label }}</span>
+              <span class="navicon" aria-hidden="true"></span>
+            </summary>
+            <ul class="greedy-nav__mobile-links">
+              {% for link in site.data.navigation.main %}
+                {% if link.url contains 'http' %}
+                  {% assign domain = '' %}
+                {% else %}
+                  {% assign domain = base_path %}
+                {% endif %}
+                <li class="{% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+                  <a href="{{ domain }}{{ link.url }}"><span class="greedy-nav__link-label">{{ link.title }}</span></a>
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
           <button type="button" class="greedy-nav__toggle is-hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav-overflow" data-count="0">
             <span class="greedy-nav__toggle-label">Menu</span>
             <span class="navicon" aria-hidden="true"></span>

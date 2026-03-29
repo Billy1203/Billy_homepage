@@ -24,4 +24,4 @@ Pingpong detection in real-time with low-cost hardware.
   </video>
 </div>
 
-<span style="color:green;">**Green**</span> denotes slow, and <span style="color:red;">**Red**</span> denotes fast.
+<span class="inline-accent inline-accent--positive">Green</span> denotes slow, and <span class="inline-accent inline-accent--alert">Red</span> denotes fast.

@@ -50,4 +50,4 @@ relationship between the university and industries is enhanced through the cours
   <a class="btn btn--inverse" href="https://drive.google.com/file/d/1GJohcOxVezSdEvdCDuLkXdGVdazoF0Vg/view?usp=share_link" target="_blank" rel="noopener">Read Related Article</a>
 </div>
 
-<p style="font-size: smaller">Recommended citation: 张璧, 吴凤霞. 基于“综合设计”课程的新工科教育探索[J]. 高等工程教育研究, 2020, (02): 41-48+60.</p>
+<p class="content-citation">Recommended citation: 张璧, 吴凤霞. 基于“综合设计”课程的新工科教育探索[J]. 高等工程教育研究, 2020, (02): 41-48+60.</p>

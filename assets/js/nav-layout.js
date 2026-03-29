@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = Array.from(links.children);
   let frame = null;
 
+  const getViewportWidth = () => {
+    const visualViewportWidth = window.visualViewport?.width;
+    return Math.min(window.innerWidth, visualViewportWidth || window.innerWidth);
+  };
+
   const syncToggleState = () => {
     const hiddenCount = hidden.children.length;
     toggle.setAttribute("data-count", String(hiddenCount));
@@ -35,8 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const layoutNav = () => {
     resetLinks();
 
-    const narrowViewport = window.innerWidth < 380;
+    const viewportWidth = getViewportWidth();
+    const dropdownViewport = viewportWidth < 560;
+    const narrowViewport = viewportWidth < 480;
     const minVisibleItems = narrowViewport ? 0 : 1;
+
+    if (dropdownViewport) {
+      toggle.classList.remove("is-hidden");
+      items.forEach((item) => {
+        hidden.appendChild(item);
+      });
+      syncToggleState();
+      return;
+    }
 
     while (links.scrollWidth > links.clientWidth && links.children.length > minVisibleItems) {
       toggle.classList.remove("is-hidden");

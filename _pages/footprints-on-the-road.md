@@ -1,6 +1,6 @@
 ---
 layout: section-list
-title: "Footprints on the Road 👣"
+title: "Footprints on the Road"
 permalink: /plogs/
 author_profile: true
 show_page_title: false

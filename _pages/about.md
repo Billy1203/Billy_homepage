@@ -1,7 +1,7 @@
 ---
 permalink: /
 layout: page-content
-title: "Hi! 👋🏻"
+title: "About Billy"
 author_profile: true
 show_page_title: false
 watermark_label: "About Billy"
@@ -85,17 +85,15 @@ redirect_from:
   </div>
 </div>
 
-I am a robotics and computer vision engineer focused on perception systems that move from research prototypes into real-world products. I received an M.Res. with Distinction in Pattern Recognition and Intelligent Systems from the [University of Liverpool](https://www.liverpool.ac.uk), supported by the [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn/site/main), and a B.Eng. in Computer Science and Technology from [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/en).
+I work at the intersection of robotics perception, computer vision, and applied machine learning, with a focus on systems that can move from research prototypes into deployable products. I received an M.Res. with Distinction in Pattern Recognition and Intelligent Systems from the [University of Liverpool](https://www.liverpool.ac.uk), supported by the [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn/site/main), and a B.Eng. in Computer Science and Technology from [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/en).
 
-My background spans academic research, startup engineering, and industry-facing technical development. Over three years as a research assistant, I worked on robotics and perception topics across academic projects and commercialization-oriented collaborations, with hands-on experience in algorithm development, product execution, and interdisciplinary teamwork.
-
-I also spent time exploring the intersection of frontier technology and capital. That experience gave me a broader view of how emerging technologies are evaluated, funded, and translated into viable products, and it still shapes how I think about applied research: ambitious enough to matter, but grounded enough to ship.
+My experience spans academic labs, startup engineering, and industry-facing technical development. Over several years of research and product work, I have built algorithms, prototype systems, and collaboration habits that translate well across research, engineering, and commercialization contexts. A later period exploring frontier-technology investing broadened how I think about technical ambition, product timing, and the path from idea to market.
 
 ## Research Interests
 
-My main interests include machine learning, pattern recognition, robotics perception, and computer vision. Outside work, I enjoy photography, hiking, football, and visual storytelling. You can find some of my photos and illustrations [here](https://unsplash.com/@billyxue).
+My core interests are machine learning, pattern recognition, robotics perception, and computer vision. Outside work, I spend time on photography, hiking, football, and visual storytelling. You can find some of my photos and illustrations [here](https://unsplash.com/@billyxue).
 
-If you are working on a related problem or building something ambitious in robotics, I would be glad to connect.
+If you are building something ambitious in robotics or perception, I would be glad to connect.
 
 ## News
 

@@ -12,6 +12,9 @@
     return;
   }
 
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTransitioning = false;
+
   function hashList(values) {
     return values.join('|').replace(/[^a-z0-9]+/gi, '-').toLowerCase();
   }
@@ -107,12 +110,79 @@
     });
   }
 
-  function applyNextAvatar() {
-    applyAvatar(getNextAvatar());
+  function preloadAvatar(source, callback) {
+    var image = new Image();
+
+    image.onload = function() {
+      callback(source);
+    };
+
+    image.onerror = function() {
+      callback(source);
+    };
+
+    image.src = source;
   }
 
-  applyNextAvatar();
+  function applyNextAvatar(options) {
+    var nextAvatar = getNextAvatar();
+    var shouldAnimate = !(options && options.animate === false) && !prefersReducedMotion;
+
+    if (!shouldAnimate) {
+      applyAvatar(nextAvatar);
+      return;
+    }
+
+    if (isTransitioning) {
+      return;
+    }
+
+    isTransitioning = true;
+    preloadAvatar(nextAvatar, function(readyAvatar) {
+      avatars.forEach(function(avatar) {
+        avatar.classList.add('is-swapping');
+      });
+
+      window.setTimeout(function() {
+        applyAvatar(readyAvatar);
+
+        window.requestAnimationFrame(function() {
+          avatars.forEach(function(avatar) {
+            avatar.classList.remove('is-swapping');
+          });
+
+          window.setTimeout(function() {
+            isTransitioning = false;
+          }, 180);
+        });
+      }, 90);
+    });
+  }
+
+  applyNextAvatar({ animate: false });
   avatars.forEach(function(avatar) {
-    avatar.addEventListener('click', applyNextAvatar);
+    avatar.setAttribute('role', 'button');
+    avatar.setAttribute('tabindex', '0');
+    avatar.setAttribute('draggable', 'false');
+    avatar.setAttribute('aria-label', 'Shuffle portrait');
+    avatar.setAttribute('title', 'Shuffle portrait');
+
+    avatar.addEventListener('click', function() {
+      if (isTransitioning) {
+        return;
+      }
+      applyNextAvatar();
+    });
+
+    avatar.addEventListener('keydown', function(event) {
+      if (event.key !== 'Enter' && event.key !== ' ') {
+        return;
+      }
+      event.preventDefault();
+      if (isTransitioning) {
+        return;
+      }
+      applyNextAvatar();
+    });
   });
 })();
