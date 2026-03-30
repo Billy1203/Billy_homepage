@@ -2520,9 +2520,13 @@ video.publication-embed--video {
 }
 
 @media (max-width: 63.99em) {
+  body.layout--travel-log-entry {
+    --site-reader-shell-pad: var(--site-toolbar-pad);
+  }
+
   body.layout--travel-log-entry #main.page-main--reader {
-    padding-left: 0.95rem;
-    padding-right: 0.95rem;
+    padding-left: var(--site-reader-shell-pad);
+    padding-right: var(--site-reader-shell-pad);
   }
 
   body.layout--travel-log-entry .page--reader .page__inner-wrap--reader {
@@ -4120,67 +4124,30 @@ body.layout--travel-log-entry #main.page-main--reader {
 body.layout--travel-log-entry {
   --site-reader-shell-max: 56rem;
   --site-reader-shell-pad: clamp(0.72rem, calc(0.18rem + 1.5vw), 1.35rem);
-  --site-toolbar-shell-max: var(--site-reader-shell-max);
-  --site-toolbar-shell-pad: var(--site-reader-shell-pad);
-  --site-toolbar-brand-pad-x: clamp(0.6rem, calc(0.44rem + 0.32vw), 0.82rem);
-  --site-toolbar-group-gap: clamp(0.3rem, calc(0.2rem + 0.34vw), 0.4rem);
-}
-
-body.layout--travel-log-entry .greedy-nav {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  column-gap: var(--site-toolbar-group-gap);
-  min-height: var(--site-toolbar-control-height);
-}
-
-body.layout--travel-log-entry .greedy-nav__brand,
-body.layout--travel-log-entry .greedy-nav__theme {
-  position: static;
-  transform: none;
-  z-index: auto;
-}
-
-body.layout--travel-log-entry .greedy-nav__primary {
-  width: auto;
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-body.layout--travel-log-entry .greedy-nav__links {
-  justify-content: flex-start;
-}
-
-body.layout--travel-log-entry .greedy-nav__item:first-child {
-  margin-left: 0;
-}
-
-body.layout--travel-log-entry .greedy-nav.greedy-nav--compact {
-  @include greedy-nav-compact-layout;
-}
-
-@media (min-width: 56.01em) and (max-width: 82em) {
-  body.layout--travel-log-entry #main.page-main--reader {
-    display: block;
-    grid-template-columns: none;
-    column-gap: 0;
-  }
+  --site-reader-body-size-compact: 1rem;
+  --site-reader-body-leading-compact: 1.82;
+  --site-reader-title-size-compact: clamp(2rem, calc(1.82rem + 0.72vw), 2.34rem);
 }
 
 @media (max-width: 56em) {
-  body.layout--travel-log-entry #main.page-main--reader {
-    width: 100%;
-  }
-}
-
-@media (max-width: 40em) {
-  body.layout--travel-log-entry .greedy-nav {
-    @include greedy-nav-compact-layout;
+  body.layout--travel-log-entry .page--reader .page__title {
+    font-size: var(--site-reader-title-size-compact);
+    line-height: 1.12;
   }
 
-  body.layout--travel-log-entry #main.page-main--reader {
-    width: 100%;
+  body.layout--travel-log-entry .page--reader .page__content {
+    font-size: var(--site-reader-body-size-compact);
+    line-height: var(--site-reader-body-leading-compact);
+  }
+
+  body.layout--travel-log-entry .page--reader .page__content p,
+  body.layout--travel-log-entry .page--reader .page__content li,
+  body.layout--travel-log-entry .page--reader .page__content dl {
+    font-size: 1em;
+  }
+
+  body.layout--travel-log-entry .page__reader-timestamp,
+  body.layout--travel-log-entry .page__reader-context {
+    font-size: 0.95rem;
   }
 }
