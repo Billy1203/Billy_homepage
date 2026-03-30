@@ -92,17 +92,108 @@ If you are building something ambitious in robotics or perception, I would be gl
 
 <h2>{% include i18n-text.html en="News" zh="动态" %}</h2>
 
-<ul class="profile-updates">
-  <li>{% include i18n-text.html en="2025-06 Paper accepted to IROS 2025 as an oral presentation." zh="2025-06 论文被 IROS 2025 接收，并获 oral presentation。" %}</li>
-  <li>{% include i18n-text.html en="2025-04 Overseas PhD enrollment became unlikely because of research-background sensitivity, but my focus on applied robotics remains unchanged." zh="2025-04 由于研究背景相关因素，海外 PhD 入学前景变得不确定，但我对应用机器人方向的投入没有改变。" %}</li>
-  <li>{% include i18n-text.html en="2025-03 Received multiple fully funded PhD offers in robotics." zh="2025-03 获得多个机器人方向全额资助 PhD offer。" %}</li>
-  <li>{% include i18n-text.html en="2024-11 Unable to proceed with UK enrollment because of ATAS clearance issues." zh="2024-11 因 ATAS 审批问题，未能继续推进英国入学。" %}</li>
-  <li>{% include i18n-text.html en="2024-05 Paper accepted by Ocean Engineering." zh="2024-05 论文被 Ocean Engineering 接收。" %}</li>
-  <li>{% include i18n-text.html en="2024-04 Received multiple fully funded PhD offers in robotics, spanning manipulation, arm control, tactile perception, and imitation learning." zh="2024-04 获得多个机器人方向全额资助 PhD offer，涉及操作、机械臂控制、触觉感知和模仿学习。" %}</li>
-  <li>{% include i18n-text.html en="2024-03 Returned to Shenzhen and joined Boundary AI to work on VSLAM systems." zh="2024-03 回到深圳，加入 Boundary AI 从事 VSLAM 系统研发。" %}</li>
-  <li>{% include i18n-text.html en="2024-02 Graduated with M.Res. Distinction and received the Best Overall Master Student award, ranked 1st among 80+ students." zh="2024-02 以 Distinction 完成 M.Res. 学位，并获得 Best Overall Master Student，80 余名学生中排名第 1。" %}</li>
-  <li>{% include i18n-text.html en="2023-11 Paper accepted by Nature Communications." zh="2023-11 论文被 Nature Communications 接收。" %}</li>
-</ul>
+<section class="about-news" data-news-stack aria-label="News timeline" data-i18n-aria-label-en="News timeline" data-i18n-aria-label-zh="动态时间线">
+  <div class="about-news__list" role="list">
+    <article class="about-news__item about-news__item--paper" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2025-06</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Paper" zh="论文" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Paper accepted to IROS 2025 as an oral presentation." zh="论文被 IROS 2025 接收，并获 oral presentation。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--pivot" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2025-04</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Pivot" zh="调整" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Overseas PhD enrollment became unlikely because of research-background sensitivity, but my focus on applied robotics remains unchanged." zh="由于研究背景相关因素，海外 PhD 入学前景变得不确定，但我对应用机器人方向的投入没有改变。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--offer" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2025-03</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Offers" zh="Offer" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Received multiple fully funded PhD offers in robotics." zh="获得多个机器人方向全额资助 PhD offer。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--pivot" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2024-11</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Update" zh="进展" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Unable to proceed with UK enrollment because of ATAS clearance issues." zh="因 ATAS 审批问题，未能继续推进英国入学。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--paper" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2024-05</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Paper" zh="论文" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Paper accepted by Ocean Engineering." zh="论文被 Ocean Engineering 接收。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--offer" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2024-04</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Offers" zh="Offer" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Received multiple fully funded PhD offers in robotics, spanning manipulation, arm control, tactile perception, and imitation learning." zh="获得多个机器人方向全额资助 PhD offer，涉及操作、机械臂控制、触觉感知和模仿学习。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--move" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2024-03</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Move" zh="新阶段" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Returned to Shenzhen and joined Boundary AI to work on VSLAM systems." zh="回到深圳，加入 Boundary AI 从事 VSLAM 系统研发。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--award" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2024-02</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Award" zh="荣誉" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Graduated with M.Res. Distinction and received the Best Overall Master Student award, ranked 1st among 80+ students." zh="以 Distinction 完成 M.Res. 学位，并获得 Best Overall Master Student，80 余名学生中排名第 1。" %}</p>
+      </div>
+    </article>
+
+    <article class="about-news__item about-news__item--paper" data-news-card role="listitem">
+      <div class="about-news__pin" aria-hidden="true"></div>
+      <div class="about-news__bubble">
+        <div class="about-news__meta">
+          <span class="about-news__date">2023-11</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Paper" zh="论文" %}</span>
+        </div>
+        <p class="about-news__text">{% include i18n-text.html en="Paper accepted by Nature Communications." zh="论文被 Nature Communications 接收。" %}</p>
+      </div>
+    </article>
+  </div>
+</section>
 
 ---
 

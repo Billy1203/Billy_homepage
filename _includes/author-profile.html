@@ -7,7 +7,7 @@
 {% capture avatar_sources %}{% if author.avatar_options %}{% for avatar_option in author.avatar_options %}{% if forloop.index0 > 0 %}|{% endif %}{% if avatar_option contains "://" %}{{ avatar_option }}{% else %}{{ avatar_option | prepend: "/images/" | prepend: base_path }}{% endif %}{% endfor %}{% endif %}{% endcapture %}
 {% capture avatar_url %}{% if author.avatar contains "://" %}{{ author.avatar }}{% else %}{{ author.avatar | prepend: "/images/" | prepend: base_path }}{% endif %}{% endcapture %}
 {% capture author_intro %}
-  <h3 class="author__name">{{ author.name }}</h3>
+  {% include i18n-text.html en=author.name zh=author.name_zh wrapper_tag="h3" class="author__name" display="block" %}
   {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
   {% if author.slogan %}<p class="author__slogan">{% include i18n-text.html en=author.slogan zh=author.slogan_zh %}</p>{% elsif author.bio %}<p class="author__slogan">{{ author.bio }}</p>{% endif %}
 {% endcapture %}

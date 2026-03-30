@@ -211,6 +211,189 @@ $(document).ready(function(){
     syncVisibleItems();
   };
 
+  var initAboutNews = function() {
+    var sections = Array.prototype.slice.call(document.querySelectorAll("[data-news-stack]"));
+    var reducedMotionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+
+    if (!sections.length) {
+      return;
+    }
+
+    var prefersReducedMotion = function() {
+      return reducedMotionQuery ? reducedMotionQuery.matches : false;
+    };
+
+    var supportsSticky = function() {
+      if (!window.CSS || !window.CSS.supports) {
+        return true;
+      }
+
+      return window.CSS.supports("position", "sticky") || window.CSS.supports("position", "-webkit-sticky");
+    };
+
+    sections.forEach(function(section) {
+      var items = Array.prototype.slice.call(section.querySelectorAll("[data-news-card]"));
+      var observer = null;
+      var layoutFrame = null;
+      var resizeObserver = null;
+
+      if (!items.length) {
+        return;
+      }
+
+      items.forEach(function(item, index) {
+        item.style.setProperty("--news-layer", items.length - index);
+        item.setAttribute("data-news-index", index);
+      });
+
+      section.classList.add("is-enhanced");
+
+      var markVisible = function(item) {
+        item.classList.add("is-visible");
+      };
+
+      var clearStickyLayout = function() {
+        section.setAttribute("data-news-layout", "flow");
+
+        items.forEach(function(item) {
+          item.style.removeProperty("--news-stick-top");
+
+          if (window.Stickyfill && typeof window.Stickyfill.remove === "function") {
+            window.Stickyfill.remove(item);
+          }
+        });
+      };
+
+      var primeVisibleItems = function() {
+        var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+
+        items.forEach(function(item) {
+          var rect = item.getBoundingClientRect();
+
+          if (rect.top < viewportHeight * 0.94) {
+            markVisible(item);
+          }
+        });
+      };
+
+      var computeStickyLayout = function() {
+        var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+        var masthead = document.querySelector(".masthead");
+        var mastheadHeight = masthead ? Math.ceil(masthead.getBoundingClientRect().height) : 0;
+        var baseTop = Math.max(84, mastheadHeight + 18);
+        var gap = viewportWidth > 1360 ? 12 : 10;
+        var bottomBuffer = 28;
+        var nextTop = baseTop;
+        var requiredHeight = 0;
+        var hasTallCard = false;
+
+        clearStickyLayout();
+
+        if (prefersReducedMotion() || viewportWidth < 1080 || viewportHeight < 680 || !supportsSticky()) {
+          return;
+        }
+
+        items.forEach(function(item, index) {
+          var bubble = item.querySelector(".about-news__bubble");
+          var bubbleHeight = bubble ? Math.ceil(bubble.getBoundingClientRect().height) : item.offsetHeight;
+
+          if (bubbleHeight > viewportHeight * 0.26 && index < items.length - 1) {
+            hasTallCard = true;
+          }
+
+          requiredHeight += bubbleHeight + (index === items.length - 1 ? 0 : gap);
+          item.setAttribute("data-news-height", bubbleHeight);
+        });
+
+        if (hasTallCard || requiredHeight > viewportHeight - baseTop - bottomBuffer) {
+          return;
+        }
+
+        section.setAttribute("data-news-layout", "stacked");
+
+        items.forEach(function(item) {
+          var bubbleHeight = parseInt(item.getAttribute("data-news-height"), 10) || item.offsetHeight;
+
+          item.style.setProperty("--news-stick-top", nextTop + "px");
+          nextTop += bubbleHeight + gap;
+
+          if (window.Stickyfill && typeof window.Stickyfill.add === "function") {
+            window.Stickyfill.add(item);
+          }
+        });
+      };
+
+      var requestStickyLayout = function() {
+        window.cancelAnimationFrame(layoutFrame);
+        layoutFrame = window.requestAnimationFrame(computeStickyLayout);
+      };
+
+      primeVisibleItems();
+
+      if (!prefersReducedMotion() && "IntersectionObserver" in window) {
+        observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0.18) {
+              markVisible(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.18,
+          rootMargin: "0px 0px -12% 0px"
+        });
+
+        items.forEach(function(item) {
+          if (!item.classList.contains("is-visible")) {
+            observer.observe(item);
+          }
+        });
+
+        window.requestAnimationFrame(function() {
+          section.classList.add("is-motion-ready");
+        });
+      } else {
+        items.forEach(markVisible);
+        section.classList.add("is-motion-ready");
+      }
+
+      requestStickyLayout();
+      window.addEventListener("resize", requestStickyLayout);
+      window.addEventListener("orientationchange", requestStickyLayout);
+      window.addEventListener("load", requestStickyLayout);
+
+      if ("ResizeObserver" in window) {
+        resizeObserver = new ResizeObserver(function() {
+          requestStickyLayout();
+        });
+
+        resizeObserver.observe(section);
+        items.forEach(function(item) {
+          var bubble = item.querySelector(".about-news__bubble");
+          resizeObserver.observe(bubble || item);
+        });
+      }
+
+      if (reducedMotionQuery) {
+        var handleMotionChange = function() {
+          if (prefersReducedMotion()) {
+            items.forEach(markVisible);
+          }
+
+          requestStickyLayout();
+        };
+
+        if (typeof reducedMotionQuery.addEventListener === "function") {
+          reducedMotionQuery.addEventListener("change", handleMotionChange);
+        } else if (typeof reducedMotionQuery.addListener === "function") {
+          reducedMotionQuery.addListener(handleMotionChange);
+        }
+      }
+    });
+  };
+
   initPlogFilters();
+  initAboutNews();
 
 });
