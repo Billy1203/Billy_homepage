@@ -5,91 +5,127 @@ layout: default
 {% include base_path %}
 {% assign ui_text_en = site.data.ui-text.en %}
 {% assign ui_text_zh = site.data.ui-text['zh-CN'] %}
+{% assign plog_type_en = page.type | strip %}
+{% assign plog_type_zh = page.type_zh | default: page.type | strip %}
+{% capture plog_context_en %}
+  {% if page.venue %}{{ page.venue }}{% endif %}
+  {% if page.location %}{% if page.venue %} · {% endif %}{{ page.location }}{% endif %}
+{% endcapture %}
+{% capture plog_context_zh %}
+  {% if page.venue_zh or page.venue %}{{ page.venue_zh | default: page.venue }}{% endif %}
+  {% if page.location_zh or page.location %}{% if page.venue_zh or page.venue %} · {% endif %}{{ page.location_zh | default: page.location }}{% endif %}
+{% endcapture %}
+{% assign plog_context_en = plog_context_en | strip %}
+{% assign plog_context_zh = plog_context_zh | strip %}
+{% assign plog_type_key = "" %}
+{% case page.type %}
+  {% when "Trip ✈️" %}
+    {% assign plog_type_key = "trip" %}
+  {% when "Essay ✍️" %}
+    {% assign plog_type_key = "essay" %}
+  {% when "Relocation 🏠" %}
+    {% assign plog_type_key = "relocation" %}
+  {% when "Move 🏠" %}
+    {% assign plog_type_key = "relocation" %}
+  {% when "Journey ☀️" %}
+    {% assign plog_type_key = "journey" %}
+{% endcase %}
+{% if plog_type_key == "" %}
+  {% case page.type_zh %}
+    {% when "旅行 ✈️" %}
+      {% assign plog_type_key = "trip" %}
+    {% when "随笔 ✍️" %}
+      {% assign plog_type_key = "essay" %}
+    {% when "驻留 🏠" %}
+      {% assign plog_type_key = "relocation" %}
+    {% when "搬迁 🏠" %}
+      {% assign plog_type_key = "relocation" %}
+    {% when "途中 ☀️" %}
+      {% assign plog_type_key = "journey" %}
+  {% endcase %}
+{% endif %}
+{% capture plogs_index_url %}{{ base_path }}/plogs/{% endcapture %}
+{% if page.date %}
+  {% capture plog_date_en %}{{ page.date | date: "%B %d, %Y" }}{% endcapture %}
+  {% capture plog_date_zh %}{{ page.date | date: "%Y年%-m月%-d日" }}{% endcapture %}
+{% endif %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}
 
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-<div id="main" role="main"{% if page.watermark_label %} data-page-label-en="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% if page.watermark_label_zh %} data-page-label-zh="{{ page.watermark_label_zh | strip_html | strip_newlines | escape_once }}"{% endif %}{% endif %}>
-  {% include sidebar.html %}
-
-  <article class="page page--plog" itemscope itemtype="http://schema.org/CreativeWork">
+<div id="main" class="page-main--reader" role="main"{% if page.watermark_label %} data-page-label-en="{{ page.watermark_label | strip_html | strip_newlines | escape_once }}"{% if page.watermark_label_zh %} data-page-label-zh="{{ page.watermark_label_zh | strip_html | strip_newlines | escape_once }}"{% endif %}{% endif %}>
+  <article class="page page--plog page--reader" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
-    <div class="page__inner-wrap">
+    <div class="page__inner-wrap page__inner-wrap--reader">
       {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header class="page__header page__header--plog">
+        <header class="page__header page__header--plog page__header--reader">
+          <div class="page__reader-topbar">
+            {% if page.date %}
+              <p class="archive__item-timestamp page__reader-timestamp"><i class="fa fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en=plog_date_en zh=plog_date_zh %}</p>
+            {% endif %}
+            <div class="page__reader-actions">
+              <section class="page__share page__share--copy page__share--copy--icon">
+                <button
+                  type="button"
+                  class="btn btn--inverse btn--icon js-copy-link"
+                  aria-label="Copy Page Link"
+                  data-aria-default-en="Copy Page Link"
+                  data-aria-default-zh="复制页面链接"
+                  data-aria-success-en="Link copied"
+                  data-aria-success-zh="链接已复制"
+                  data-aria-error-en="Copy failed"
+                  data-aria-error-zh="复制失败"
+                >
+                  <i class="fa fa-link js-copy-icon" aria-hidden="true" data-default-icon="fa-link" data-success-icon="fa-check"></i>
+                  <span class="sr-only js-copy-label" data-default-en="Copy Page Link" data-default-zh="复制页面链接" data-success-en="Link copied" data-success-zh="链接已复制">Copy Page Link</span>
+                </button>
+                <span class="page__share-status" aria-live="polite" data-success-en="Link copied to clipboard." data-success-zh="链接已复制到剪贴板。" data-error-en="Copy failed. Please copy the URL manually." data-error-zh="复制失败，请手动复制当前链接。"></span>
+              </section>
+              <a href="{{ plogs_index_url }}" class="btn btn--inverse btn--icon btn--plogs-back js-plogs-back" aria-label="Back to Footprints" data-plogs-index-url="{{ plogs_index_url }}">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span class="sr-only">Back to Footprints</span>
+              </a>
+            </div>
+          </div>
+
           {% if page.title %}
             {% capture plog_title_en %}{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
             {% capture plog_title_zh %}{{ page.title_zh | default: page.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
             <h1 class="page__title" itemprop="headline">{% include i18n-text.html en=plog_title_en zh=plog_title_zh %}</h1>
           {% endif %}
-          {% if page.read_time %}
-            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+          {% if plog_type_en != "" or plog_context_en != "" %}
+            <p class="archive__item-context page__reader-context">
+              {% if plog_type_en != "" %}
+                <span class="archive__item-context-tag{% if plog_type_key != "" %} archive__item-context-tag--{{ plog_type_key }}{% endif %}">{% include i18n-text.html en=plog_type_en zh=plog_type_zh %}</span>
+              {% endif %}
+              {% if plog_context_en != "" %}
+                <span class="archive__item-context-text">{% include i18n-text.html en=plog_context_en zh=plog_context_zh %}</span>
+              {% endif %}
+            </p>
           {% endif %}
-        {% if page.modified %}
-          {% capture plog_modified_en %}{{ page.modified | date: "%B %d, %Y" }}{% endcapture %}
-          {% capture plog_modified_zh %}{{ page.modified | date: "%Y年%-m月%-d日" }}{% endcapture %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en="Date:" zh="日期：" %}</strong> {% include i18n-text.html en=plog_modified_en zh=plog_modified_zh %}</p>
-        {% elsif page.date %}
-          {% capture plog_date_en %}{{ page.date | date: "%B %d, %Y" }}{% endcapture %}
-          {% capture plog_date_zh %}{{ page.date | date: "%Y年%-m月%-d日" }}{% endcapture %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en="Date:" zh="日期：" %}</strong> {% include i18n-text.html en=plog_date_en zh=plog_date_zh %}</p>
-        {% endif %}
-        {% if page.talk_type %}
-            {% capture talk_meta_en %}{{ page.talk_type }} at {{ page.venue }}, {{ page.location }}{% endcapture %}
-            {% capture talk_meta_zh %}{{ page.talk_type_zh | default: page.talk_type }}，{{ page.venue_zh | default: page.venue }}，{{ page.location_zh | default: page.location }}{% endcapture %}
-            <p>{% include i18n-text.html en=talk_meta_en zh=talk_meta_zh %}</p>
-        {% endif %}
         </header>
       {% endunless %}
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content page__content--reader" itemprop="text">
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{% include i18n-text.html en=ui_text_en.ext_link_label zh=ui_text_zh.ext_link_label %}</a></div>{% endif %}
       </section>
 
       {% if site.data.ui-text[site.locale].meta_label or page.tags[0] or page.categories[0] %}
-      <footer class="page__meta">
-        {% if ui_text_en.meta_label or ui_text_zh.meta_label %}
-          <h4 class="page__meta-title">{% include i18n-text.html en=ui_text_en.meta_label zh=ui_text_zh.meta_label %}</h4>
-        {% endif %}
-        {% include page__taxonomy.html %}
-      </footer>
+        <footer class="page__meta page__meta--reader-footer">
+          {% if site.data.ui-text[site.locale].meta_label %}
+            <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+          {% endif %}
+          {% include page__taxonomy.html %}
+        </footer>
       {% endif %}
-
-      {% if page.share %}{% include page-actions.html %}{% endif %}
 
       {% include post_pagination.html %}
     </div>
-
-    {% if site.comments.provider and page.comments %}
-      {% include comments.html %}
-    {% endif %}
   </article>
-
-  {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    <div class="page__related">
-      {% assign related_label_en = ui_text_en.related_label | default: "You May Also Enjoy" %}
-      {% assign related_label_zh = ui_text_zh.related_label | default: "你可能也会喜欢" %}
-      {% if ui_text_en.related_label or ui_text_zh.related_label %}
-        <h4 class="page__related-title">{% include i18n-text.html en=related_label_en zh=related_label_zh %}</h4>
-      {% endif %}
-      <div class="grid__wrapper">
-        {% for post in site.related_posts limit:4 %}
-          {% include archive-single.html type="grid" %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
 </div>

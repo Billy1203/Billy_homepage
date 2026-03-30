@@ -53,13 +53,38 @@
     return localized || english || fallback || '';
   }
 
-  function syncCopyFeedback(button, label, status) {
+  function syncCopyIcon(button, icon) {
+    if (!icon) {
+      return;
+    }
+
+    var buttonState = button.getAttribute('data-copy-state') || 'default';
+    var defaultIcon = icon.getAttribute('data-default-icon') || 'fa-link';
+    var successIcon = icon.getAttribute('data-success-icon') || 'fa-check';
+
+    icon.classList.remove(defaultIcon, successIcon);
+    icon.classList.add(buttonState === 'success' ? successIcon : defaultIcon);
+  }
+
+  function syncCopyFeedback(button, label, status, icon) {
     var buttonState = button.getAttribute('data-copy-state') || 'default';
     var statusState = status ? (status.getAttribute('data-copy-state') || '') : '';
+    var buttonText = getLocalizedText(label, buttonState === 'success' ? 'success' : 'default', 'Copy Page Link');
+
+    syncCopyIcon(button, icon);
 
     if (label) {
-      label.textContent = getLocalizedText(label, buttonState === 'success' ? 'success' : 'default', 'Copy Page Link');
+      label.textContent = buttonText;
     }
+
+    button.setAttribute(
+      'aria-label',
+      getLocalizedText(
+        button,
+        'aria-' + (buttonState === 'success' ? 'success' : buttonState === 'error' ? 'error' : 'default'),
+        buttonText
+      )
+    );
 
     if (!status) {
       return;
@@ -76,14 +101,15 @@
   buttons.forEach(function(button) {
     var container = button.closest('.page__share--copy');
     var status = container && container.querySelector('.page__share-status');
-    var label = button.querySelector('span');
+    var label = button.querySelector('.js-copy-label') || button.querySelector('span');
+    var icon = button.querySelector('.js-copy-icon');
     var resetTimer = null;
 
     button.setAttribute('data-copy-state', 'default');
     if (status) {
       status.setAttribute('data-copy-state', '');
     }
-    syncCopyFeedback(button, label, status);
+    syncCopyFeedback(button, label, status, icon);
 
     button.addEventListener('click', function() {
       copyCurrentUrl().then(function() {
@@ -91,7 +117,7 @@
         if (status) {
           status.setAttribute('data-copy-state', 'success');
         }
-        syncCopyFeedback(button, label, status);
+        syncCopyFeedback(button, label, status, icon);
 
         window.clearTimeout(resetTimer);
         resetTimer = window.setTimeout(function() {
@@ -99,19 +125,28 @@
           if (status) {
             status.setAttribute('data-copy-state', '');
           }
-          syncCopyFeedback(button, label, status);
+          syncCopyFeedback(button, label, status, icon);
         }, 2200);
       }).catch(function() {
         if (status) {
           status.setAttribute('data-copy-state', 'error');
         }
-        button.setAttribute('data-copy-state', 'default');
-        syncCopyFeedback(button, label, status);
+        button.setAttribute('data-copy-state', 'error');
+        syncCopyFeedback(button, label, status, icon);
+
+        window.clearTimeout(resetTimer);
+        resetTimer = window.setTimeout(function() {
+          button.setAttribute('data-copy-state', 'default');
+          if (status) {
+            status.setAttribute('data-copy-state', '');
+          }
+          syncCopyFeedback(button, label, status, icon);
+        }, 2200);
       });
     });
 
     window.addEventListener('site-language-change', function() {
-      syncCopyFeedback(button, label, status);
+      syncCopyFeedback(button, label, status, icon);
     });
   });
 })();

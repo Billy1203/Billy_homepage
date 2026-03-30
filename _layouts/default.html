@@ -21,7 +21,8 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  {% capture body_classes %}{% if page.collection %} collection--{{ page.collection | slugify }}{% endif %}{% if page.layout %} layout--{{ page.layout | slugify }}{% endif %}{% if page.url == "/" or page.permalink == "/" %} page-home{% endif %}{% endcapture %}
+  <body{% if body_classes != "" %} class="{{ body_classes | strip }}"{% endif %}>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}

@@ -2,80 +2,69 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("site-nav");
   if (!nav) return;
 
-  const primary = nav.querySelector(".greedy-nav__primary");
+  const brand = nav.querySelector(".greedy-nav__brand");
   const links = nav.querySelector(".greedy-nav__links");
-  const hidden = nav.querySelector(".greedy-nav__hidden-links");
-  const toggle = nav.querySelector(".greedy-nav__toggle");
+  const linkItems = Array.from(nav.querySelectorAll(".greedy-nav__item"));
+  const mobileMenu = nav.querySelector(".greedy-nav__mobile-menu");
+  const theme = nav.querySelector(".greedy-nav__theme");
 
-  if (!primary || !links || !hidden || !toggle) return;
-
-  const items = Array.from(links.children);
+  if (!brand || !links || !linkItems.length || !mobileMenu || !theme) return;
   let frame = null;
-
-  const getCurrentLanguage = () => (
-    document.documentElement.getAttribute("data-language") === "zh" ? "zh" : "en"
-  );
-
-  const getLocalizedLabel = (element, key, fallback) => (
-    element.getAttribute(`data-${key}-${getCurrentLanguage()}`) ||
-    element.getAttribute(`data-${key}-en`) ||
-    fallback
-  );
+  const compactMenuQuery = window.matchMedia("(max-width: 40em)");
+  const navGap = 12;
+  const widthTolerance = 1;
 
   const getViewportWidth = () => {
     const visualViewportWidth = window.visualViewport?.width;
     return Math.min(window.innerWidth, visualViewportWidth || window.innerWidth);
   };
 
-  const syncToggleState = () => {
-    const hiddenCount = hidden.children.length;
-    toggle.setAttribute("data-count", String(hiddenCount));
-    toggle.setAttribute(
-      "aria-label",
-      hidden.classList.contains("is-hidden")
-        ? getLocalizedLabel(toggle, "open-label", "Open navigation menu")
-        : getLocalizedLabel(toggle, "close-label", "Close navigation menu")
-    );
+  const closeMobileMenu = () => {
+    mobileMenu.removeAttribute("open");
   };
 
-  const resetLinks = () => {
-    items.forEach((item) => {
-      links.appendChild(item);
-    });
-    hidden.classList.add("is-hidden");
-    toggle.classList.remove("close");
-    toggle.classList.add("is-hidden");
-    toggle.setAttribute("aria-expanded", "false");
-    syncToggleState();
+  const parseSize = (value) => {
+    const parsedValue = parseFloat(value || "0");
+    return Number.isFinite(parsedValue) ? parsedValue : 0;
+  };
+
+  const getAvailableMiddleWidth = () => {
+    const brandRect = brand.getBoundingClientRect();
+    const themeRect = theme.getBoundingClientRect();
+    return Math.max(0, themeRect.left - brandRect.right - navGap * 2);
+  };
+
+  const getRequiredMiddleWidth = () => {
+    const linkStyles = window.getComputedStyle(links);
+    const gap = parseSize(linkStyles.columnGap || linkStyles.gap);
+
+    const itemsWidth = linkItems.reduce((totalWidth, item) => {
+      const itemStyles = window.getComputedStyle(item);
+      const marginLeft = parseSize(itemStyles.marginLeft);
+      const marginRight = parseSize(itemStyles.marginRight);
+      return totalWidth + item.getBoundingClientRect().width + marginLeft + marginRight;
+    }, 0);
+
+    return Math.ceil(itemsWidth + gap * Math.max(0, linkItems.length - 1));
   };
 
   const layoutNav = () => {
-    resetLinks();
-
     const viewportWidth = getViewportWidth();
-    const dropdownViewport = viewportWidth < 560;
-    const narrowViewport = viewportWidth < 480;
-    const minVisibleItems = narrowViewport ? 0 : 1;
+    if (viewportWidth <= 0) return;
 
-    if (dropdownViewport) {
-      toggle.classList.remove("is-hidden");
-      items.forEach((item) => {
-        hidden.appendChild(item);
-      });
-      syncToggleState();
+    if (compactMenuQuery.matches) {
+      nav.classList.add("greedy-nav--compact");
+      closeMobileMenu();
       return;
     }
 
-    while (links.scrollWidth > links.clientWidth && links.children.length > minVisibleItems) {
-      toggle.classList.remove("is-hidden");
-      hidden.prepend(links.lastElementChild);
-    }
+    nav.classList.remove("greedy-nav--compact");
+    const availableMiddleWidth = getAvailableMiddleWidth();
+    const requiredMiddleWidth = getRequiredMiddleWidth();
+    const shouldUseCompactMenu = requiredMiddleWidth - availableMiddleWidth > widthTolerance;
 
-    if (!hidden.children.length) {
-      toggle.classList.add("is-hidden");
-    }
-
-    syncToggleState();
+    nav.classList.toggle("greedy-nav--compact", shouldUseCompactMenu);
+    closeMobileMenu();
   };
 
   const scheduleLayout = () => {
@@ -86,34 +75,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  toggle.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (toggle.classList.contains("is-hidden")) return;
-    hidden.classList.toggle("is-hidden");
-    toggle.classList.toggle("close", !hidden.classList.contains("is-hidden"));
-    toggle.setAttribute("aria-expanded", hidden.classList.contains("is-hidden") ? "false" : "true");
-    syncToggleState();
-  });
-
   document.addEventListener("click", (event) => {
     if (nav.contains(event.target)) return;
-    hidden.classList.add("is-hidden");
-    toggle.classList.remove("close");
-    toggle.setAttribute("aria-expanded", "false");
-    syncToggleState();
-  });
-
-  hidden.addEventListener("click", () => {
-    hidden.classList.add("is-hidden");
-    toggle.classList.remove("close");
-    toggle.setAttribute("aria-expanded", "false");
-    syncToggleState();
+    closeMobileMenu();
   });
 
   window.addEventListener("resize", scheduleLayout);
   window.visualViewport?.addEventListener("resize", scheduleLayout);
   window.addEventListener("orientationchange", scheduleLayout);
-  window.addEventListener("site-language-change", syncToggleState);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleLayout).catch(() => {});
+  }
 
   scheduleLayout();
 });

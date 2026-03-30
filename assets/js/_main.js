@@ -104,4 +104,113 @@ $(document).ready(function(){
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
 
+  var initPlogFilters = function() {
+    var filterRoot = document.querySelector("[data-plog-filters]");
+    var feed = document.querySelector("[data-plogs-feed]");
+
+    if (!filterRoot || !feed) {
+      return;
+    }
+
+    var buttons = Array.prototype.slice.call(filterRoot.querySelectorAll("[data-plog-filter]"));
+    var items = Array.prototype.slice.call(feed.querySelectorAll("[data-plog-item]"));
+    var emptyState = document.querySelector("[data-plogs-empty]");
+    var activeFilters = [];
+    var emptyFeedbackTimer = null;
+
+    var hasActiveFilter = function(filterKey) {
+      return activeFilters.indexOf(filterKey) !== -1;
+    };
+
+    var getVisibleCount = function(filters) {
+      var hasFilters = filters.length > 0;
+      var visibleCount = 0;
+
+      items.forEach(function(item) {
+        var itemType = item.getAttribute("data-plog-type") || "";
+        var matches = !hasFilters || filters.indexOf(itemType) !== -1;
+
+        if (matches) {
+          visibleCount += 1;
+        }
+      });
+
+      return visibleCount;
+    };
+
+    var hideEmptyFeedback = function() {
+      if (!emptyState) {
+        return;
+      }
+
+      window.clearTimeout(emptyFeedbackTimer);
+      emptyState.hidden = true;
+    };
+
+    var showEmptyFeedback = function() {
+      if (!emptyState) {
+        return;
+      }
+
+      window.clearTimeout(emptyFeedbackTimer);
+      emptyState.hidden = false;
+      emptyFeedbackTimer = window.setTimeout(function() {
+        emptyState.hidden = true;
+      }, 2400);
+    };
+
+    var syncButtonState = function(button) {
+      var filterKey = button.getAttribute("data-plog-filter");
+      var isActive = hasActiveFilter(filterKey);
+
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    };
+
+    var syncVisibleItems = function() {
+      var hasFilters = activeFilters.length > 0;
+
+      items.forEach(function(item) {
+        var itemType = item.getAttribute("data-plog-type") || "";
+        var matches = !hasFilters || hasActiveFilter(itemType);
+
+        item.hidden = !matches;
+        item.classList.toggle("is-filtered-out", !matches);
+      });
+
+      filterRoot.classList.toggle("has-active-filters", hasFilters);
+    };
+
+    buttons.forEach(function(button) {
+      syncButtonState(button);
+
+      button.addEventListener("click", function() {
+        var filterKey = button.getAttribute("data-plog-filter");
+        var nextFilters = activeFilters.slice();
+        var filterIndex = nextFilters.indexOf(filterKey);
+
+        if (filterIndex === -1) {
+          nextFilters.push(filterKey);
+        } else {
+          nextFilters.splice(filterIndex, 1);
+        }
+
+        if (nextFilters.length > 0 && getVisibleCount(nextFilters) === 0) {
+          showEmptyFeedback();
+          return;
+        }
+
+        hideEmptyFeedback();
+        activeFilters = nextFilters;
+        buttons.forEach(syncButtonState);
+        syncVisibleItems();
+      });
+    });
+
+    hideEmptyFeedback();
+    syncVisibleItems();
+  };
+
+  initPlogFilters();
+
 });

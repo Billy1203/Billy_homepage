@@ -14,7 +14,48 @@
   {% assign title_zh = post.title_zh | default: post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+{% assign plog_type_en = post.type | strip %}
+{% assign plog_type_zh = post.type_zh | default: post.type | strip %}
+{% capture plog_context_en %}
+  {% if post.venue %}{{ post.venue }}{% endif %}
+  {% if post.location %}{% if post.venue %} · {% endif %}{{ post.location }}{% endif %}
+{% endcapture %}
+{% capture plog_context_zh %}
+  {% if post.venue_zh or post.venue %}{{ post.venue_zh | default: post.venue }}{% endif %}
+  {% if post.location_zh or post.location %}{% if post.venue_zh or post.venue %} · {% endif %}{{ post.location_zh | default: post.location }}{% endif %}
+{% endcapture %}
+{% assign plog_context_en = plog_context_en | strip %}
+{% assign plog_context_zh = plog_context_zh | strip %}
+
+{% assign plog_type_key = "" %}
+{% case post.type %}
+  {% when "Trip ✈️" %}
+    {% assign plog_type_key = "trip" %}
+  {% when "Essay ✍️" %}
+    {% assign plog_type_key = "essay" %}
+  {% when "Relocation 🏠" %}
+    {% assign plog_type_key = "relocation" %}
+  {% when "Move 🏠" %}
+    {% assign plog_type_key = "relocation" %}
+  {% when "Journey ☀️" %}
+    {% assign plog_type_key = "journey" %}
+{% endcase %}
+{% if plog_type_key == "" %}
+  {% case post.type_zh %}
+    {% when "旅行 ✈️" %}
+      {% assign plog_type_key = "trip" %}
+    {% when "随笔 ✍️" %}
+      {% assign plog_type_key = "essay" %}
+    {% when "驻留 🏠" %}
+      {% assign plog_type_key = "relocation" %}
+    {% when "搬迁 🏠" %}
+      {% assign plog_type_key = "relocation" %}
+    {% when "途中 ☀️" %}
+      {% assign plog_type_key = "journey" %}
+  {% endcase %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item" data-plog-item{% if plog_type_key != "" %} data-plog-type="{{ plog_type_key }}"{% endif %}>
   <article class="archive__item archive__item--plog" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -36,35 +77,27 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{% include i18n-text.html en=title zh=title_zh %}</a>
       {% endif %}
     </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
     {% if post.date %}
       {% capture plog_list_date_en %}{{ post.date | date: "%B %d, %Y" }}{% endcapture %}
       {% capture plog_list_date_zh %}{{ post.date | date: "%Y年%-m月%-d日" }}{% endcapture %}
-      <p class="page__meta"><i class="fa fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en=plog_list_date_en zh=plog_list_date_zh %}</p>
+      <p class="archive__item-timestamp"><i class="fa fa-calendar" aria-hidden="true"></i> {% include i18n-text.html en=plog_list_date_en zh=plog_list_date_zh %}</p>
     {% endif %}
 
-    {% capture plog_meta %}
-      {% if post.type %}{{ post.type }}{% endif %}
-      {% if post.venue %}{% if post.type %}, {% endif %}{{ post.venue }}{% endif %}
-      {% if post.location %}{% if post.type or post.venue %}, {% endif %}{{ post.location }}{% endif %}
-    {% endcapture %}
-    {% capture plog_meta_zh %}
-      {% if post.type_zh or post.type %}{{ post.type_zh | default: post.type }}{% endif %}
-      {% if post.venue_zh or post.venue %}{% if post.type_zh or post.type %}，{% endif %}{{ post.venue_zh | default: post.venue }}{% endif %}
-      {% if post.location_zh or post.location %}{% if post.type_zh or post.type or post.venue_zh or post.venue %}，{% endif %}{{ post.location_zh | default: post.location }}{% endif %}
-    {% endcapture %}
-    {% assign plog_meta = plog_meta | strip %}
-    {% assign plog_meta_zh = plog_meta_zh | strip %}
-    {% if plog_meta != "" %}
-      <p class="archive__item-excerpt" itemprop="description">{% include i18n-text.html en=plog_meta zh=plog_meta_zh %}</p>
+    {% if plog_type_en != "" or plog_context_en != "" %}
+      <p class="archive__item-context">
+        {% if plog_type_en != "" %}
+          <span class="archive__item-context-tag{% if plog_type_key != "" %} archive__item-context-tag--{{ plog_type_key }}{% endif %}">{% include i18n-text.html en=plog_type_en zh=plog_type_zh %}</span>
+        {% endif %}
+        {% if plog_context_en != "" %}
+          <span class="archive__item-context-text">{% include i18n-text.html en=plog_context_en zh=plog_context_zh %}</span>
+        {% endif %}
+      </p>
     {% endif %}
 
-    {% capture plog_excerpt_en %}{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
-    {% capture plog_excerpt_zh %}{{ post.excerpt_zh | default: post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
+    {% capture plog_excerpt_en %}{{ post.excerpt | markdownify | replace: "</li>\n<li>", " · " | replace: "</li><li>", " · " | replace: "</p>\n<p>", " " | replace: "</p><p>", " " | replace: "</li>", "" | replace: "</p>", " " | replace: "<br />", " " | strip_html | strip_newlines | replace: "  ", " " | replace: "  ", " " | strip }}{% endcapture %}
+    {% capture plog_excerpt_zh %}{{ post.excerpt_zh | default: post.excerpt | markdownify | replace: "</li>\n<li>", " · " | replace: "</li><li>", " · " | replace: "</p>\n<p>", " " | replace: "</p><p>", " " | replace: "</li>", "" | replace: "</p>", " " | replace: "<br />", " " | strip_html | strip_newlines | replace: "  ", " " | replace: "  ", " " | strip }}{% endcapture %}
     {% if post.excerpt %}
-      <p class="archive__item-excerpt" itemprop="description">{% include i18n-text.html en=plog_excerpt_en zh=plog_excerpt_zh %}</p>
+      <p class="archive__item-excerpt archive__item-excerpt--plog" itemprop="description">{% include i18n-text.html en=plog_excerpt_en zh=plog_excerpt_zh %}</p>
     {% endif %}
   </article>
 </div>

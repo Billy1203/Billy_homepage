@@ -13,7 +13,7 @@ main:
     url: /projects/
 
   - title: "Footprints"
-    title_zh: "足迹"
+    title_zh: "杂文"
     url: /plogs/
     
 #  - title: "Portfolio"

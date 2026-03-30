@@ -8,7 +8,7 @@ This file is the fastest way to find where to edit content in this site.
 - CV page: [`_pages/cv.md`](/Users/yiheng/Billy_homepage/_pages/cv.md)
 - Publications landing page: [`_pages/publications.md`](/Users/yiheng/Billy_homepage/_pages/publications.md)
 - Projects landing page: [`_pages/projects.md`](/Users/yiheng/Billy_homepage/_pages/projects.md)
-- Footprints landing page: [`_pages/footprints-on-the-road.md`](/Users/yiheng/Billy_homepage/_pages/footprints-on-the-road.md)
+- Footprints landing page: [`_pages/footprints.md`](/Users/yiheng/Billy_homepage/_pages/footprints.md)
 - Top navigation: [`_data/navigation.yml`](/Users/yiheng/Billy_homepage/_data/navigation.yml)
 - Site title, author info, avatar, social links: [`_config.yml`](/Users/yiheng/Billy_homepage/_config.yml)
 - Sidebar / author card structure: [`_includes/author-profile.html`](/Users/yiheng/Billy_homepage/_includes/author-profile.html)

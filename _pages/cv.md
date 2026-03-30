@@ -97,15 +97,15 @@ redirect_from:
 ## 教育背景
 
 * **研究型硕士**，利物浦大学（UoL），英国利物浦 🇬🇧 / 西交利物浦大学，中国苏州 🇨🇳 <span class="cv-date-pill">2022.9 - 2024.4</span>
-  * Advanced Technology 学院，专业方向为**模式识别与智能系统**，以 Distinction 毕业
+  * 智能工程学院，专业方向为**模式识别与智能系统**，以 Distinction 毕业
   * 学位论文：_基于多传感器融合的三维感知算法研究_ [[项目详情]](../projects/2024-master.html)
-  * 获 Best Overall Award（JITRI-XJTLU 前 2%），由浙江大学提供全额资助（Top 5% studentship）
+  * 获 Best Overall Award（西浦-集萃学院 前 2%），由浙江大学提供全额资助。
 
 * **工学学士**，南方科技大学（SUSTech），中国深圳 🇨🇳 <span class="cv-date-pill">2015.9 - 2019.7</span>
   * [计算机科学与工程系](https://cse.sustech.edu.cn/en)，专业为**计算机科学与技术**
-  * 毕业设计：_基于 RGB 相机阵列的实时三维人体骨架重建_ [[项目详情]](../projects/2019-bachelor.html)
+  * 毕业设计：_实时三维人体模型重建的 RGB 相机阵列系统_ [[项目详情]](../projects/2019-bachelor.html)
   * 工学院综合设计竞赛二等奖
-  * 2019 届优秀本科毕业论文
+  * 2019 届优秀本科生毕业论文
 
   <details>
   <summary><strong>关于南方科技大学</strong></summary>
@@ -116,11 +116,11 @@ redirect_from:
   </ul>
   </details>
 
-* 暑期项目，不列颠哥伦比亚大学（UBC），加拿大温哥华 🇨🇦 <span class="cv-date-pill">2017.6 - 2017.9</span>
+* 短期交流，不列颠哥伦比亚大学（UBC），加拿大温哥华 🇨🇦 <span class="cv-date-pill">2017.6 - 2017.9</span>
   * ECE 暑期项目优秀学员
 
 <details>
-<summary><strong>博士录取（已获得 offer，曾计划入学）</strong></summary>
+<summary><strong>博士录取（计划入学，无果）</strong></summary>
 <ul>
   <li>利兹大学 🇬🇧，School of Computing，方向为 Computing & Robotics</li>
   <li>格拉斯哥大学 🇬🇧，School of Engineering，方向为 EEE</li>
@@ -134,10 +134,11 @@ redirect_from:
 * [Jabbr](https://jabbr.ai/) <span class="cv-date-pill">2025.9 - now</span>
   * **AI 算法工程师**
 
-* [OMOway](https://www.omoway.com/) <span class="cv-date-pill">2024.12 - 2025.08</span>
+* [目蔚科技](https://www.omoway.com/) <span class="cv-date-pill">2024.12 - 2025.08</span>
   * **V-SLAM 算法工程师**
+  * 参与了公司首款产品的自动驾驶感知算法开发，负责视觉定位、里程计和静态/动态地图构建。
 
-* [*GAP 阶段*] [鼎新资本](http://www.dingxin-capital.com) <span class="cv-date-pill">2024.6 - 2024.11</span>
+* [*GAP 阶段*] [鼎心资本](http://www.dingxin-capital.com) <span class="cv-date-pill">2024.6 - 2024.11</span>
   * **AI 产业分析师**
   * 深度接触 100 余家创业公司，对创业、融资与早期公司的真实运营逻辑形成了更直接的理解。
 
@@ -149,16 +150,16 @@ redirect_from:
 
 * [*兼职*] [西交利物浦大学](https://www.xjtlu.edu.cn/en) <span class="cv-date-pill">2022.9 - 2024.3</span>
   * **助教**
-    * DTS201TC Pattern Recognition（130+ 本科生）
-    * DTS206TC Applied Linear Statistical Models（130+ 本科生）
+    * DTS201TC 模式识别（130+ 本科生）
+    * DTS206TC 应用线性统计模型（130+ 本科生）
 
 * [南方科技大学](https://www.sustech.edu.cn/en/) <span class="cv-date-pill">2019.9 - 2022.8</span>
   * 在 [ISUS Lab](https://github.com/sustech-isus) 担任**科研与教学助理**
-    * CS401 Intelligent Robotics（70+ 本科生）
-    * CS405 Machine Learning（90+ 本科生及研究生）
+    * CS401 智能机器人（70+ 本科生）
+    * CS405 机器学习（90+ 本科生及研究生）
   * 前两年同时兼任**计算机视觉工程师** <span class="cv-date-pill">2019.9 - 2021.8</span>
-    * Roboeye Technology（深圳）有限公司，深圳市南山区领航团队项目企业
-    * 主导了一项延续本科毕业设计与综合设计项目的应用研究工作
+    * 械瞳科技（深圳）有限公司，深圳市南山区领航团队项目企业
+    * 主导了一项延续本科毕业设计项目的应用研究工作
 
 ## 技能
 
