@@ -37,28 +37,10 @@ My dissertation scored 88, ranking 1st in the school and earning a distinction.
 </div>
 
 <h3>{% include i18n-text.html en="Oral Presentation" zh="答辩展示" %}</h3>
-<div class="document-viewer-shell">
-  <div class="lazy-embed js-lazy-embed">
-    <p class="lazy-embed__summary">{% include i18n-text.html en="PDF preview loads only when requested so the page stays responsive." zh="PDF 预览仅在主动点击后加载，以保持页面响应速度。" %}</p>
-    <button class="btn btn--inverse lazy-embed__trigger" type="button" data-default-en="Load Presentation Preview" data-default-zh="加载展示预览" data-loaded-en="Presentation Preview Loaded" data-loaded-zh="展示预览已加载">Load Presentation Preview</button>
-    <iframe class="document-embed document-embed--pdf lazy-embed__frame" data-src="../files/MRes_presentation.pdf" title="MRes presentation preview" data-i18n-title-en="MRes presentation preview" data-i18n-title-zh="硕士答辩展示预览" loading="lazy"></iframe>
-  </div>
-</div>
-<div class="content-link-row">
-  <a class="btn btn--inverse" href="../files/MRes_presentation.pdf" target="_blank" rel="noopener">{% include i18n-text.html en="Open Presentation PDF" zh="打开展示 PDF" %}</a>
-</div>
+{% include content-media.html kind="pdf" src="../files/MRes_presentation.pdf" title_en="MRes presentation preview" title_zh="硕士答辩展示预览" open_href="../files/MRes_presentation.pdf" open_label_en="Open Presentation PDF" open_label_zh="打开展示 PDF" %}
 
 <h3>{% include i18n-text.html en="Master Dissertation" zh="硕士论文" %}</h3>
-<div class="document-viewer-shell">
-  <div class="lazy-embed js-lazy-embed">
-    <p class="lazy-embed__summary">{% include i18n-text.html en="PDF preview loads only when requested so the page stays responsive." zh="PDF 预览仅在主动点击后加载，以保持页面响应速度。" %}</p>
-    <button class="btn btn--inverse lazy-embed__trigger" type="button" data-default-en="Load Dissertation Preview" data-default-zh="加载论文预览" data-loaded-en="Dissertation Preview Loaded" data-loaded-zh="论文预览已加载">Load Dissertation Preview</button>
-    <iframe class="document-embed document-embed--pdf lazy-embed__frame" data-src="../files/MRes_dissertation.pdf" title="MRes dissertation preview" data-i18n-title-en="MRes dissertation preview" data-i18n-title-zh="硕士论文预览" loading="lazy"></iframe>
-  </div>
-</div>
-<div class="content-link-row">
-  <a class="btn btn--inverse" href="../files/MRes_dissertation.pdf" target="_blank" rel="noopener">{% include i18n-text.html en="Open Dissertation PDF" zh="打开论文 PDF" %}</a>
-</div>
+{% include content-media.html kind="pdf" src="../files/MRes_dissertation.pdf" title_en="MRes dissertation preview" title_zh="硕士论文预览" open_href="../files/MRes_dissertation.pdf" open_label_en="Open Dissertation PDF" open_label_zh="打开论文 PDF" %}
 
 ---
 

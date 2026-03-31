@@ -10,8 +10,6 @@ watermark_label: "Projects"
 watermark_label_zh: "项目"
 ---
 
-{% include base_path %}
-
 {% for post in site.projects reversed %}
   {% include archive-single.html %}
 {% endfor %}

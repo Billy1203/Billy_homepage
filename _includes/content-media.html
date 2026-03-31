@@ -1,0 +1,42 @@
+{% assign media_kind = include.kind | default: "pdf" %}
+{% assign shell_class = include.shell_class | default: "document-viewer-shell" %}
+{% assign frame_class = include.frame_class | default: "document-embed" %}
+{% assign kind_class = include.kind_class %}
+{% assign open_style = include.open_style | default: "btn--inverse" %}
+{% assign secondary_style = include.secondary_style | default: "btn--primary" %}
+
+{% if kind_class == nil or kind_class == "" %}
+  {% capture kind_class %}document-embed--{{ media_kind }}{% endcapture %}
+{% endif %}
+
+{% if media_kind == "video" %}
+  {% unless shell_class contains "document-viewer-shell--video" %}
+    {% assign shell_class = shell_class | append: " document-viewer-shell--video" %}
+  {% endunless %}
+{% endif %}
+
+{% if include.kicker_en or include.kicker_zh %}
+  <p class="publication-kicker">{% include i18n-text.html en=include.kicker_en zh=include.kicker_zh %}</p>
+{% endif %}
+
+<div class="{{ shell_class }}">
+  {% if media_kind == "video" %}
+    <video class="{{ frame_class }} {{ kind_class }}" controls preload="metadata" playsinline>
+      <source src="{{ include.src }}" type="{{ include.source_type | default: 'video/mp4' }}">
+      {% include i18n-text.html en="Your browser does not support embedded video playback." zh="当前浏览器不支持内嵌视频播放。" %}
+    </video>
+  {% else %}
+    <iframe class="{{ frame_class }} {{ kind_class }}" src="{{ include.src }}" title="{{ include.title_en | default: include.title_zh | default: 'PDF preview' }}" {% if include.title_en %}data-i18n-title-en="{{ include.title_en }}"{% endif %}{% if include.title_zh %} data-i18n-title-zh="{{ include.title_zh }}"{% endif %}></iframe>
+  {% endif %}
+</div>
+
+{% if include.open_href or include.secondary_href %}
+  <div class="content-link-row">
+    {% if include.open_href %}
+      <a class="btn {{ open_style }}" href="{{ include.open_href }}" target="_blank" rel="noopener">{% include i18n-text.html en=include.open_label_en zh=include.open_label_zh %}</a>
+    {% endif %}
+    {% if include.secondary_href %}
+      <a class="btn {{ secondary_style }}" href="{{ include.secondary_href }}" target="_blank" rel="noopener">{% include i18n-text.html en=include.secondary_label_en zh=include.secondary_label_zh %}</a>
+    {% endif %}
+  </div>
+{% endif %}

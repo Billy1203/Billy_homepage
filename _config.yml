@@ -15,7 +15,7 @@ name                     : &name "Yiheng XUE"
 description              : &description "personal description"
 url                      : "https://yihengxue.com"
 baseurl                  : # "/testtttttttt" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "Billy1203/Billy_homepage"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.

@@ -1,0 +1,11 @@
+<div class="page__reader-actions">
+  {% if page.share %}
+    {% include copy-link-button.html share_classes="page__share--copy--icon" button_classes="btn btn--inverse btn--icon" icon_only=true %}
+  {% endif %}
+  {% if include.back_url and include.back_url != "" %}
+    <a href="{{ include.back_url }}" class="btn btn--inverse btn--icon btn--page-back" aria-label="{{ include.back_label_en | default: 'Back' }}">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      <span class="sr-only">{% include i18n-text.html en=include.back_label_en zh=include.back_label_zh %}</span>
+    </a>
+  {% endif %}
+</div>

@@ -210,24 +210,3 @@ If you are building something ambitious in robotics or perception, I would be gl
       decoding="async">
   </div>
 </div>
-
-<div class="font-preview-panel font-preview-panel--footer" aria-label="Font preview presets" data-i18n-aria-label-en="Font preview presets" data-i18n-aria-label-zh="字体与阅读预设">
-  <div class="font-preview-panel__group">
-    <span class="font-preview-panel__label">{% include i18n-text.html en="Typeface Preview" zh="浏览字体" %}</span>
-    <div class="font-preview-panel__options">
-      <button type="button" class="font-preview-panel__option is-active" data-font-preset="default">{% include i18n-text.html en="Current" zh="当前" %}</button>
-      <button type="button" class="font-preview-panel__option" data-font-preset="system-sans">{% include i18n-text.html en="System Sans" zh="系统" %}</button>
-      <button type="button" class="font-preview-panel__option" data-font-preset="editorial">{% include i18n-text.html en="Editorial" zh="编辑" %}</button>
-      <button type="button" class="font-preview-panel__option" data-font-preset="scholar">{% include i18n-text.html en="Scholar" zh="学术" %}</button>
-      <button type="button" class="font-preview-panel__option" data-font-preset="studio">{% include i18n-text.html en="Studio" zh="设计" %}</button>
-    </div>
-  </div>
-  <div class="font-preview-panel__group">
-    <span class="font-preview-panel__label">{% include i18n-text.html en="Reading Density" zh="阅读密度" %}</span>
-    <div class="font-preview-panel__options">
-      <button type="button" class="font-preview-panel__option is-active" data-density-preset="balanced">{% include i18n-text.html en="Balanced" zh="均衡" %}</button>
-      <button type="button" class="font-preview-panel__option" data-density-preset="compact">{% include i18n-text.html en="Compact" zh="紧凑" %}</button>
-      <button type="button" class="font-preview-panel__option" data-density-preset="relaxed">{% include i18n-text.html en="Relaxed" zh="舒展" %}</button>
-    </div>
-  </div>
-</div>

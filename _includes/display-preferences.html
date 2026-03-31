@@ -1,0 +1,35 @@
+<section class="page__footer-display-dock" aria-label="Display preferences" data-i18n-aria-label-en="Display preferences" data-i18n-aria-label-zh="显示偏好">
+  <details class="page__footer-display-menu">
+    <summary class="page__footer-display-summary">
+      <i class="fa fa-font" aria-hidden="true"></i>
+      {% include i18n-text.html en="Typeface" zh="字体" class="page__footer-display-summary-label" %}
+    </summary>
+    <div class="page__footer-display-panel">
+      <div class="page__footer-display-options">
+        <button type="button" class="font-preview-panel__option page__footer-display-option is-active" data-font-preset="default">{% include i18n-text.html en="Current" zh="当前" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="comfortaa">Comfortaa</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="georgia">Georgia</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="verdana">Verdana</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="system-sans">{% include i18n-text.html en="System" zh="系统" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="editorial">{% include i18n-text.html en="Editorial" zh="编辑" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="scholar">{% include i18n-text.html en="Scholar" zh="学术" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-font-preset="studio">{% include i18n-text.html en="Studio" zh="设计" %}</button>
+      </div>
+    </div>
+  </details>
+
+  <details class="page__footer-display-menu">
+    <summary class="page__footer-display-summary">
+      <i class="fa fa-align-justify" aria-hidden="true"></i>
+      {% include i18n-text.html en="Density" zh="密度" class="page__footer-display-summary-label" %}
+    </summary>
+    <div class="page__footer-display-panel">
+      <div class="page__footer-display-options">
+        <button type="button" class="font-preview-panel__option page__footer-display-option is-active" data-density-preset="balanced">{% include i18n-text.html en="Balanced" zh="均衡" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-density-preset="compact">{% include i18n-text.html en="Compact" zh="紧凑" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-density-preset="relaxed">{% include i18n-text.html en="Relaxed" zh="舒展" %}</button>
+        <button type="button" class="font-preview-panel__option page__footer-display-option" data-density-preset="wide">{% include i18n-text.html en="Wide" zh="宽松" %}</button>
+      </div>
+    </div>
+  </details>
+</section>

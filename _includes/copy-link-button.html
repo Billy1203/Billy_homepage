@@ -1,0 +1,20 @@
+{% capture copy_share_classes %}page__share page__share--copy{% if include.share_classes %} {{ include.share_classes }}{% endif %}{% endcapture %}
+{% assign copy_button_classes = include.button_classes | default: "btn btn--inverse" %}
+
+<section class="{{ copy_share_classes | strip }}">
+  <button
+    type="button"
+    class="{{ copy_button_classes }} js-copy-link"
+    aria-label="Copy Page Link"
+    data-aria-default-en="Copy Page Link"
+    data-aria-default-zh="复制页面链接"
+    data-aria-success-en="Link copied"
+    data-aria-success-zh="链接已复制"
+    data-aria-error-en="Copy failed"
+    data-aria-error-zh="复制失败"
+  >
+    <i class="fa fa-link js-copy-icon" aria-hidden="true" data-default-icon="fa-link" data-success-icon="fa-check"></i>
+    <span class="{% if include.icon_only %}sr-only {% endif %}js-copy-label" data-default-en="Copy Page Link" data-default-zh="复制页面链接" data-success-en="Copied" data-success-zh="已复制">Copy Page Link</span>
+  </button>
+  <span class="page__share-status" aria-live="polite" data-success-en="Link copied to clipboard." data-success-zh="链接已复制到剪贴板。" data-error-en="Copy failed. Please copy the URL manually." data-error-zh="复制失败，请手动复制当前链接。"></span>
+</section>

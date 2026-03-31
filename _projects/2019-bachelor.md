@@ -35,12 +35,7 @@ I was one of the inaugural participants in the Capstone Design project at the Sc
 </div>
 
 <h3>{% include i18n-text.html en="Video" zh="视频" %}</h3>
-<div class="document-viewer-shell document-viewer-shell--video">
-  <video class="document-embed document-embed--video" controls preload="metadata" playsinline>
-    <source src="../files/Real-time 3D human skeleton reconstruction based on RGB camera array.mp4" type="video/mp4">
-    Your browser does not support embedded video playback.
-  </video>
-</div>
+{% include content-media.html kind="video" src="../files/Real-time 3D human skeleton reconstruction based on RGB camera array.mp4" %}
 
 ---
 

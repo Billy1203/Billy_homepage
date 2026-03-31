@@ -158,6 +158,38 @@
   }
 }
 
+.pagination__pager-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.pagination__pager-group .pagination--pager {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.65rem;
+  min-height: 2rem;
+  padding: 0.28rem 0.78rem;
+  float: none;
+  width: auto;
+  font-size: 0.88rem;
+  line-height: 1;
+  border-radius: 999px;
+}
+
+.pagination__pager-group .pagination--pager:first-child,
+.pagination__pager-group .pagination--pager:last-child {
+  margin-left: 0;
+  border-radius: 999px;
+}
+
+.pagination__pager-group .pagination--pager:last-child {
+  margin-left: auto;
+}
+
 .page__content + .pagination,
 .page__meta + .pagination,
 .page__share + .pagination,

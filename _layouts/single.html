@@ -8,6 +8,18 @@ Prefer editing `_layouts/page-content.html`.
 {% endcomment %}
 
 {% include base_path %}
+{% assign page_back_url = "" %}
+{% assign page_back_label_en = "" %}
+{% assign page_back_label_zh = "" %}
+{% if page.collection == 'publications' %}
+  {% capture page_back_url %}{{ base_path }}/publications/{% endcapture %}
+  {% assign page_back_label_en = "Back to Publications" %}
+  {% assign page_back_label_zh = "返回论文列表" %}
+{% elsif page.collection == 'projects' %}
+  {% capture page_back_url %}{{ base_path }}/projects/{% endcapture %}
+  {% assign page_back_label_en = "Back to Projects" %}
+  {% assign page_back_label_zh = "返回项目列表" %}
+{% endif %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -32,6 +44,11 @@ Prefer editing `_layouts/page-content.html`.
       <div class="page__inner-wrap{% if page.content_width == 'wide' %} page__inner-wrap--wide{% endif %}">
         {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
           <header class="page__header{% if page.collection %} page__header--{{ page.collection | slugify }}{% endif %}">
+            {% if page.share or page_back_url != "" %}
+              <div class="page__header-topbar">
+                {% include page-header-actions.html back_url=page_back_url back_label_en=page_back_label_en back_label_zh=page_back_label_zh %}
+              </div>
+            {% endif %}
             {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
             {% if page.read_time %}
               <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -85,8 +102,6 @@ Prefer editing `_layouts/page-content.html`.
           {% include page__taxonomy.html %}
         </footer>
         {% endif %}
-
-        {% if page.share %}{% include page-actions.html %}{% endif %}
 
         {% include post_pagination.html %}
       </div>

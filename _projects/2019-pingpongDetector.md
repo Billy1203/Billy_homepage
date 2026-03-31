@@ -1,7 +1,6 @@
 ---
 title: "Pingpong-detector"
 title_zh: "乒乓球检测器"
-collection: projects
 type: "Python / Real-time system"
 type_zh: "Python / 实时系统"
 permalink: /projects/2019-project1
@@ -35,11 +34,6 @@ Pingpong detection in real time with low-cost hardware.
 </div>
 
 <h3>{% include i18n-text.html en="Video" zh="视频" %}</h3>
-<div class="document-viewer-shell document-viewer-shell--video">
-  <video class="document-embed document-embed--video" controls preload="metadata" playsinline>
-    <source src="../files/pingpongDetector.mp4" type="video/mp4">
-    Your browser does not support embedded video playback.
-  </video>
-</div>
+{% include content-media.html kind="video" src="../files/pingpongDetector.mp4" %}
 
 <p>{% include i18n-text.html en="<span class='inline-accent inline-accent--positive'>Green</span> denotes slow, and <span class='inline-accent inline-accent--alert'>Red</span> denotes fast." zh="<span class='inline-accent inline-accent--positive'>绿色</span>表示较慢，<span class='inline-accent inline-accent--alert'>红色</span>表示较快。" %}</p>

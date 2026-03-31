@@ -17,6 +17,23 @@ layout: compress
         } catch (error) {}
       })();
     </script>
+    <script>
+      (function() {
+        try {
+          var palette = window.localStorage.getItem("site-color-preset");
+          var validPalettes = {
+            celadon: true,
+            cinnabar: true,
+            inkstone: true,
+            lotus: true
+          };
+
+          if (validPalettes[palette]) {
+            document.documentElement.setAttribute("data-color-preset", palette);
+          }
+        } catch (error) {}
+      })();
+    </script>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
@@ -31,7 +48,6 @@ layout: compress
 
     <div class="page__footer">
       <footer>
-        {% include footer/custom.html %}
         {% include footer.html %}
       </footer>
     </div>

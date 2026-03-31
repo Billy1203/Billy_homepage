@@ -2,8 +2,8 @@
   var root = document.documentElement;
   var fontControls = document.querySelectorAll('[data-font-preset]');
   var densityControls = document.querySelectorAll('[data-density-preset]');
-  var validPresets = ['default', 'system-sans', 'editorial', 'scholar', 'studio'];
-  var validDensities = ['balanced', 'compact', 'relaxed'];
+  var validPresets = ['default', 'comfortaa', 'georgia', 'verdana', 'system-sans', 'editorial', 'scholar', 'studio'];
+  var validDensities = ['balanced', 'compact', 'relaxed', 'wide'];
 
   function getStoredValue(key) {
     try {
@@ -23,6 +23,15 @@
     } catch (error) {
       return;
     }
+  }
+
+  function closeDisplayMenu(control) {
+    var menu = control.closest('details');
+    if (!menu) {
+      return;
+    }
+
+    menu.removeAttribute('open');
   }
 
   function resolvePreset(preset) {
@@ -71,6 +80,7 @@
       var preset = resolvePreset(control.getAttribute('data-font-preset'));
       setStoredValue('font-preset', preset, 'default');
       applyPreset(preset);
+      closeDisplayMenu(control);
     });
   });
 
@@ -79,6 +89,7 @@
       var density = resolveDensity(control.getAttribute('data-density-preset'));
       setStoredValue('reading-density', density, 'balanced');
       applyDensity(density);
+      closeDisplayMenu(control);
     });
   });
 })();

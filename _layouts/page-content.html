@@ -5,6 +5,22 @@ layout: default
 {% include base_path %}
 {% assign ui_text_en = site.data.ui-text.en %}
 {% assign ui_text_zh = site.data.ui-text['zh-CN'] %}
+{% assign page_back_url = "" %}
+{% assign page_back_label_en = "" %}
+{% assign page_back_label_zh = "" %}
+{% assign publication_has_status = false %}
+{% if page.status or page.status_zh %}
+  {% assign publication_has_status = true %}
+{% endif %}
+{% if page.collection == 'publications' %}
+  {% capture page_back_url %}{{ base_path }}/publications/{% endcapture %}
+  {% assign page_back_label_en = "Back to Publications" %}
+  {% assign page_back_label_zh = "返回论文列表" %}
+{% elsif page.collection == 'projects' %}
+  {% capture page_back_url %}{{ base_path }}/projects/{% endcapture %}
+  {% assign page_back_label_en = "Back to Projects" %}
+  {% assign page_back_label_zh = "返回项目列表" %}
+{% endif %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -29,6 +45,11 @@ layout: default
       <div class="page__inner-wrap{% if page.content_width == 'wide' %} page__inner-wrap--wide{% endif %}">
         {% unless page.header.overlay_color or page.header.overlay_image or page.show_page_title == false %}
           <header class="page__header{% if page.collection %} page__header--{{ page.collection | slugify }}{% endif %}">
+            {% if page.share or page_back_url != "" %}
+              <div class="page__header-topbar">
+                {% include page-header-actions.html back_url=page_back_url back_label_en=page_back_label_en back_label_zh=page_back_label_zh %}
+              </div>
+            {% endif %}
             {% if page.title %}
               {% capture page_title_en %}{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
               {% capture page_title_zh %}{{ page.title_zh | default: page.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endcapture %}
@@ -60,6 +81,14 @@ layout: default
               {% capture publication_year %}{{ page.date | default: "1900-01-01" | date: "%Y" }}{% endcapture %}
               <span class="page__subhead-chip">{% include i18n-text.html en=publication_year zh=publication_year %}</span>
             </div>
+          {% elsif page.collection == 'publications' and publication_has_status %}
+            <div class="page__subhead">
+              <span class="page__subhead-chip">{% include i18n-text.html en=page.status zh=page.status_zh %}</span>
+              {% if page.date %}
+                {% capture publication_year %}{{ page.date | default: "1900-01-01" | date: "%Y" }}{% endcapture %}
+                <span class="page__subhead-chip">{% include i18n-text.html en=publication_year zh=publication_year %}</span>
+              {% endif %}
+            </div>
           {% elsif page.date %}
             {% capture page_date_en %}{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}{% endcapture %}
             {% capture page_date_zh %}{{ page.date | default: "1900-01-01" | date: "%Y年%-m月%-d日" }}{% endcapture %}
@@ -70,6 +99,16 @@ layout: default
 
         <section class="page__content" itemprop="text">
           {{ content }}
+
+          {% assign page_content_markup = content | strip %}
+          {% if page_content_markup == "" and page.collection == 'publications' and publication_has_status %}
+            <div class="lang-en">
+              <div class="content-callout">This publication is currently under review. A fuller summary will be added after the review process.</div>
+            </div>
+            <div class="lang-zh">
+              <div class="content-callout">这篇论文目前仍在审稿中，待流程结束后会补充更完整的内容说明。</div>
+            </div>
+          {% endif %}
 
           {% if page.citation or page.paperurl or page.slidesurl %}
             <section class="page__resource-panel{% if page.collection %} page__resource-panel--{{ page.collection | slugify }}{% endif %}">
@@ -96,8 +135,6 @@ layout: default
           {% include page__taxonomy.html %}
         </footer>
         {% endif %}
-
-        {% if page.share %}{% include page-actions.html %}{% endif %}
 
         {% include post_pagination.html %}
       </div>

@@ -59,6 +59,12 @@
           {% capture publication_meta_zh %}发表于 <i>{{ post.venue_zh | default: post.venue }}</i>，{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endcapture %}
           {% include i18n-text.html en=publication_meta_en zh=publication_meta_zh %}
         </p>
+      {% elsif post.status or post.status_zh %}
+        <p class="archive__item-excerpt archive__item-meta">
+          {% capture publication_status_en %}{{ post.status | default: "In progress" }}{% if post.date %}, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}{% endcapture %}
+          {% capture publication_status_zh %}{{ post.status_zh | default: post.status | default: "进行中" }}{% if post.date %}，{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}{% endcapture %}
+          {% include i18n-text.html en=publication_status_en zh=publication_status_zh %}
+        </p>
       {% elsif post.date %}
         <p class="archive__item-excerpt archive__item-meta">
           {% capture submitted_en %}Submitted on {{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}{% endcapture %}
@@ -84,20 +90,6 @@
         {% include i18n-text.html en=excerpt_en zh=excerpt_zh %}
         <strong><a href="{{ base_path }}{{ post.url }}" rel="permalink">{% include i18n-text.html en="Read more" zh="继续阅读" %}</a></strong>
       </p>
-    {% endif %}
-
-    {% if post.citation and post.paperurl and post.slidesurl %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.paperurl }}">{% include i18n-text.html en="Paper Link" zh="论文链接" %}</a> | <a href="{{ post.slidesurl }}">{% include i18n-text.html en="Download Slides" zh="下载幻灯片" %}</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.paperurl }}">{% include i18n-text.html en="Paper Link" zh="论文链接" %}</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}<br><a href="{{ post.slidesurl }}">{% include i18n-text.html en="Download Slides" zh="下载幻灯片" %}</a></p>
-    {% elsif post.citation %}
-      <p class="archive__item-excerpt archive__item-links">{{ post.citation }}</p>
-    {% elsif post.paperurl %}
-      <p class="archive__item-excerpt archive__item-links"><a href="{{ post.paperurl }}">{% include i18n-text.html en="Paper Link" zh="论文链接" %}</a></p>
-    {% elsif post.slidesurl %}
-      <p class="archive__item-excerpt archive__item-links"><a href="{{ post.slidesurl }}">{% include i18n-text.html en="Download Slides" zh="下载幻灯片" %}</a></p>
     {% endif %}
   </article>
 </div>

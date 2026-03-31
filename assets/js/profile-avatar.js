@@ -15,6 +15,16 @@
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isTransitioning = false;
 
+  function updateAvatarMetadata() {
+    avatars.forEach(function(avatar) {
+      avatar.setAttribute('role', 'button');
+      avatar.setAttribute('tabindex', '0');
+      avatar.setAttribute('draggable', 'false');
+      avatar.setAttribute('aria-label', 'Shuffle portrait and palette');
+      avatar.setAttribute('title', 'Shuffle portrait and palette');
+    });
+  }
+
   function hashList(values) {
     return values.join('|').replace(/[^a-z0-9]+/gi, '-').toLowerCase();
   }
@@ -108,6 +118,10 @@
     avatars.forEach(function(avatar) {
       avatar.setAttribute('src', source);
     });
+
+    if (window.SitePalette && typeof window.SitePalette.syncFromAvatar === 'function') {
+      window.SitePalette.syncFromAvatar(source, avatarList);
+    }
   }
 
   function preloadAvatar(source, callback) {
@@ -160,13 +174,13 @@
   }
 
   applyNextAvatar({ animate: false });
-  avatars.forEach(function(avatar) {
-    avatar.setAttribute('role', 'button');
-    avatar.setAttribute('tabindex', '0');
-    avatar.setAttribute('draggable', 'false');
-    avatar.setAttribute('aria-label', 'Shuffle portrait');
-    avatar.setAttribute('title', 'Shuffle portrait');
+  updateAvatarMetadata();
 
+  window.addEventListener('site-language-change', function() {
+    updateAvatarMetadata();
+  });
+
+  avatars.forEach(function(avatar) {
     avatar.addEventListener('click', function() {
       if (isTransitioning) {
         return;
