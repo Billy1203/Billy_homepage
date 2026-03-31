@@ -1,5 +1,6 @@
 (function() {
   var root = document.documentElement;
+  var displayMenus = document.querySelectorAll('.page__footer-display-menu');
   var fontControls = document.querySelectorAll('[data-font-preset]');
   var densityControls = document.querySelectorAll('[data-density-preset]');
   var validPresets = ['default', 'comfortaa', 'georgia', 'verdana', 'system-sans', 'editorial', 'scholar', 'studio'];
@@ -32,6 +33,19 @@
     }
 
     menu.removeAttribute('open');
+  }
+
+  function closeSiblingDisplayMenus(activeMenu) {
+    var dock = activeMenu.closest('.page__footer-display-dock');
+    if (!dock) {
+      return;
+    }
+
+    dock.querySelectorAll('.page__footer-display-menu[open]').forEach(function(menu) {
+      if (menu !== activeMenu) {
+        menu.removeAttribute('open');
+      }
+    });
   }
 
   function resolvePreset(preset) {
@@ -74,6 +88,19 @@
 
   applyPreset();
   applyDensity();
+
+  displayMenus.forEach(function(menu) {
+    var summary = menu.querySelector('summary');
+    if (!summary) {
+      return;
+    }
+
+    summary.addEventListener('click', function() {
+      if (!menu.hasAttribute('open')) {
+        closeSiblingDisplayMenus(menu);
+      }
+    });
+  });
 
   fontControls.forEach(function(control) {
     control.addEventListener('click', function() {
