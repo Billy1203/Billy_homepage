@@ -5,7 +5,7 @@ title_zh: "履历"
 permalink: /cv/
 author_profile: true
 show_page_title: false
-watermark_label: "CV"
+watermark_label: "Resume"
 watermark_label_zh: "履历"
 content_width: wide
 redirect_from:

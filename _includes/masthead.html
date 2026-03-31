@@ -1,10 +1,14 @@
 {% include base_path %}
-{% assign mobile_menu_label = "Menu" %}
-{% assign mobile_menu_label_zh = "菜单" %}
+{% assign mobile_menu_label = "Navigation" %}
+{% assign mobile_menu_label_zh = "导航" %}
+{% assign mobile_menu_short_label = "Nav" %}
+{% assign mobile_menu_short_label_zh = "导航" %}
 {% for link in site.data.navigation.main %}
   {% if link.url != '/' and page.url contains link.url %}
     {% assign mobile_menu_label = link.title %}
     {% assign mobile_menu_label_zh = link.title_zh | default: link.title %}
+    {% assign mobile_menu_short_label = link.title_short | default: link.title %}
+    {% assign mobile_menu_short_label_zh = link.title_short_zh | default: link.title_zh | default: link.title %}
   {% endif %}
 {% endfor %}
 
@@ -30,7 +34,8 @@
           </ul>
           <details class="greedy-nav__mobile-menu">
             <summary class="greedy-nav__mobile-summary">
-              {% include i18n-text.html en=mobile_menu_label zh=mobile_menu_label_zh class="greedy-nav__toggle-label" %}
+              {% include i18n-text.html en=mobile_menu_label zh=mobile_menu_label_zh class="greedy-nav__toggle-label greedy-nav__toggle-label--current" %}
+              {% include i18n-text.html en=mobile_menu_short_label zh=mobile_menu_short_label_zh class="greedy-nav__toggle-label greedy-nav__toggle-label--fallback" %}
               <span class="navicon" aria-hidden="true"></span>
             </summary>
             <ul class="greedy-nav__mobile-links">

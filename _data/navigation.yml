@@ -2,18 +2,26 @@
 main:
   - title: "CV"
     title_zh: "履历"
+    title_short: "CV"
+    title_short_zh: "履历"
     url: /cv/
 
   - title: "Publications"
     title_zh: "论文"
+    title_short: "Pub"
+    title_short_zh: "论文"
     url: /publications/
 
   - title: "Projects"
     title_zh: "项目"
+    title_short: "Proj"
+    title_short_zh: "项目"
     url: /projects/
 
   - title: "Footprints"
     title_zh: "杂文"
+    title_short: "plog"
+    title_short_zh: "杂文"
     url: /plogs/
     
 #  - title: "Portfolio"
