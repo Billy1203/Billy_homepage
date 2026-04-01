@@ -14,168 +14,447 @@ redirect_from:
 
 {% include base_path %}
 
-<div class="cv-actions">
+<div class="cv-actions" aria-label="Resume downloads">
   <a class="btn btn--primary" href="https://drive.google.com/file/d/1tV_HWoPmH-wsyAeUMnmPxYyeKQkzrKXr/preview" target="_blank" rel="noopener">Resume (EN)</a>
   <a class="btn btn--inverse" href="https://drive.google.com/file/d/1E2BlLuXIvtUrV_0oL_njYSsOqR9UlG1u/preview" target="_blank" rel="noopener">简历（中文）</a>
 </div>
 
-<div class="lang-en" markdown="1">
-## Education
+<section id="education" class="cv-section">
+  <div class="lang-en">
+    <header class="cv-section__header">
+      <h2>Education</h2>
+    </header>
 
-* **Master of Research**, University of Liverpool (UoL), Liverpool, UK 🇬🇧 / XJTLU, Suzhou, China 🇨🇳 <span class="cv-date-pill">2022.9 - 2024.4</span>
-  * School of Advanced Technology, major in **Pattern Recognition and Intelligent System**, graduated with Distinction
-  * Dissertation: _Research of 3D Perception Algorithm Based on Multi-Sensor Fusion_ [[Details here]](../projects/2024-master.html)
-  * Best Overall Award (Top 2% in JITRI-XJTLU), fully funded by Zhejiang University (Top 5% studentship)
+    <div class="cv-timeline">
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <div class="cv-entry__degree-line">
+                <h3>Master of Research</h3>
+                <div class="cv-entry__logos about-stat__logos about-stat__logos--dual" aria-hidden="true">
+                  <img class="about-stat__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
+                  <img class="about-stat__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </div>
+            <span class="cv-date-pill">2022.9 - 2024.4</span>
+          </div>
+          <p class="cv-entry__org">University of Liverpool (UoL) / XJTLU, Liverpool, UK / Suzhou, China</p>
+        </div>
+        <p class="cv-entry__summary">Pattern Recognition and Intelligent Systems · Distinction · Best Overall Award</p>
+        <ul class="cv-entry__list">
+          <li>School of Advanced Technology, fully funded by Zhejiang University.</li>
+          <li>Dissertation: <em>Research of 3D Perception Algorithm Based on Multi-Sensor Fusion</em> <a href="{{ base_path }}/projects/2024-master.html">[Details]</a></li>
+          <li>Ranked 1st in the school; dissertation score 88.</li>
+        </ul>
+      </article>
 
-* **Bachelor of Engineering**, Southern University of Science and Technology (SUSTech), Shenzhen, China 🇨🇳 <span class="cv-date-pill">2015.9 - 2019.7</span>
-  * [Department of Computer Science and Engineering](https://cse.sustech.edu.cn/en), major in **Computer Science and Technology**
-  * Dissertation: _Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array_ [[Details here]](../projects/2019-bachelor.html)
-  * 2nd Place in Capstone Design Competition at the College of Engineering
-  * Outstanding Undergraduate Dissertation 2019
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <div class="cv-entry__degree-line">
+                <h3>Bachelor of Engineering</h3>
+                <div class="cv-entry__logos about-stat__logos" aria-hidden="true">
+                  <img class="about-stat__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </div>
+            <span class="cv-date-pill">2015.9 - 2019.7</span>
+          </div>
+          <p class="cv-entry__org">Southern University of Science and Technology (SUSTech), Shenzhen, China</p>
+        </div>
+        <p class="cv-entry__summary">Computer Science and Technology</p>
+        <ul class="cv-entry__list">
+          <li><a href="https://cse.sustech.edu.cn/en">Department of Computer Science and Engineering</a>.</li>
+          <li>Dissertation: <em>Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array</em> <a href="{{ base_path }}/projects/2019-bachelor.html">[Details]</a></li>
+          <li>2nd Place in Capstone Design Competition at the College of Engineering.</li>
+          <li>Outstanding Undergraduate Dissertation 2019.</li>
+        </ul>
+      </article>
 
-  <details>
-  <summary><strong>About SUSTech</strong></summary>
-  <ul>
-    <li>SUSTech ranked <strong>1st</strong> in Mainland China and <strong>13th</strong> worldwide in the THE Young University Rankings 2022</li>
-    <li>SUSTech ranked <strong>15th</strong> in Mainland China and <strong>157th</strong> worldwide in the US News Best Global Universities 2024</li>
-    <li><a href="https://www.nature.com/articles/nature.2012.10631">A short story from 2012</a>, before I decided to join SUSTech</li>
-  </ul>
-  </details>
-
-* Summer Program, The University of British Columbia (UBC), Vancouver, Canada 🇨🇦 <span class="cv-date-pill">2017.6 - 2017.9</span>
-  * Excellent Student in Summer Program, Department of ECE
-
-<details>
-<summary><strong>Provisional PhD (received offer, expected to enroll)</strong></summary>
-<ul>
-  <li>University of Leeds 🇬🇧, School of Computing, major in Computing & Robotics</li>
-  <li>University of Glasgow 🇬🇧, School of Engineering, major in EEE</li>
-  <li>University of Manchester 🇬🇧, major in Computer Science</li>
-  <li>University of Bristol 🇬🇧, major in Engineering Mathematics</li>
-</ul>
-</details>
-
-## Work Experience
-
-* [Jabbr](https://jabbr.ai/) <span class="cv-date-pill">2025.9 - now</span>
-  * **AI Algorithm Engineer**
-
-* [OMOway](https://www.omoway.com/) <span class="cv-date-pill">2024.12 - 2025.08</span>
-  * **V-SLAM Algorithm Engineer**
-
-* [*GAP work*] [Dingxin Capital](http://www.dingxin-capital.com) <span class="cv-date-pill">2024.6 - 2024.11</span>
-  * **AI Industry Analyst**
-  * Engaged with more than 100 startups and developed a stronger understanding of entrepreneurship, fundraising, and the operational realities of early-stage companies.
-
-* [Boundary.AI](https://www.boundaryai.cn/en) <span class="cv-date-pill">2024.3 - 2024.6</span>
-  * **V-SLAM Algorithm Engineer**
-
-* [*Intern*] [Huzhou Institute of Zhejiang University](http://hzi.zju.edu.cn) <span class="cv-date-pill">2022.9 - 2024.3</span>
-  * **Perception Algorithm Engineer** in [APRIL Lab](https://april.zju.edu.cn)
-
-* [*Part Time*] [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en) <span class="cv-date-pill">2022.9 - 2024.3</span>
-  * **Teaching Assistant**
-    * DTS201TC Pattern Recognition (130+ undergraduate students)
-    * DTS206TC Applied Linear Statistical Models (130+ undergraduate students)
-
-* [Southern University of Science and Technology](https://www.sustech.edu.cn/en/) <span class="cv-date-pill">2019.9 - 2022.8</span>
-  * **Research and Teaching Assistant** in [ISUS Lab](https://github.com/sustech-isus)
-    * CS401 Intelligent Robotics (70+ undergraduate students)
-    * CS405 Machine Learning (90+ undergraduate and graduate students)
-  * Concurrent **Computer Vision Engineer** role during the first two years <span class="cv-date-pill">2019.9 - 2021.8</span>
-    * Roboeye Technology (Shenzhen) Co., Ltd., a startup, part of the Nanshan District Leading Team Project in Shenzhen
-    * Led an applied research project extending my undergraduate dissertation and capstone work
-
-## Skills
-
-* Programming: Python > Matlab > C++ = Java > R
-* Design: Photography, Video Editing, Illustration
-* Sports: Soccer ⚽️, Badminton 🏸, Table Tennis 🏓, Hiking ⛰️
-</div>
-
-<div class="lang-zh" markdown="1">
-## 教育背景
-
-* **研究型硕士**，利物浦大学（UoL），英国利物浦 🇬🇧 / 西交利物浦大学，中国苏州 🇨🇳 <span class="cv-date-pill">2022.9 - 2024.4</span>
-  * 智能工程学院，专业方向为**模式识别与智能系统**，以 Distinction 毕业
-  * 学位论文：_基于多传感器融合的三维感知算法研究_ [[项目详情]](../projects/2024-master.html)
-  * 获 Best Overall Award（西浦-集萃学院 前 2%），由浙江大学提供全额资助。
-
-* **工学学士**，南方科技大学（SUSTech），中国深圳 🇨🇳 <span class="cv-date-pill">2015.9 - 2019.7</span>
-  * [计算机科学与工程系](https://cse.sustech.edu.cn/en)，专业为**计算机科学与技术**
-  * 毕业设计：_实时三维人体模型重建的 RGB 相机阵列系统_ [[项目详情]](../projects/2019-bachelor.html)
-  * 工学院综合设计竞赛二等奖
-  * 2019 届优秀本科生毕业论文
-
-  <details>
-  <summary><strong>关于南方科技大学</strong></summary>
-  <ul>
-    <li>SUSTech 在 2022 年 THE 年轻大学排名中位列中国大陆 <strong>第 1</strong>、全球 <strong>第 13</strong></li>
-    <li>SUSTech 在 2024 年 US News 全球大学排名中位列中国大陆 <strong>第 15</strong>、全球 <strong>第 157</strong></li>
-    <li>这是我决定加入 SUSTech 之前看到的一篇<a href="https://www.nature.com/articles/nature.2012.10631">2012 年短文</a></li>
-  </ul>
-  </details>
-
-* 短期交流，不列颠哥伦比亚大学（UBC），加拿大温哥华 🇨🇦 <span class="cv-date-pill">2017.6 - 2017.9</span>
-  * ECE 暑期项目优秀学员
-
-<details>
-<summary><strong>博士录取（计划入学，无果）</strong></summary>
-<ul>
-  <li>利兹大学 🇬🇧，School of Computing，方向为 Computing & Robotics</li>
-  <li>格拉斯哥大学 🇬🇧，School of Engineering，方向为 EEE</li>
-  <li>曼彻斯特大学 🇬🇧，方向为 Computer Science</li>
-  <li>布里斯托大学 🇬🇧，方向为 Engineering Mathematics</li>
-</ul>
-</details>
-
-## 工作经历
-
-* [Jabbr](https://jabbr.ai/) <span class="cv-date-pill">2025.9 - now</span>
-  * **AI 算法工程师**
-
-* [目蔚科技](https://www.omoway.com/) <span class="cv-date-pill">2024.12 - 2025.08</span>
-  * **V-SLAM 算法工程师**
-  * 参与了公司首款产品的自动驾驶感知算法开发，负责视觉定位、里程计和静态/动态地图构建。
-
-* [*GAP 阶段*] [鼎心资本](http://www.dingxin-capital.com) <span class="cv-date-pill">2024.6 - 2024.11</span>
-  * **AI 产业分析师**
-  * 深度接触 100 余家创业公司，对创业、融资与早期公司的真实运营逻辑形成了更直接的理解。
-
-* [Boundary.AI](https://www.boundaryai.cn/en) <span class="cv-date-pill">2024.3 - 2024.6</span>
-  * **V-SLAM 算法工程师**
-
-* [*实习*] [浙江大学湖州研究院](http://hzi.zju.edu.cn) <span class="cv-date-pill">2022.9 - 2024.3</span>
-  * 在 [APRIL Lab](https://april.zju.edu.cn) 担任**感知算法工程师**
-
-* [*兼职*] [西交利物浦大学](https://www.xjtlu.edu.cn/en) <span class="cv-date-pill">2022.9 - 2024.3</span>
-  * **助教**
-    * DTS201TC 模式识别（130+ 本科生）
-    * DTS206TC 应用线性统计模型（130+ 本科生）
-
-* [南方科技大学](https://www.sustech.edu.cn/en/) <span class="cv-date-pill">2019.9 - 2022.8</span>
-  * 在 [ISUS Lab](https://github.com/sustech-isus) 担任**科研与教学助理**
-    * CS401 智能机器人（70+ 本科生）
-    * CS405 机器学习（90+ 本科生及研究生）
-  * 前两年同时兼任**计算机视觉工程师** <span class="cv-date-pill">2019.9 - 2021.8</span>
-    * 械瞳科技（深圳）有限公司，深圳市南山区领航团队项目企业
-    * 主导了一项延续本科毕业设计项目的应用研究工作
-
-## 技能
-
-* 编程：Python > Matlab > C++ = Java > R
-* 设计：摄影、视频剪辑、插画
-* 运动：足球 ⚽️、羽毛球 🏸、乒乓球 🏓、徒步 ⛰️
-</div>
-
-<h2>{% include i18n-text.html en="Publications" zh="论文" %}</h2>
-
-<div class="cv-pubs">
-  <div class="entries-list">
-    <ol class="archive cv-ordered">
-      {% for post in site.publications reversed %}
-        {% include archive-single-cv.html type="list" %}
-      {% endfor %}
-    </ol>
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3>Summer Program</h3>
+            </div>
+            <span class="cv-date-pill">2017.6 - 2017.9</span>
+          </div>
+          <p class="cv-entry__org">The University of British Columbia (UBC), Vancouver, Canada</p>
+        </div>
+        <p class="cv-entry__summary">Department of ECE</p>
+        <ul class="cv-entry__list">
+          <li>Excellent Student in Summer Program.</li>
+        </ul>
+      </article>
+    </div>
   </div>
-</div>
+
+  <div class="lang-zh">
+    <header class="cv-section__header">
+      <h2>教育背景</h2>
+    </header>
+
+    <div class="cv-timeline">
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <div class="cv-entry__degree-line">
+                <h3>研究型硕士</h3>
+                <div class="cv-entry__logos about-stat__logos about-stat__logos--dual" aria-hidden="true">
+                  <img class="about-stat__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
+                  <img class="about-stat__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </div>
+            <span class="cv-date-pill">2022.9 - 2024.4</span>
+          </div>
+          <p class="cv-entry__org">利物浦大学（UoL） / 西交利物浦大学，英国利物浦 / 中国苏州</p>
+        </div>
+        <p class="cv-entry__summary">模式识别与智能系统 · Distinction · Best Overall Award</p>
+        <ul class="cv-entry__list">
+          <li>智能工程学院，由浙江大学提供全额资助。</li>
+          <li>学位论文：<em>基于多传感器融合的三维感知算法研究</em> <a href="{{ base_path }}/projects/2024-master.html">[项目详情]</a></li>
+          <li>学院总评第 1，论文成绩 88 分。</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <div class="cv-entry__degree-line">
+                <h3>工学学士</h3>
+                <div class="cv-entry__logos about-stat__logos" aria-hidden="true">
+                  <img class="about-stat__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </div>
+            <span class="cv-date-pill">2015.9 - 2019.7</span>
+          </div>
+          <p class="cv-entry__org">南方科技大学（SUSTech），中国深圳</p>
+        </div>
+        <p class="cv-entry__summary">计算机科学与技术</p>
+        <ul class="cv-entry__list">
+          <li><a href="https://cse.sustech.edu.cn/en">计算机科学与工程系</a>。</li>
+          <li>毕业设计：<em>基于 RGB 相机阵列的实时三维人体骨架重建</em> <a href="{{ base_path }}/projects/2019-bachelor.html">[项目详情]</a></li>
+          <li>工学院综合设计竞赛二等奖。</li>
+          <li>2019 届优秀本科毕业论文。</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3>短期交流</h3>
+            </div>
+            <span class="cv-date-pill">2017.6 - 2017.9</span>
+          </div>
+          <p class="cv-entry__org">不列颠哥伦比亚大学（UBC），加拿大温哥华</p>
+        </div>
+        <p class="cv-entry__summary">ECE 暑期项目</p>
+        <ul class="cv-entry__list">
+          <li>获评暑期项目优秀学员。</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="cv-section">
+  <div class="lang-en">
+    <header class="cv-section__header">
+      <h2>Experience</h2>
+    </header>
+
+    <div class="cv-timeline">
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://jabbr.ai/">Jabbr</a></h3>
+            </div>
+            <span class="cv-date-pill">2025.9 - present</span>
+          </div>
+          <p class="cv-entry__org">AI Algorithm Engineer</p>
+        </div>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.omoway.com/">OMOway</a></h3>
+            </div>
+            <span class="cv-date-pill">2024.12 - 2025.08</span>
+          </div>
+          <p class="cv-entry__org">V-SLAM Algorithm Engineer</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>Autonomy perception for the company’s first product.</li>
+          <li>Visual localization, odometry, and static / dynamic map construction.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="http://www.dingxin-capital.com">Dingxin Capital</a></h3>
+            </div>
+            <span class="cv-date-pill">2024.6 - 2024.11</span>
+          </div>
+          <p class="cv-entry__org">AI Industry Analyst</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>Covered more than 100 AI startups.</li>
+          <li>Research focus: fundraising, operations, and product positioning.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.boundaryai.cn/en">Boundary.AI</a></h3>
+            </div>
+            <span class="cv-date-pill">2024.3 - 2024.6</span>
+          </div>
+          <p class="cv-entry__org">V-SLAM Algorithm Engineer</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>V-SLAM system development.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="http://hzi.zju.edu.cn">Huzhou Institute of Zhejiang University</a></h3>
+            </div>
+            <span class="cv-date-pill">2022.9 - 2024.3</span>
+          </div>
+          <p class="cv-entry__org">Perception Algorithm Engineer Intern, <a href="https://april.zju.edu.cn">APRIL Lab</a></p>
+        </div>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.xjtlu.edu.cn/en">Xi’an Jiaotong-Liverpool University</a></h3>
+            </div>
+            <span class="cv-date-pill">2022.9 - 2024.3</span>
+          </div>
+          <p class="cv-entry__org">Teaching Assistant</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>DTS201TC Pattern Recognition (130+ undergraduate students).</li>
+          <li>DTS206TC Applied Linear Statistical Models (130+ undergraduate students).</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.sustech.edu.cn/en/">Southern University of Science and Technology</a></h3>
+            </div>
+            <span class="cv-date-pill">2019.9 - 2022.8</span>
+          </div>
+          <p class="cv-entry__org">Research and Teaching Assistant, <a href="https://github.com/sustech-isus">ISUS Lab</a></p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>Supported CS401 Intelligent Robotics and CS405 Machine Learning.</li>
+          <li>Concurrent Computer Vision Engineer at Roboeye Technology during 2019.9 - 2021.8.</li>
+          <li>Led an applied research project extending the undergraduate dissertation and capstone project.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <div class="lang-zh">
+    <header class="cv-section__header">
+      <h2>工作经历</h2>
+    </header>
+
+    <div class="cv-timeline">
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://jabbr.ai/">Jabbr</a></h3>
+            </div>
+            <span class="cv-date-pill">2025.9 - 至今</span>
+          </div>
+          <p class="cv-entry__org">AI 算法工程师</p>
+        </div>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.omoway.com/">目蔚科技</a></h3>
+            </div>
+            <span class="cv-date-pill">2024.12 - 2025.08</span>
+          </div>
+          <p class="cv-entry__org">V-SLAM 算法工程师</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>公司首款产品的自动驾驶感知算法开发。</li>
+          <li>视觉定位、里程计与静态 / 动态地图构建。</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="http://www.dingxin-capital.com">鼎心资本</a></h3>
+            </div>
+            <span class="cv-date-pill">2024.6 - 2024.11</span>
+          </div>
+          <p class="cv-entry__org">AI 产业分析师</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>覆盖 100 余家 AI 创业公司。</li>
+          <li>研究方向：融资、运营与产品定位。</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.boundaryai.cn/en">Boundary.AI</a></h3>
+            </div>
+            <span class="cv-date-pill">2024.3 - 2024.6</span>
+          </div>
+          <p class="cv-entry__org">V-SLAM 算法工程师</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>V-SLAM 系统研发。</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="http://hzi.zju.edu.cn">浙江大学湖州研究院</a></h3>
+            </div>
+            <span class="cv-date-pill">2022.9 - 2024.3</span>
+          </div>
+          <p class="cv-entry__org"><a href="https://april.zju.edu.cn">APRIL Lab</a> 感知算法工程师（实习）</p>
+        </div>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.xjtlu.edu.cn/en">西交利物浦大学</a></h3>
+            </div>
+            <span class="cv-date-pill">2022.9 - 2024.3</span>
+          </div>
+          <p class="cv-entry__org">助教</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>DTS201TC 模式识别（130+ 本科生）。</li>
+          <li>DTS206TC 应用线性统计模型（130+ 本科生）。</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="cv-entry__header">
+          <div class="cv-entry__title-row">
+            <div class="cv-entry__heading">
+              <h3><a href="https://www.sustech.edu.cn/en/">南方科技大学</a></h3>
+            </div>
+            <span class="cv-date-pill">2019.9 - 2022.8</span>
+          </div>
+          <p class="cv-entry__org"><a href="https://github.com/sustech-isus">ISUS Lab</a> 科研与教学助理</p>
+        </div>
+        <ul class="cv-entry__list">
+          <li>参与 CS401 智能机器人与 CS405 机器学习课程教学支持。</li>
+          <li>2019.9 - 2021.8 同时兼任械瞳科技计算机视觉工程师。</li>
+          <li>主导一项延续本科毕业设计与综合设计项目的应用研究。</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="cv-section">
+  <div class="lang-en">
+    <header class="cv-section__header">
+      <h2>Skills & Interests</h2>
+    </header>
+
+    <div class="cv-skill-grid">
+      <article class="cv-skill-card">
+        <h3>Languages</h3>
+        <p>Python &gt; Matlab &gt; C++ = Java &gt; R</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>Areas</h3>
+        <p>Robotics perception, computer vision, multi-sensor fusion, V-SLAM, and applied machine learning.</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>Media & Presentation</h3>
+        <p>Photography, video editing, illustration, technical slides, figures, and demos.</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>Interests</h3>
+        <p>Football, badminton, table tennis, hiking, and visual storytelling.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="lang-zh">
+    <header class="cv-section__header">
+      <h2>技能与兴趣</h2>
+    </header>
+
+    <div class="cv-skill-grid">
+      <article class="cv-skill-card">
+        <h3>编程语言</h3>
+        <p>Python &gt; Matlab &gt; C++ = Java &gt; R</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>应用方向</h3>
+        <p>机器人感知、计算机视觉、多传感器融合、V-SLAM 与应用机器学习。</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>影像与展示</h3>
+        <p>摄影、视频剪辑、插画、技术汇报、论文配图与演示材料制作。</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>兴趣</h3>
+        <p>足球、羽毛球、乒乓球、徒步与视觉叙事。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="cv-section">
+  <header class="cv-section__header">
+    <h2>{% include i18n-text.html en="Publications" zh="论文" %}</h2>
+  </header>
+
+  <div class="cv-pubs">
+    <div class="entries-list">
+      <ol class="archive cv-ordered">
+        {% for post in site.publications reversed %}
+          {% include archive-single-cv.html type="list" %}
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>

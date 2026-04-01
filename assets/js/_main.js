@@ -223,14 +223,6 @@ $(document).ready(function(){
       return reducedMotionQuery ? reducedMotionQuery.matches : false;
     };
 
-    var supportsSticky = function() {
-      if (!window.CSS || !window.CSS.supports) {
-        return true;
-      }
-
-      return window.CSS.supports("position", "sticky") || window.CSS.supports("position", "-webkit-sticky");
-    };
-
     sections.forEach(function(section) {
       var items = Array.prototype.slice.call(section.querySelectorAll("[data-news-card]"));
       var observer = null;
@@ -277,51 +269,10 @@ $(document).ready(function(){
       };
 
       var computeStickyLayout = function() {
-        var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-        var viewportWidth = window.innerWidth || document.documentElement.clientWidth || 0;
-        var masthead = document.querySelector(".masthead");
-        var mastheadHeight = masthead ? Math.ceil(masthead.getBoundingClientRect().height) : 0;
-        var baseTop = Math.max(84, mastheadHeight + 18);
-        var gap = viewportWidth > 1360 ? 12 : 10;
-        var bottomBuffer = 28;
-        var nextTop = baseTop;
-        var requiredHeight = 0;
-        var hasTallCard = false;
-
         clearStickyLayout();
-
-        if (prefersReducedMotion() || viewportWidth < 1080 || viewportHeight < 680 || !supportsSticky()) {
-          return;
-        }
-
-        items.forEach(function(item, index) {
-          var bubble = item.querySelector(".about-news__bubble");
-          var bubbleHeight = bubble ? Math.ceil(bubble.getBoundingClientRect().height) : item.offsetHeight;
-
-          if (bubbleHeight > viewportHeight * 0.26 && index < items.length - 1) {
-            hasTallCard = true;
-          }
-
-          requiredHeight += bubbleHeight + (index === items.length - 1 ? 0 : gap);
-          item.setAttribute("data-news-height", bubbleHeight);
-        });
-
-        if (hasTallCard || requiredHeight > viewportHeight - baseTop - bottomBuffer) {
-          return;
-        }
-
-        section.setAttribute("data-news-layout", "stacked");
-
-        items.forEach(function(item) {
-          var bubbleHeight = parseInt(item.getAttribute("data-news-height"), 10) || item.offsetHeight;
-
-          item.style.setProperty("--news-stick-top", nextTop + "px");
-          nextTop += bubbleHeight + gap;
-
-          if (window.Stickyfill && typeof window.Stickyfill.add === "function") {
-            window.Stickyfill.add(item);
-          }
-        });
+        // Prefer a stable flow layout here. The sticky-stacked version looked
+        // interesting, but it could under-estimate height on longer timelines
+        // and cause lower cards to overlap on wide screens.
       };
 
       var requestStickyLayout = function() {
