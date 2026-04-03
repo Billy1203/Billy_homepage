@@ -233,15 +233,14 @@ redirect_from:
 ---
 
 <div class="visitor-stats">
-  <div class="visitor-title">{% include i18n-text.html en="Visitors from" zh="访客来自" %}</div>
-  <div class="visitor-counter-shell">
+  <a class="visitor-counter-shell" href="https://s01.flagcounter.com/more/ylM7/" target="_blank" rel="noopener" aria-label="Open visitor country details">
     <img
       class="visitor-counter js-theme-image"
-      src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_8/maxflags_16/viewers_0/labels_1/pageviews_0/"
-      data-light-src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_8/maxflags_16/viewers_0/labels_1/pageviews_0/"
-      data-dark-src="https://s01.flagcounter.com/count2/ylM7/bg_1B2430/txt_EFE7DB/border_3A4A59/columns_8/maxflags_16/viewers_0/labels_1/pageviews_0/"
+      src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_3/maxflags_6/viewers_0/labels_0/pageviews_0/"
+      data-light-src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_3/maxflags_6/viewers_0/labels_0/pageviews_0/"
+      data-dark-src="https://s01.flagcounter.com/count2/ylM7/bg_1B2430/txt_EFE7DB/border_3A4A59/columns_4/maxflags_6/viewers_0/labels_0/pageviews_0/"
       alt="Visitor Counter"
       loading="lazy"
       decoding="async">
-  </div>
+  </a>
 </div>

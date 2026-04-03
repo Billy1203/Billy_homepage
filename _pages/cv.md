@@ -30,12 +30,10 @@ redirect_from:
         <div class="cv-entry__header">
           <div class="cv-entry__title-row">
             <div class="cv-entry__heading">
-              <div class="cv-entry__degree-line">
-                <h3>Master of Research</h3>
-                <div class="cv-entry__logos about-stat__logos about-stat__logos--dual" aria-hidden="true">
-                  <img class="about-stat__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
-                  <img class="about-stat__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
-                </div>
+              <h3>Master of Research</h3>
+              <div class="cv-entry__logos cv-entry__logos--dual" aria-hidden="true">
+                <img class="cv-entry__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2022.9 - 2024.4</span>
@@ -46,7 +44,6 @@ redirect_from:
         <ul class="cv-entry__list">
           <li>School of Advanced Technology, fully funded by Zhejiang University.</li>
           <li>Dissertation: <em>Research of 3D Perception Algorithm Based on Multi-Sensor Fusion</em> <a href="{{ base_path }}/projects/2024-master.html">[Details]</a></li>
-          <li>Ranked 1st in the school; dissertation score 88.</li>
         </ul>
       </article>
 
@@ -54,11 +51,9 @@ redirect_from:
         <div class="cv-entry__header">
           <div class="cv-entry__title-row">
             <div class="cv-entry__heading">
-              <div class="cv-entry__degree-line">
-                <h3>Bachelor of Engineering</h3>
-                <div class="cv-entry__logos about-stat__logos" aria-hidden="true">
-                  <img class="about-stat__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
-                </div>
+              <h3>Bachelor of Engineering</h3>
+              <div class="cv-entry__logos" aria-hidden="true">
+                <img class="cv-entry__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2015.9 - 2019.7</span>
@@ -79,6 +74,9 @@ redirect_from:
           <div class="cv-entry__title-row">
             <div class="cv-entry__heading">
               <h3>Summer Program</h3>
+              <div class="cv-entry__logos" aria-hidden="true">
+                <img class="cv-entry__logo cv-entry__logo--ubc" src="../images/UBC.png" alt="" loading="lazy" decoding="async">
+              </div>
             </div>
             <span class="cv-date-pill">2017.6 - 2017.9</span>
           </div>
@@ -102,12 +100,10 @@ redirect_from:
         <div class="cv-entry__header">
           <div class="cv-entry__title-row">
             <div class="cv-entry__heading">
-              <div class="cv-entry__degree-line">
-                <h3>研究型硕士</h3>
-                <div class="cv-entry__logos about-stat__logos about-stat__logos--dual" aria-hidden="true">
-                  <img class="about-stat__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
-                  <img class="about-stat__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
-                </div>
+              <h3>研究型硕士</h3>
+              <div class="cv-entry__logos cv-entry__logos--dual" aria-hidden="true">
+                <img class="cv-entry__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2022.9 - 2024.4</span>
@@ -118,7 +114,6 @@ redirect_from:
         <ul class="cv-entry__list">
           <li>智能工程学院，由浙江大学提供全额资助。</li>
           <li>学位论文：<em>基于多传感器融合的三维感知算法研究</em> <a href="{{ base_path }}/projects/2024-master.html">[项目详情]</a></li>
-          <li>学院总评第 1，论文成绩 88 分。</li>
         </ul>
       </article>
 
@@ -126,11 +121,9 @@ redirect_from:
         <div class="cv-entry__header">
           <div class="cv-entry__title-row">
             <div class="cv-entry__heading">
-              <div class="cv-entry__degree-line">
-                <h3>工学学士</h3>
-                <div class="cv-entry__logos about-stat__logos" aria-hidden="true">
-                  <img class="about-stat__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
-                </div>
+              <h3>工学学士</h3>
+              <div class="cv-entry__logos" aria-hidden="true">
+                <img class="cv-entry__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2015.9 - 2019.7</span>
@@ -151,6 +144,9 @@ redirect_from:
           <div class="cv-entry__title-row">
             <div class="cv-entry__heading">
               <h3>短期交流</h3>
+              <div class="cv-entry__logos" aria-hidden="true">
+                <img class="cv-entry__logo cv-entry__logo--ubc" src="../images/UBC.png" alt="" loading="lazy" decoding="async">
+              </div>
             </div>
             <span class="cv-date-pill">2017.6 - 2017.9</span>
           </div>
