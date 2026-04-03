@@ -39,8 +39,8 @@ redirect_from:
         <div class="about-stat__head">
           <span class="about-stat__value">MRes</span>
           <div class="about-stat__logos about-stat__logos--dual" aria-hidden="true">
-            <img class="about-stat__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
-            <img class="about-stat__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
+            <img class="about-stat__logo" src="../images/UoL.webp" alt="" loading="lazy" decoding="async">
+            <img class="about-stat__logo" src="../images/ZJU.webp" alt="" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="about-stat__label">UoL x ZJU</span>
@@ -50,7 +50,7 @@ redirect_from:
         <div class="about-stat__head">
           <span class="about-stat__value">BEng</span>
           <div class="about-stat__logos" aria-hidden="true">
-            <img class="about-stat__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
+            <img class="about-stat__logo" src="../images/SUSTech.webp" alt="" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="about-stat__label">SUSTech</span>

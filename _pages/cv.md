@@ -32,8 +32,8 @@ redirect_from:
             <div class="cv-entry__heading">
               <h3>Master of Research</h3>
               <div class="cv-entry__logos cv-entry__logos--dual" aria-hidden="true">
-                <img class="cv-entry__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
-                <img class="cv-entry__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/UoL.webp" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/ZJU.webp" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2022.9 - 2024.4</span>
@@ -53,7 +53,7 @@ redirect_from:
             <div class="cv-entry__heading">
               <h3>Bachelor of Engineering</h3>
               <div class="cv-entry__logos" aria-hidden="true">
-                <img class="cv-entry__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/SUSTech.webp" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2015.9 - 2019.7</span>
@@ -75,7 +75,7 @@ redirect_from:
             <div class="cv-entry__heading">
               <h3>Summer Program</h3>
               <div class="cv-entry__logos" aria-hidden="true">
-                <img class="cv-entry__logo cv-entry__logo--ubc" src="../images/UBC.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo cv-entry__logo--ubc" src="../images/UBC.webp" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2017.6 - 2017.9</span>
@@ -102,8 +102,8 @@ redirect_from:
             <div class="cv-entry__heading">
               <h3>研究型硕士</h3>
               <div class="cv-entry__logos cv-entry__logos--dual" aria-hidden="true">
-                <img class="cv-entry__logo" src="../images/UoL.png" alt="" loading="lazy" decoding="async">
-                <img class="cv-entry__logo" src="../images/ZJU.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/UoL.webp" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/ZJU.webp" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2022.9 - 2024.4</span>
@@ -123,7 +123,7 @@ redirect_from:
             <div class="cv-entry__heading">
               <h3>工学学士</h3>
               <div class="cv-entry__logos" aria-hidden="true">
-                <img class="cv-entry__logo" src="../images/SUSTech.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo" src="../images/SUSTech.webp" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2015.9 - 2019.7</span>
@@ -145,7 +145,7 @@ redirect_from:
             <div class="cv-entry__heading">
               <h3>短期交流</h3>
               <div class="cv-entry__logos" aria-hidden="true">
-                <img class="cv-entry__logo cv-entry__logo--ubc" src="../images/UBC.png" alt="" loading="lazy" decoding="async">
+                <img class="cv-entry__logo cv-entry__logo--ubc" src="../images/UBC.webp" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <span class="cv-date-pill">2017.6 - 2017.9</span>

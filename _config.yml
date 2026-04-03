@@ -22,12 +22,12 @@ repository               : "Billy1203/Billy_homepage"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "yiheng_image2.png"
+  avatar           : "yiheng_image2.webp"
   avatar_options   :
-    - "yiheng_image2.png"
-    - "yiheng_image.png"
-    - "yiheng_pic1.png"
-    - "yiheng_pic2.png"
+    - "yiheng_image2.webp"
+    - "yiheng_image.webp"
+    - "yiheng_pic1.webp"
+    - "yiheng_pic2.webp"
     - "head.webp"
   name             : "Yiheng XUE (Billy)"
   name_zh          : "薛毅恒"
