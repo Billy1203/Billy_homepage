@@ -41,27 +41,8 @@ When you are initially working your website, it is very useful to be able to pre
 
 1. Clone the repository and made updates as detailed above.
 1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Install image conversion tools for auto-webp: `sudo apt install webp imagemagick`
 1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
 1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-
-## WebP Auto Conversion (Jekyll Build Stage)
-
-This repo now includes a build hook that will:
-
-- convert local `.png`, `.jpg`, `.jpeg` files to `.webp` during site build
-- rewrite generated HTML references to `.webp`
-- keep `.gif` and `.mp4` unchanged
-
-Config is in `_config.yml`:
-
-```yml
-auto_webp:
-  enabled: true
-  quality: 82
-```
-
-For `github.io` deployment, you must use **GitHub Actions** build (workflow: `.github/workflows/pages.yml`), because default GitHub Pages build does not run custom plugins in `_plugins/`.
 
 If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
 

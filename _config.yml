@@ -350,10 +350,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-# Build-time image optimization
-# Converts local .png/.jpg/.jpeg references in generated HTML to .webp.
-# .gif and .mp4 are not touched.
-auto_webp:
-  enabled: true
-  quality: 82
