@@ -17,7 +17,16 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         <div class="greedy-nav__brand{% if page.url == '/' or page.url == '/index.html' %} selected{% endif %}">
-          <a href="{{ base_path }}/">{% include i18n-text.html en=site.title zh=site.title_zh class="greedy-nav__brand-label" %}</a>
+          <a href="{{ base_path }}/">
+            <img
+              class="greedy-nav__brand-mark"
+              src="{{ base_path }}/images/site-mark.svg"
+              alt=""
+              aria-hidden="true"
+              decoding="async"
+            >
+            {% include i18n-text.html en=site.title zh=site.title_zh class="greedy-nav__brand-label" %}
+          </a>
         </div>
         <div class="greedy-nav__primary">
           <ul class="greedy-nav__links">

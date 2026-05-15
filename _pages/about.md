@@ -22,10 +22,10 @@ redirect_from:
   {% include i18n-text.html en="I build robotics perception systems that connect strong research with product reality, from tactile sensing and multi-sensor fusion to V-SLAM and large-scale vision pipelines." zh="我专注于机器人感知系统，擅长把扎实研究与产品现实连接起来，工作横跨触觉感知、多传感器融合、V-SLAM 与大规模视觉生成流程。" wrapper_tag="p" class="about-lead" %}
 
   <div class="about-highlights">
-    <span class="about-highlight">{% include i18n-text.html en="Tactile sensing" zh="触觉感知" %}</span>
     <span class="about-highlight">{% include i18n-text.html en="Multi-sensor fusion" zh="多传感器融合" %}</span>
-    <span class="about-highlight">{% include i18n-text.html en="V-SLAM & autonomy" zh="V-SLAM 与自动驾驶" %}</span>
-    <span class="about-highlight">{% include i18n-text.html en="Research to product" zh="研究到产品落地" %}</span>
+    <span class="about-highlight">{% include i18n-text.html en="V-SLAM & autonomous driving" zh="V-SLAM 与自动驾驶" %}</span>
+    <span class="about-highlight">{% include i18n-text.html en="Tactile sensing" zh="触觉感知" %}</span>
+    <span class="about-highlight">{% include i18n-text.html en="0 to 1, research to product" zh="从0到1的落地" %}</span>
   </div>
 
   <div class="about-glance">
@@ -44,7 +44,7 @@ redirect_from:
           </div>
         </div>
         <span class="about-stat__label">UoL x ZJU</span>
-        <span class="about-stat__meta">{% include i18n-text.html en="Pattern Recognition and Intelligent Systems, Distinction, Best Overall Award" zh="模式识别与智能系统，Distinction 毕业，Best Overall Award" %}</span>
+        <span class="about-stat__meta">{% include i18n-text.html en="Pattern Recognition and Intelligent Systems, Distinction, Best Overall Award" zh="模式识别与智能系统，以 Distinction 等级毕业，获得 Best Overall Award" %}</span>
       </article>
       <article class="about-stat">
         <div class="about-stat__head">
@@ -54,7 +54,7 @@ redirect_from:
           </div>
         </div>
         <span class="about-stat__label">SUSTech</span>
-        <span class="about-stat__meta">{% include i18n-text.html en="Computer Science and Technology, capstone ranked 2nd in the College of Engineering" zh="计算机科学与技术，综合设计项目获工学院第 2 名" %}</span>
+        <span class="about-stat__meta">{% include i18n-text.html en="Computer Science and Technology, capstone ranked 2nd in the College of Engineering" zh="计算机科学与技术，获得工学院综合设计项目第 2 名" %}</span>
       </article>
       <article class="about-stat">
         <div class="about-stat__head">
@@ -92,7 +92,7 @@ redirect_from:
       <span class="about-panel__eyebrow">{% include i18n-text.html en="Communication & Craft" zh="表达与审美" %}</span>
       <h3 class="about-panel__title">{% include i18n-text.html en="I treat visuals, demos, and writing as part of technical work rather than decoration." zh="我把视觉表达、演示与写作视为技术工作的一部分，而不是附属装饰。" %}</h3>
       <p class="about-panel__text lang-en">In several projects I took ownership of illustrations, videos, and presentation materials in addition to algorithms and experiments. Outside work, photography and visual storytelling continue to sharpen how I explain systems. Some of that work is <a href="https://unsplash.com/@billyxue">here</a>.</p>
-      <p class="about-panel__text lang-zh">在不少项目里，我除了负责算法与实验，也主动承担插图、视频和展示材料的制作。工作之外，摄影与视觉叙事也持续影响我解释技术系统的方式。部分作品可以在<a href="https://unsplash.com/@billyxue">这里</a>看到。</p>
+      <p class="about-panel__text lang-zh">在多个项目中，我除了负责算法与实验，也主动承担插图、视频和展示材料的制作。工作之外，摄影与视觉叙事也持续影响我解释技术系统的方式。部分作品可以在<a href="https://unsplash.com/@billyxue">这里</a>看到。</p>
     </article>
   </div>
 </section>
@@ -100,7 +100,7 @@ redirect_from:
 <section class="about-section">
   <h2>{% include i18n-text.html en="Research Interests" zh="研究兴趣" %}</h2>
 
-  <p class="about-closing">{% include i18n-text.html en="My current interests center on robotics perception, machine learning, computer vision, and embodied intelligence, especially where perception quality directly shapes system behavior, autonomy, and product usefulness. If you are building something ambitious in robotics or perception, I would be glad to connect." zh="我当前的兴趣仍然聚焦于机器人感知、机器学习、计算机视觉与具身智能，尤其关注那些会直接影响系统行为、自主能力与产品价值的感知问题。如果你正在做有野心的机器人或感知相关项目，欢迎联系我。" %}</p>
+  <p class="about-closing">{% include i18n-text.html en="My current interests center on robotics perception, machine learning, computer vision, and embodied intelligence, especially where perception quality directly shapes system behavior, autonomy, and product usefulness. If you are building something ambitious in robotics or perception, I would be glad to connect." zh="我当前的兴趣仍然聚焦于机器人感知、机器学习、计算机视觉与具身智能，尤其关注那些会直接影响系统行为、自主能力与产品价值的感知问题。如果你正在做有趣的机器人或感知相关项目，欢迎联系我。" %}</p>
 </section>
 
 <h2>{% include i18n-text.html en="News" zh="动态" %}</h2>
@@ -125,7 +125,7 @@ redirect_from:
           <span class="about-news__date">2025-06</span>
           <span class="about-news__tag">{% include i18n-text.html en="Paper" zh="论文" %}</span>
         </div>
-        <p class="about-news__text">{% include i18n-text.html en="Paper accepted to IROS 2025 as an oral presentation." zh="论文被 IROS 2025 接收，并获 oral presentation。" %}</p>
+        <p class="about-news__text">{% include i18n-text.html en="One paper accepted to IROS 2025 as an oral presentation." zh="一篇论文被 IROS 2025 接收，并获 oral presentation。" %}</p>
       </div>
     </article>
 
@@ -156,7 +156,7 @@ redirect_from:
       <div class="about-news__bubble">
         <div class="about-news__meta">
           <span class="about-news__date">2024-12</span>
-          <span class="about-news__tag">{% include i18n-text.html en="Role" zh="新角色" %}</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Role" zh="新职位" %}</span>
         </div>
         <p class="about-news__text">{% include i18n-text.html en="Joined OMOway and worked on V-SLAM, visual localization, odometry, and map building for its first product." zh="加入 OMOway，参与首款产品的 V-SLAM、视觉定位、里程计与地图构建。" %}</p>
       </div>
@@ -169,7 +169,7 @@ redirect_from:
           <span class="about-news__date">2024-11</span>
           <span class="about-news__tag">{% include i18n-text.html en="Update" zh="进展" %}</span>
         </div>
-        <p class="about-news__text">{% include i18n-text.html en="Unable to proceed with UK enrollment because of ATAS clearance issues." zh="因 ATAS 审批问题，未能继续推进英国入学。" %}</p>
+        <p class="about-news__text">{% include i18n-text.html en="Unable to proceed with PhD enrollment because of the FUCKING ATAS issues." zh="艹TMD ATAS 审批没过，未能继续推进PhD入学。" %}</p>
       </div>
     </article>
 
@@ -180,7 +180,7 @@ redirect_from:
           <span class="about-news__date">2024-05</span>
           <span class="about-news__tag">{% include i18n-text.html en="Paper" zh="论文" %}</span>
         </div>
-        <p class="about-news__text">{% include i18n-text.html en="Paper accepted by Ocean Engineering." zh="论文被 Ocean Engineering 接收。" %}</p>
+        <p class="about-news__text">{% include i18n-text.html en="One paper accepted by Ocean Engineering." zh="一篇论文被 Ocean Engineering 接收。" %}</p>
       </div>
     </article>
 
@@ -195,23 +195,23 @@ redirect_from:
       </div>
     </article>
 
-    <article class="about-news__item about-news__item--move" data-news-card role="listitem">
+    <article class="about-news__item about-news__item--role" data-news-card role="listitem">
       <div class="about-news__pin" aria-hidden="true"></div>
       <div class="about-news__bubble">
         <div class="about-news__meta">
           <span class="about-news__date">2024-03</span>
-          <span class="about-news__tag">{% include i18n-text.html en="Move" zh="新阶段" %}</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Role" zh="新职位" %}</span>
         </div>
         <p class="about-news__text">{% include i18n-text.html en="Returned to Shenzhen and joined Boundary AI to work on VSLAM systems." zh="回到深圳，加入 Boundary AI 从事 VSLAM 系统研发。" %}</p>
       </div>
     </article>
 
-    <article class="about-news__item about-news__item--award" data-news-card role="listitem">
+    <article class="about-news__item about-news__item--degree" data-news-card role="listitem">
       <div class="about-news__pin" aria-hidden="true"></div>
       <div class="about-news__bubble">
         <div class="about-news__meta">
           <span class="about-news__date">2024-02</span>
-          <span class="about-news__tag">{% include i18n-text.html en="Award" zh="荣誉" %}</span>
+          <span class="about-news__tag">{% include i18n-text.html en="Degree" zh="学位" %}</span>
         </div>
         <p class="about-news__text">{% include i18n-text.html en="Graduated with M.Res. Distinction and received the Best Overall Master Student award, ranked 1st among 80+ students." zh="以 Distinction 完成 M.Res. 学位，并获得 Best Overall Master Student，80 余名学生中排名第 1。" %}</p>
       </div>
@@ -224,7 +224,7 @@ redirect_from:
           <span class="about-news__date">2023-11</span>
           <span class="about-news__tag">{% include i18n-text.html en="Paper" zh="论文" %}</span>
         </div>
-        <p class="about-news__text">{% include i18n-text.html en="Paper accepted by Nature Communications." zh="论文被 Nature Communications 接收。" %}</p>
+        <p class="about-news__text">{% include i18n-text.html en="One paper accepted by Nature Communications." zh="一篇论文被 Nature Communications 接收。" %}</p>
       </div>
     </article>
   </div>
