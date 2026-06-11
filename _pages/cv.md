@@ -134,7 +134,7 @@ redirect_from:
         <ul class="cv-entry__list">
           <li><a href="https://cse.sustech.edu.cn/en">计算机科学与工程系</a>。</li>
           <li>毕业设计：<em>基于 RGB 相机阵列的实时三维人体骨架重建</em> <a href="{{ base_path }}/projects/2019-bachelor.html">[项目详情]</a></li>
-          <li>工学院综合设计竞赛二等奖。</li>
+          <li>工学院综合设计项目第 2 名。</li>
           <li>2019 届优秀本科毕业论文。</li>
         </ul>
       </article>
@@ -320,7 +320,7 @@ redirect_from:
         </div>
         <ul class="cv-entry__list">
           <li>覆盖 100 余家 AI 创业公司。</li>
-          <li>研究方向：融资、运营与产品定位。</li>
+          <li>工作内容：AI 与机器人产业调研，融资、运营与产品定位。</li>
         </ul>
       </article>
 
