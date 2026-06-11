@@ -355,9 +355,8 @@ redirect_from:
     <img
       class="visitor-counter js-theme-image"
       src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_4/maxflags_8/viewers_0/labels_0/pageviews_0/"
-      data-light-src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_3/maxflags_6/viewers_0/labels_0/pageviews_0/"
-      data-dark-src="https://s01.flagcounter.com/count2/ylM7/bg_1B2430/txt_EFE7DB/border_3A4A59/columns_4/maxflags_6/viewers_0/labels_0/pageviews_0/"
-      alt="Visitor Counter"
+      data-light-src="https://s01.flagcounter.com/count2/ylM7/bg_F7F1E6/txt_23313D/border_D8CBB7/columns_4/maxflags_8/viewers_0/labels_0/pageviews_0/"
+      data-dark-src="https://s01.flagcounter.com/count2/ylM7/bg_1B2430/txt_EFE7DB/border_3A4A59/columns_4/maxflags_8/viewers_0/labels_0/pageviews_0/"
       loading="lazy"
       decoding="async">
   </a>
