@@ -1,0 +1,244 @@
+# Sidebar profile links. `href` replaces `{value}` with the matching author field.
+- key: uri
+  href: "{value}"
+  icon: "fas fa-fw fa-link"
+  label_en: "Website"
+  label_zh: "网站"
+
+- key: email
+  href: "mailto:{value}"
+  icon: "fas fa-fw fa-envelope"
+  label_en: "Email"
+  label_zh: "邮箱"
+  item_class: "author__link--email"
+  compact: true
+
+- key: arxiv
+  href: "{value}"
+  icon: "ai ai-arxiv ai-fw"
+  label_en: "arXiv"
+  label_zh: "arXiv"
+
+- key: googlescholar
+  href: "{value}"
+  icon: "ai ai-google-scholar ai-fw"
+  label_en: "Google Scholar"
+  label_zh: "谷歌学术"
+  item_class: "author__link--scholar"
+  compact: true
+
+- key: semantic
+  href: "{value}"
+  icon: "ai ai-semantic-scholar ai-fw"
+  label_en: "Semantic Scholar"
+  label_zh: "Semantic Scholar"
+
+- key: impactstory
+  href: "{value}"
+  icon: "ai ai-impactstory ai-fw"
+  label_en: "Impactstory"
+  label_zh: "Impactstory"
+
+- key: orcid
+  href: "{value}"
+  icon: "ai ai-orcid ai-fw"
+  label_en: "ORCID"
+  label_zh: "ORCID"
+  item_class: "author__link--orcid"
+  compact: true
+
+- key: pubmed
+  href: "{value}"
+  icon: "ai ai-pubmed ai-fw"
+  label_en: "PubMed"
+  label_zh: "PubMed"
+
+- key: researchgate
+  href: "{value}"
+  icon: "fab fa-fw fa-researchgate"
+  label_en: "ResearchGate"
+  label_zh: "ResearchGate"
+
+- key: bitbucket
+  href: "https://bitbucket.org/{value}"
+  icon: "fab fa-fw fa-bitbucket"
+  label_en: "Bitbucket"
+  label_zh: "Bitbucket"
+
+- key: codepen
+  href: "https://codepen.io/{value}"
+  icon: "fab fa-fw fa-codepen"
+  label_en: "CodePen"
+  label_zh: "CodePen"
+
+- key: dribbble
+  href: "https://dribbble.com/{value}"
+  icon: "fab fa-fw fa-dribbble"
+  label_en: "Dribbble"
+  label_zh: "Dribbble"
+
+- key: github
+  href: "https://github.com/{value}"
+  icon: "fab fa-fw fa-github"
+  label_en: "GitHub"
+  label_zh: "GitHub"
+  item_class: "author__link--github"
+  compact: true
+
+- key: kaggle
+  href: "https://kaggle.com/{value}"
+  icon: "fab fa-fw fa-kaggle"
+  label_en: "Kaggle"
+  label_zh: "Kaggle"
+
+- key: stackoverflow
+  href: "https://www.stackoverflow.com/users/{value}"
+  icon: "fab fa-fw fa-stack-overflow"
+  label_en: "Stack Overflow"
+  label_zh: "Stack Overflow"
+
+- key: bluesky
+  href: "https://bsky.app/profile/{value}"
+  icon: "fab fa-fw fa-bluesky"
+  label_en: "Bluesky"
+  label_zh: "Bluesky"
+
+- key: facebook
+  href: "https://www.facebook.com/{value}"
+  icon: "fab fa-fw fa-facebook-f"
+  label_en: "Facebook"
+  label_zh: "Facebook"
+
+- key: flickr
+  href: "https://www.flickr.com/{value}"
+  icon: "fab fa-fw fa-flickr"
+  label_en: "Flickr"
+  label_zh: "Flickr"
+
+- key: foursquare
+  href: "https://foursquare.com/{value}"
+  icon: "fab fa-fw fa-foursquare"
+  label_en: "Foursquare"
+  label_zh: "Foursquare"
+
+- key: goodreads
+  href: "https://www.goodreads.com/{value}"
+  icon: "fab fa-fw fa-goodreads"
+  label_en: "Goodreads"
+  label_zh: "Goodreads"
+
+- key: google_plus
+  href: "https://plus.google.com/+{value}"
+  icon: "fab fa-fw fa-google-plus-g"
+  label_en: "Google+"
+  label_zh: "Google+"
+
+- key: keybase
+  href: "https://keybase.io/{value}"
+  icon: "fas fa-fw fa-key"
+  label_en: "Keybase"
+  label_zh: "Keybase"
+
+- key: instagram
+  href: "https://instagram.com/{value}"
+  icon: "fab fa-fw fa-instagram"
+  label_en: "Instagram"
+  label_zh: "Instagram"
+
+- key: lastfm
+  href: "https://lastfm.com/user/{value}"
+  icon: "fab fa-fw fa-lastfm"
+  label_en: "Last.fm"
+  label_zh: "Last.fm"
+
+- key: linkedin
+  href: "https://www.linkedin.com/in/{value}"
+  icon: "fab fa-fw fa-linkedin"
+  label_en: "LinkedIn"
+  label_zh: "领英"
+  item_class: "author__link--linkedin"
+  compact: true
+
+- key: mastodon
+  href: "{value}"
+  icon: "fab fa-fw fa-mastodon"
+  label_en: "Mastodon"
+  label_zh: "Mastodon"
+
+- key: medium
+  href: "{value}"
+  icon: "fab fa-fw fa-medium"
+  label_en: "Medium"
+  label_zh: "Medium"
+
+- key: pinterest
+  href: "https://www.pinterest.com/{value}"
+  icon: "fab fa-fw fa-pinterest"
+  label_en: "Pinterest"
+  label_zh: "Pinterest"
+
+- key: soundcloud
+  href: "https://soundcloud.com/{value}"
+  icon: "fab fa-fw fa-soundcloud"
+  label_en: "Soundcloud"
+  label_zh: "Soundcloud"
+
+- key: steam
+  href: "https://steamcommunity.com/id/{value}"
+  icon: "fab fa-fw fa-steam"
+  label_en: "Steam"
+  label_zh: "Steam"
+
+- key: telegram
+  href: "{value}"
+  icon: "fab fa-fw fa-telegram"
+  label_en: "Telegram"
+  label_zh: "Telegram"
+
+- key: tumblr
+  href: "https://{value}.tumblr.com"
+  icon: "fab fa-fw fa-tumblr"
+  label_en: "Tumblr"
+  label_zh: "Tumblr"
+
+- key: twitter
+  href: "https://twitter.com/{value}"
+  icon: "fab fa-fw fa-x-twitter"
+  label_en: "X"
+  label_zh: "X"
+
+- key: vine
+  href: "https://vine.co/u/{value}"
+  icon: "fab fa-fw fa-vine"
+  label_en: "Vine"
+  label_zh: "Vine"
+
+- key: weibo
+  href: "https://www.weibo.com/{value}"
+  icon: "fab fa-fw fa-weibo"
+  label_en: "Weibo"
+  label_zh: "微博"
+
+- key: wikipedia
+  href: "https://en.wikipedia.org/wiki/User:{value}"
+  icon: "fab fa-fw fa-wikipedia-w"
+  label_en: "Wikipedia"
+  label_zh: "Wikipedia"
+
+- key: xing
+  href: "https://www.xing.com/profile/{value}"
+  icon: "fab fa-fw fa-xing"
+  label_en: "XING"
+  label_zh: "XING"
+
+- key: youtube
+  href: "https://www.youtube.com/user/{value}"
+  icon: "fab fa-fw fa-youtube"
+  label_en: "YouTube"
+  label_zh: "YouTube"
+
+- key: zhihu
+  href: "{value}"
+  icon: "fab fa-fw fa-zhihu"
+  label_en: "Zhihu"
+  label_zh: "知乎"

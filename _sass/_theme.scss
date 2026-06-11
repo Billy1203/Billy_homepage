@@ -1823,6 +1823,21 @@ video.publication-embed--video {
   color: var(--site-text);
 }
 
+.about-lead,
+.about-glance__title,
+.about-glance__text,
+.about-stat__label,
+.about-stat__meta,
+.about-panel__title,
+.about-panel__text,
+.about-closing,
+.about-news__text {
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
 .about-highlights {
   display: flex;
   flex-wrap: wrap;
@@ -1874,6 +1889,10 @@ video.publication-embed--video {
 .about-glance__text {
   margin: 0;
   color: var(--site-text-muted);
+}
+
+.about-glance__text + .about-glance__text {
+  margin-top: 0.55rem;
 }
 
 .about-glance__stats {
@@ -3689,7 +3708,7 @@ video.publication-embed--video {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(0.52rem, 0.34rem + 0.28vw, 0.68rem);
+  gap: clamp(0.52rem, calc(0.34rem + 0.28vw), 0.68rem);
   box-sizing: border-box;
   position: relative;
   min-width: 0;
@@ -3711,8 +3730,8 @@ video.publication-embed--video {
 .greedy-nav__brand-mark {
   display: block;
   flex: 0 0 auto;
-  width: clamp(2rem, 1.76rem + 0.52vw, 2.28rem);
-  height: clamp(2rem, 1.76rem + 0.52vw, 2.28rem);
+  width: clamp(2rem, calc(1.76rem + 0.52vw), 2.28rem);
+  height: clamp(2rem, calc(1.76rem + 0.52vw), 2.28rem);
   filter: drop-shadow(0 0.3rem 0.7rem color-mix(in srgb, var(--site-accent) 24%, transparent));
   transform-origin: center;
   transition: transform 0.22s ease, filter 0.22s ease;

@@ -9,12 +9,11 @@
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Billy's Homepage"
-title_zh                 : "Billy 的主页"
+title_zh                 : "Billy 的个人主页"
 title_separator          : "-"
 name                     : &name "Yiheng XUE"
 description              : &description "personal description"
 url                      : "https://yihengxue.com"
-baseurl                  : # "/testtttttttt" # the subpath of your site, e.g. "/blog"
 repository               : "Billy1203/Billy_homepage"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -220,9 +219,6 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
   plogs:
     output: true
     permalink: /plogs/:year-:month-:day-:title/
@@ -267,15 +263,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: page-content
-      author_profile: true
-      share: true
-      comment: true
   # _plogs
   - scope:
       path: ""
