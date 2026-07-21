@@ -405,6 +405,7 @@ h6,
 .author__name,
 .about-news__date,
 .about-news__eyebrow,
+.about-highlight,
 .about-news__tag,
 .cv-date-pill,
 .plogs-legend__tag,
@@ -2007,7 +2008,7 @@ video.publication-embed--video {
 
 .about-stat__label {
   color: var(--site-text-muted);
-  font-family: var(--site-ui-font);
+  font-family: var(--site-body-font);
   font-size: 0.88rem;
   font-weight: 700;
   line-height: 1.35;
@@ -2016,7 +2017,7 @@ video.publication-embed--video {
 .about-stat__meta {
   max-width: 32ch;
   color: color-mix(in srgb, var(--site-text-muted) 92%, transparent);
-  font-family: var(--site-ui-font);
+  font-family: var(--site-body-font);
   font-size: 0.8rem;
   line-height: 1.45;
 }
@@ -2083,7 +2084,6 @@ video.publication-embed--video {
   border: 1px solid var(--site-badge-border);
   background: color-mix(in srgb, var(--site-badge-bg) 94%, transparent);
   color: var(--site-badge-text);
-  font-family: var(--site-ui-font);
   font-size: 0.84rem;
   font-weight: 700;
   line-height: 1;
