@@ -12,8 +12,6 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
 <div class="cv-actions" aria-label="Resume downloads">
   <a class="btn btn--primary" href="https://drive.google.com/file/d/1tV_HWoPmH-wsyAeUMnmPxYyeKQkzrKXr/preview" target="_blank" rel="noopener">Resume (EN)</a>
   <a class="btn btn--inverse" href="https://drive.google.com/file/d/1E2BlLuXIvtUrV_0oL_njYSsOqR9UlG1u/preview" target="_blank" rel="noopener">简历（中文）</a>
@@ -43,7 +41,7 @@ redirect_from:
         <p class="cv-entry__summary">Pattern Recognition and Intelligent Systems · Distinction · Best Overall Award</p>
         <ul class="cv-entry__list">
           <li>School of Advanced Technology, fully funded by Zhejiang University.</li>
-          <li>Dissertation: <em>Research of 3D Perception Algorithm Based on Multi-Sensor Fusion</em> <a href="{{ base_path }}/projects/2024-master.html">[Details]</a></li>
+          <li>Dissertation: <em>Research of 3D Perception Algorithm Based on Multi-Sensor Fusion</em> <a href="{{ '/projects/2024-master.html' | relative_url }}">[Details]</a></li>
         </ul>
       </article>
 
@@ -63,7 +61,7 @@ redirect_from:
         <p class="cv-entry__summary">Computer Science and Technology</p>
         <ul class="cv-entry__list">
           <li><a href="https://cse.sustech.edu.cn/en">Department of Computer Science and Engineering</a>.</li>
-          <li>Dissertation: <em>Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array</em> <a href="{{ base_path }}/projects/2019-bachelor.html">[Details]</a></li>
+          <li>Dissertation: <em>Real-time 3D Human Skeleton Reconstruction Based on RGB Camera Array</em> <a href="{{ '/projects/2019-bachelor.html' | relative_url }}">[Details]</a></li>
           <li>2nd Place in Capstone Design Competition at the College of Engineering.</li>
           <li>Outstanding Undergraduate Dissertation 2019.</li>
         </ul>
@@ -113,7 +111,7 @@ redirect_from:
         <p class="cv-entry__summary">模式识别与智能系统 · Distinction · Best Overall Award</p>
         <ul class="cv-entry__list">
           <li>智能工程学院，由浙江大学提供全额资助。</li>
-          <li>学位论文：<em>基于多传感器融合的三维感知算法研究</em> <a href="{{ base_path }}/projects/2024-master.html">[项目详情]</a></li>
+          <li>学位论文：<em>基于多传感器融合的三维感知算法研究</em> <a href="{{ '/projects/2024-master.html' | relative_url }}">[项目详情]</a></li>
         </ul>
       </article>
 
@@ -133,7 +131,7 @@ redirect_from:
         <p class="cv-entry__summary">计算机科学与技术</p>
         <ul class="cv-entry__list">
           <li><a href="https://cse.sustech.edu.cn/en">计算机科学与工程系</a>。</li>
-          <li>毕业设计：<em>基于 RGB 相机阵列的实时三维人体骨架重建</em> <a href="{{ base_path }}/projects/2019-bachelor.html">[项目详情]</a></li>
+          <li>毕业设计：<em>基于 RGB 相机阵列的实时三维人体骨架重建</em> <a href="{{ '/projects/2019-bachelor.html' | relative_url }}">[项目详情]</a></li>
           <li>工学院综合设计项目第 2 名。</li>
           <li>2019 届优秀本科毕业论文。</li>
         </ul>

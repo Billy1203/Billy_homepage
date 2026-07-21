@@ -17,10 +17,10 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         <div class="greedy-nav__brand{% if page.url == '/' or page.url == '/index.html' %} selected{% endif %}">
-          <a href="{{ base_path }}/">
+          <a href="{{ '/' | relative_url }}">
             <img
               class="greedy-nav__brand-mark"
-              src="{{ base_path }}/images/site-mark.svg"
+              src="{{ '/images/site-mark.svg' | relative_url }}"
               alt=""
               aria-hidden="true"
               decoding="async"
@@ -32,12 +32,12 @@
           <ul class="greedy-nav__links">
             {% for link in site.data.navigation.main %}
               {% if link.url contains 'http' %}
-                {% assign domain = '' %}
+                {% assign link_href = link.url %}
               {% else %}
-                {% assign domain = base_path %}
+                {% assign link_href = link.url | relative_url %}
               {% endif %}
               <li class="greedy-nav__item{% if page.url contains link.url and link.url != '/' %} selected{% endif %}">
-                <a href="{{ domain }}{{ link.url }}">{% include i18n-text.html en=link.title zh=link.title_zh class="greedy-nav__link-label" %}</a>
+                <a href="{{ link_href }}">{% include i18n-text.html en=link.title zh=link.title_zh class="greedy-nav__link-label" %}</a>
               </li>
             {% endfor %}
           </ul>
@@ -50,12 +50,12 @@
             <ul class="greedy-nav__mobile-links">
               {% for link in site.data.navigation.main %}
                 {% if link.url contains 'http' %}
-                  {% assign domain = '' %}
+                  {% assign link_href = link.url %}
                 {% else %}
-                  {% assign domain = base_path %}
+                  {% assign link_href = link.url | relative_url %}
                 {% endif %}
                 <li class="{% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-                  <a href="{{ domain }}{{ link.url }}">{% include i18n-text.html en=link.title zh=link.title_zh class="greedy-nav__link-label" %}</a>
+                  <a href="{{ link_href }}">{% include i18n-text.html en=link.title zh=link.title_zh class="greedy-nav__link-label" %}</a>
                 </li>
               {% endfor %}
             </ul>

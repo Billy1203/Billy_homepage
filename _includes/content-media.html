@@ -26,7 +26,7 @@
       {% include i18n-text.html en="Your browser does not support embedded video playback." zh="当前浏览器不支持内嵌视频播放。" %}
     </video>
   {% else %}
-    <iframe class="{{ frame_class }} {{ kind_class }}" src="{{ include.src }}" title="{{ include.title_en | default: include.title_zh | default: 'PDF preview' }}" {% if include.title_en %}data-i18n-title-en="{{ include.title_en }}"{% endif %}{% if include.title_zh %} data-i18n-title-zh="{{ include.title_zh }}"{% endif %}></iframe>
+    <iframe class="{{ frame_class }} {{ kind_class }}" src="{{ include.src }}" title="{{ include.title_en | default: include.title_zh | default: 'PDF preview' }}" loading="lazy" {% if include.title_en %}data-i18n-title-en="{{ include.title_en }}"{% endif %}{% if include.title_zh %} data-i18n-title-zh="{{ include.title_zh }}"{% endif %}></iframe>
   {% endif %}
 </div>
 

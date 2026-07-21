@@ -173,7 +173,18 @@
     });
   }
 
-  applyNextAvatar({ animate: false });
+  function restoreStoredAvatar() {
+    var state = readState();
+    var storedAvatar = state && avatarList.indexOf(state.lastShown) > -1 ? state.lastShown : null;
+
+    if (!storedAvatar) {
+      return;
+    }
+
+    applyAvatar(storedAvatar);
+  }
+
+  restoreStoredAvatar();
   updateAvatarMetadata();
 
   window.addEventListener('site-language-change', function() {

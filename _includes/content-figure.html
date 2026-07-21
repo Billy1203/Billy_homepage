@@ -2,7 +2,7 @@
 {% assign figure_alt = include.alt | default: "" %}
 
 <figure class="{{ figure_class }}">
-  <img src="{{ include.src }}" alt="{{ figure_alt }}" decoding="async">
+  <img src="{{ include.src }}" alt="{{ figure_alt }}" loading="{{ include.loading | default: 'lazy' }}" decoding="async">
   {% if include.caption_en or include.caption_zh %}
     <figcaption>
       {% include i18n-text.html en=include.caption_en zh=include.caption_zh %}

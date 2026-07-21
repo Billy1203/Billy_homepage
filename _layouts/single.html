@@ -12,11 +12,11 @@ Prefer editing `_layouts/page-content.html`.
 {% assign page_back_label_en = "" %}
 {% assign page_back_label_zh = "" %}
 {% if page.collection == 'publications' %}
-  {% capture page_back_url %}{{ base_path }}/publications/{% endcapture %}
+  {% assign page_back_url = "/publications/" | relative_url %}
   {% assign page_back_label_en = "Back to Publications" %}
   {% assign page_back_label_zh = "返回论文列表" %}
 {% elsif page.collection == 'projects' %}
-  {% capture page_back_url %}{{ base_path }}/projects/{% endcapture %}
+  {% assign page_back_url = "/projects/" | relative_url %}
   {% assign page_back_label_en = "Back to Projects" %}
   {% assign page_back_label_zh = "返回项目列表" %}
 {% endif %}
