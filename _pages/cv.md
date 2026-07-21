@@ -14,7 +14,7 @@ redirect_from:
 
 <div class="cv-actions" aria-label="Resume downloads">
   <a class="btn btn--primary" href="https://drive.google.com/file/d/1tV_HWoPmH-wsyAeUMnmPxYyeKQkzrKXr/preview" target="_blank" rel="noopener">Resume (EN)</a>
-  <a class="btn btn--inverse" href="https://drive.google.com/file/d/1E2BlLuXIvtUrV_0oL_njYSsOqR9UlG1u/preview" target="_blank" rel="noopener">简历（中文）</a>
+  <a class="btn btn--inverse" href="https://drive.google.com/file/d/12dN7NmfRKN15DTnfJHXymp1JYTjOoXcu/preview" target="_blank" rel="noopener">简历（中文）</a>
 </div>
 
 <section id="education" class="cv-section">
