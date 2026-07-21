@@ -20,7 +20,7 @@
     {% if include.type == "grid" and teaser %}
     <div class="archive__item-teaser">
       <img
-              src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}"
+              src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | relative_url }}{% endif %}"
               alt=""
               loading="lazy"
               decoding="async">
@@ -30,12 +30,12 @@
     <h3 class="archive__item-title" itemprop="headline">
       {% if post.link %}
       <a href="{{ post.link }}">{% include i18n-text.html en=title zh=title_zh %}</a>
-      <a href="{{ base_path }}{{ post.url }}" rel="permalink">
+      <a href="{{ post.url | relative_url }}" rel="permalink">
         <i class="fa fa-link" aria-hidden="true"></i>
         <span class="sr-only">Permalink</span>
       </a>
       {% else %}
-      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{% include i18n-text.html en=title zh=title_zh %}</a>
+      <a href="{{ post.url | relative_url }}" rel="permalink">{% include i18n-text.html en=title zh=title_zh %}</a>
       {% endif %}
     </h3>
 

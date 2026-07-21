@@ -15,7 +15,7 @@ excerpt_zh: "一项关于多传感器融合三维感知的硕士论文工作，�
 ---
 
 <div class="project-note">
-  <p>{% include i18n-text.html en="<strong>Published version:</strong> This work later appeared in <em>Ocean Engineering</em>. <a href='../../publications/2024-09-04-OE'>View publication details</a>." zh="<strong>发表版本：</strong>该工作后续发表于 <em>Ocean Engineering</em>。<a href='../../publications/2024-09-04-OE'>查看论文详情</a>。" %}</p>
+  <p>{% include i18n-text.html en="<strong>Published version:</strong> This work later appeared in <em>Ocean Engineering</em>. <a href='/publications/2024-09-04-OE'>View publication details</a>." zh="<strong>发表版本：</strong>该工作后续发表于 <em>Ocean Engineering</em>。<a href='/publications/2024-09-04-OE'>查看论文详情</a>。" %}</p>
 </div>
 
 <div class="lang-en" markdown="1">

@@ -1,11 +1,9 @@
-{% include base_path %}
-
 {% if page.author and site.data.authors[page.author] %}
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
-{% capture avatar_sources %}{% if author.avatar_options %}{% for avatar_option in author.avatar_options %}{% if forloop.index0 > 0 %}|{% endif %}{% if avatar_option contains "://" %}{{ avatar_option }}{% else %}{{ avatar_option | prepend: "/images/" | prepend: base_path }}{% endif %}{% endfor %}{% endif %}{% endcapture %}
-{% capture avatar_url %}{% if author.avatar contains "://" %}{{ author.avatar }}{% else %}{{ author.avatar | prepend: "/images/" | prepend: base_path }}{% endif %}{% endcapture %}
+{% capture avatar_sources %}{% if author.avatar_options %}{% for avatar_option in author.avatar_options %}{% if forloop.index0 > 0 %}|{% endif %}{% if avatar_option contains "://" %}{{ avatar_option }}{% else %}{{ avatar_option | prepend: "/images/" | relative_url }}{% endif %}{% endfor %}{% endif %}{% endcapture %}
+{% capture avatar_url %}{% if author.avatar contains "://" %}{{ author.avatar }}{% else %}{{ author.avatar | prepend: "/images/" | relative_url }}{% endif %}{% endcapture %}
 {% capture author_intro %}
   {% include i18n-text.html en=author.name zh=author.name_zh wrapper_tag="h3" class="author__name" display="block" %}
   {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
@@ -58,7 +56,9 @@
       {% if profile_value %}
         {% assign profile_href = profile_link.href | replace: "{value}", profile_value %}
         {% assign profile_label_zh = profile_link.label_zh | default: profile_link.label_en %}
-        <li><a href="{{ profile_href }}" aria-label="{{ profile_link.label_en }}" data-i18n-aria-label-en="{{ profile_link.label_en }}" data-i18n-aria-label-zh="{{ profile_label_zh }}"><i class="{{ profile_link.icon }} author__meta-icon" aria-hidden="true"></i></a></li>
+        {% assign compact_label_en = profile_link.compact_label_en | default: profile_link.label_en %}
+        {% assign compact_label_zh = profile_link.compact_label_zh | default: profile_label_zh %}
+        <li><a href="{{ profile_href }}" aria-label="{{ profile_link.label_en }}" data-i18n-aria-label-en="{{ profile_link.label_en }}" data-i18n-aria-label-zh="{{ profile_label_zh }}"><span class="author__compact-label">{% include i18n-text.html en=compact_label_en zh=compact_label_zh %}</span></a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -67,7 +67,7 @@
 <div itemscope itemtype="http://schema.org/Person">
   <div class="author-profile-card author-profile-card--desktop">
     <div class="author__avatar">
-      <img src="{{ avatar_url | strip }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" decoding="async" fetchpriority="high" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
+      <img src="{{ avatar_url | strip }}" class="author__avatar-image js-random-avatar" alt="{{ author.name }}" width="320" height="320" decoding="async" {% if avatar_sources != "" %}data-avatars="{{ avatar_sources }}"{% endif %}>
     </div>
 
     <div class="author__content">

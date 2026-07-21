@@ -12,27 +12,32 @@ redirect_from:
   - /about/
   - /about.html
 ---
-<div class="about-hero-gif">
-  <img src="../images/welcome.gif" alt="Welcome animation" decoding="async" fetchpriority="high">
-</div>
-
 <section class="about-section about-section--intro">
-  <h1>{% include i18n-text.html en="About Me" zh="关于我" %}</h1>
+  <div class="about-hero">
+    <div class="about-hero__copy">
+      <h1>{% include i18n-text.html en="About Me" zh="关于我" %}</h1>
 
-  {% include i18n-text.html
-    en="I work on robotics perception systems that connect research methods with product constraints,
-    from tactile sensing and multi-sensor fusion to V-SLAM and large-scale vision pipelines."
-    zh="我从事机器人感知系统相关工作，关注研究方法与产品约束之间的连接，
-    工作横跨触觉感知、多传感器融合、V-SLAM 与大规模视觉生成流程。"
-    wrapper_tag="p"
-    class="about-lead"
-  %}
+      {% include i18n-text.html
+        en="I work on robotics perception systems that connect research methods with product constraints,
+        from tactile sensing and multi-sensor fusion to V-SLAM and large-scale vision pipelines."
+        zh="我从事机器人感知系统相关工作，关注研究方法与产品约束之间的连接，
+        工作横跨触觉感知、多传感器融合、V-SLAM 与大规模视觉生成流程。"
+        wrapper_tag="p"
+        class="about-lead"
+      %}
 
-  <div class="about-highlights">
-    <span class="about-highlight">{% include i18n-text.html en="Multi-sensor fusion" zh="多传感器融合" %}</span>
-    <span class="about-highlight">{% include i18n-text.html en="V-SLAM & autonomous driving" zh="V-SLAM 与自动驾驶" %}</span>
-    <span class="about-highlight">{% include i18n-text.html en="Tactile sensing" zh="触觉感知" %}</span>
-    <span class="about-highlight">{% include i18n-text.html en="Research to product" zh="研究到产品" %}</span>
+      <div class="about-highlights">
+        <span class="about-highlight">{% include i18n-text.html en="Multi-sensor fusion" zh="多传感器融合" %}</span>
+        <span class="about-highlight">{% include i18n-text.html en="V-SLAM & autonomous driving" zh="V-SLAM 与自动驾驶" %}</span>
+        <span class="about-highlight">{% include i18n-text.html en="Tactile sensing" zh="触觉感知" %}</span>
+        <span class="about-highlight">{% include i18n-text.html en="Research to product" zh="研究到产品" %}</span>
+      </div>
+
+    </div>
+
+    <div class="about-hero-gif" aria-hidden="true">
+      <img src="{{ '/images/welcome.gif' | relative_url }}" alt="" width="648" height="504" loading="eager" decoding="async" fetchpriority="high">
+    </div>
   </div>
 
   <div class="about-glance">
@@ -182,7 +187,6 @@ redirect_from:
 
 <section
   class="about-news"
-  data-news-stack
   aria-label="News timeline"
   data-i18n-aria-label-en="News timeline"
   data-i18n-aria-label-zh="动态时间线">
@@ -214,7 +218,13 @@ redirect_from:
         %}</p>
       </div>
     </article>
+  </div>
 
+  <details class="about-news__archive">
+    <summary class="about-news__archive-summary">
+      {% include i18n-text.html en="More updates" zh="更多动态" %}
+    </summary>
+    <div class="about-news__list about-news__list--archive" role="list">
     <article class="about-news__item about-news__item--pivot" data-news-card role="listitem">
       <div class="about-news__pin" aria-hidden="true"></div>
       <div class="about-news__bubble">
@@ -267,7 +277,7 @@ redirect_from:
         </div>
         <p class="about-news__text">{% include i18n-text.html
           en="PhD enrollment did not proceed because of ATAS review issues."
-          zh="艹TMD ATAS 审批没过，PhD 入学未能继续推进。"
+          zh="由于 ATAS 审查问题，PhD 入学未能继续推进。"
         %}</p>
       </div>
     </article>
@@ -345,10 +355,9 @@ redirect_from:
         %}</p>
       </div>
     </article>
-  </div>
+    </div>
+  </details>
 </section>
-
----
 
 <div class="visitor-stats">
   <a class="visitor-counter-shell" href="https://s01.flagcounter.com/more/ylM7/" target="_blank" rel="noopener" aria-label="Open visitor country details">

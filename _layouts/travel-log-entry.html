@@ -44,7 +44,7 @@ layout: default
       {% assign plog_type_key = "journey" %}
   {% endcase %}
 {% endif %}
-{% capture plogs_index_url %}{{ base_path }}/plogs/{% endcapture %}
+{% assign plogs_index_url = "/plogs/" | relative_url %}
 {% if page.date %}
   {% capture plog_date_en %}{{ page.date | date: "%B %d, %Y" }}{% endcapture %}
   {% capture plog_date_zh %}{{ page.date | date: "%Y年%-m月%-d日" }}{% endcapture %}

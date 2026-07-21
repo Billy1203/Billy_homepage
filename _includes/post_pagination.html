@@ -20,7 +20,7 @@
   <nav class="pagination" aria-label="Page navigation">
     <div class="pagination__pager-group">
       {% if pagination_previous_page %}
-        <a href="{{ base_path }}{{ pagination_previous_page.url }}" class="pagination--pager pagination--pager-previous" title="{{ pagination_previous_page.title | markdownify | strip_html }}" aria-label="{{ pagination_previous_label }}">
+        <a href="{{ pagination_previous_page.url | relative_url }}" class="pagination--pager pagination--pager-previous" title="{{ pagination_previous_page.title | markdownify | strip_html }}" aria-label="{{ pagination_previous_label }}">
           <span aria-hidden="true">&lt;&lt;</span>
           <span class="sr-only">{{ pagination_previous_label }}</span>
         </a>
@@ -31,7 +31,7 @@
         </span>
       {% endif %}
       {% if pagination_next_page %}
-        <a href="{{ base_path }}{{ pagination_next_page.url }}" class="pagination--pager pagination--pager-next" title="{{ pagination_next_page.title | markdownify | strip_html }}" aria-label="{{ pagination_next_label }}">
+        <a href="{{ pagination_next_page.url | relative_url }}" class="pagination--pager pagination--pager-next" title="{{ pagination_next_page.title | markdownify | strip_html }}" aria-label="{{ pagination_next_label }}">
           <span aria-hidden="true">&gt;&gt;</span>
           <span class="sr-only">{{ pagination_next_label }}</span>
         </a>

@@ -10,6 +10,8 @@
   icon: "fas fa-fw fa-envelope"
   label_en: "Email"
   label_zh: "邮箱"
+  compact_label_en: "Email"
+  compact_label_zh: "邮箱"
   item_class: "author__link--email"
   compact: true
 
@@ -24,6 +26,8 @@
   icon: "ai ai-google-scholar ai-fw"
   label_en: "Google Scholar"
   label_zh: "谷歌学术"
+  compact_label_en: "Scholar"
+  compact_label_zh: "学术"
   item_class: "author__link--scholar"
   compact: true
 
@@ -44,6 +48,8 @@
   icon: "ai ai-orcid ai-fw"
   label_en: "ORCID"
   label_zh: "ORCID"
+  compact_label_en: "ORCID"
+  compact_label_zh: "ORCID"
   item_class: "author__link--orcid"
   compact: true
 
@@ -82,6 +88,8 @@
   icon: "fab fa-fw fa-github"
   label_en: "GitHub"
   label_zh: "GitHub"
+  compact_label_en: "GitHub"
+  compact_label_zh: "GitHub"
   item_class: "author__link--github"
   compact: true
 
@@ -156,6 +164,8 @@
   icon: "fab fa-fw fa-linkedin"
   label_en: "LinkedIn"
   label_zh: "领英"
+  compact_label_en: "LinkedIn"
+  compact_label_zh: "领英"
   item_class: "author__link--linkedin"
   compact: true
 

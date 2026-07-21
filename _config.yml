@@ -12,9 +12,10 @@ title                    : "Billy's Homepage"
 title_zh                 : "Billy 的个人主页"
 title_separator          : "-"
 name                     : &name "Yiheng XUE"
-description              : &description "personal description"
+description              : &description "Robotics perception, computer vision, tactile sensing, V-SLAM, and product-facing AI engineering."
 url                      : "https://yihengxue.com"
 repository               : "Billy1203/Billy_homepage"
+asset_version            : "2026-07-21"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -150,7 +151,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  false # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id          :
 
@@ -165,10 +166,12 @@ exclude:
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - .idea
   - .jekyll-assets-cache
   - .sass-cache
   - CHANGELOG
   - Capfile
+  - CONTENT_GUIDE.md
   - Gemfile
   - Gruntfile.js
   - LICENSE
@@ -181,6 +184,7 @@ exclude:
   - gulpfile.js
   - log
   - node_modules
+  - package-lock.json
   - package.json
   - tmp
   - vendor

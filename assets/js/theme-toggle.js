@@ -102,7 +102,7 @@
   }
 
   function preloadThemeImages() {
-    var themeImages = document.querySelectorAll('.js-theme-image');
+    var themeImages = document.querySelectorAll('.js-theme-image[data-preload-theme-image="true"]');
     themeImages.forEach(function(image) {
       var lightSrc = image.getAttribute('data-light-src');
       var darkSrc = image.getAttribute('data-dark-src');
